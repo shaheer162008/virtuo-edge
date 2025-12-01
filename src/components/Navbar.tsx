@@ -11,6 +11,7 @@ const navLinks = [
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/portfolio", label: "Portfolio" },
+    { href: "/pricing", label: "Pricing" },
     { href: "/blogs", label: "Blog" },
     { href: "/contact", label: "Contact" },
 ];
@@ -28,17 +29,36 @@ export const Navbar = () => {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Prevent body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [mobileMenuOpen]);
+
     return (
         <header
-            className="fixed top-0 left-0 right-0 z-50 bg-dark/98 backdrop-blur-md border-b border-white/10 shadow-lg"
+            className="fixed top-0 left-0 right-0 z-50 bg-[#00040F] border-b border-white/10 shadow-lg overflow-hidden"
         >
+            {/* Smooth Spotlight Effect */}
+            <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-primary/[0.08] rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '4s' }} />
+                <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[150px] bg-cyan-bright/[0.06] rounded-full blur-[80px] animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+            </div>
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex items-center justify-between h-16 md:h-20">
                     {/* Logo */}
-                    <Logo />
+                    <div className="flex-shrink-0">
+                        <Logo />
+                    </div>
 
-                    {/* Desktop Navigation */}
-                    <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+                    {/* Desktop Navigation - Centered */}
+                    <nav className="hidden md:flex items-center gap-6 lg:gap-8 absolute left-1/2 -translate-x-1/2">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}
@@ -80,14 +100,25 @@ export const Navbar = () => {
             {/* Mobile Menu */}
             <AnimatePresence>
                 {mobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="md:hidden fixed inset-x-0 top-16 bg-dark/98 backdrop-blur-xl border-b border-white/10 shadow-2xl"
-                        style={{ maxHeight: 'calc(100vh - 64px)', overflowY: 'auto' }}
-                    >
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+                            onClick={() => setMobileMenuOpen(false)}
+                            style={{ top: '64px' }}
+                        />
+                        
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
+                            className="md:hidden fixed inset-x-0 top-16 bg-[#00040F] border-b border-white/10 shadow-2xl z-50"
+                            style={{ maxHeight: 'calc(100vh - 64px)', overflowY: 'auto' }}
+                        >
                         <nav className="container mx-auto px-6 py-8 flex flex-col gap-1">
                             {navLinks.map((link, index) => (
                                 <motion.div
@@ -125,6 +156,7 @@ export const Navbar = () => {
                             </motion.div>
                         </nav>
                     </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </header>

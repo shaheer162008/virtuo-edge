@@ -10,9 +10,9 @@ export const Hero = () => {
             {/* Base dark background */}
             <div className="absolute inset-0 bg-[#0a0a0f] -z-30" />
             
-            {/* Main large gradient blob - center-right position like Flowrix */}
+            {/* Main large gradient blob - center-right position like Flowrix - SMOOTH */}
             <div 
-                className="absolute top-0 right-0 w-[100vw] h-[100vh] -z-20"
+                className="absolute top-0 right-0 w-[100vw] h-[100vh] -z-20 animate-pulse"
                 style={{
                     background: `
                         radial-gradient(ellipse 80% 70% at 60% 40%, 
@@ -23,34 +23,41 @@ export const Hero = () => {
                             rgba(59, 130, 246, 0.15) 70%,
                             transparent 85%
                         )
-                    `
+                    `,
+                    animationDuration: '6s'
                 }}
             />
             
-            {/* Orange/amber glow - right side */}
+            {/* Orange/amber glow - right side - SMOOTH */}
             <div 
-                className="absolute top-1/4 right-1/4 w-[700px] h-[700px] -z-10"
+                className="absolute top-1/4 right-1/4 w-[700px] h-[700px] -z-10 animate-pulse"
                 style={{
                     background: 'radial-gradient(circle, rgba(249, 115, 22, 0.5) 0%, rgba(251, 146, 60, 0.3) 30%, transparent 70%)',
-                    filter: 'blur(80px)'
+                    filter: 'blur(100px)',
+                    animationDuration: '5s',
+                    animationDelay: '1s'
                 }}
             />
             
-            {/* Purple/violet deep glow - center */}
+            {/* Purple/violet deep glow - center - SMOOTH */}
             <div 
-                className="absolute top-1/3 left-1/3 w-[600px] h-[600px] -z-10"
+                className="absolute top-1/3 left-1/3 w-[600px] h-[600px] -z-10 animate-pulse"
                 style={{
                     background: 'radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(91, 33, 182, 0.25) 40%, transparent 70%)',
-                    filter: 'blur(100px)'
+                    filter: 'blur(120px)',
+                    animationDuration: '7s',
+                    animationDelay: '2s'
                 }}
             />
             
-            {/* Blue accent glow - bottom */}
+            {/* Blue accent glow - bottom - SMOOTH */}
             <div 
-                className="absolute bottom-0 left-1/4 w-[500px] h-[400px] -z-10"
+                className="absolute bottom-0 left-1/4 w-[500px] h-[400px] -z-10 animate-pulse"
                 style={{
                     background: 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 60%)',
-                    filter: 'blur(80px)'
+                    filter: 'blur(100px)',
+                    animationDuration: '6s',
+                    animationDelay: '0.5s'
                 }}
             />
 

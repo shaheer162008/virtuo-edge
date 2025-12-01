@@ -90,7 +90,7 @@ export default function ServicesPage() {
 
             {/* Hero */}
             <section className="pt-32 pb-20 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[120px] animate-pulse pointer-events-none -z-10" style={{ animationDuration: '6s' }} />
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

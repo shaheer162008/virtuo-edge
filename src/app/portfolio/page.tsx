@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Newsletter } from "@/components/Newsletter";
+import { StickyFilter } from "@/components/StickyFilter";
 import { ExternalLink } from "lucide-react";
 
 // Metadata is set in layout.tsx for client components
@@ -62,7 +63,7 @@ export default function PortfolioPage() {
 
             {/* Hero */}
             <section className="pt-32 pb-20 relative overflow-hidden">
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-bright/20 rounded-full blur-3xl -z-10" />
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-bright/15 rounded-full blur-[120px] animate-pulse pointer-events-none -z-10" style={{ animationDuration: '5s' }} />
                 <div className="container mx-auto px-4">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -82,24 +83,11 @@ export default function PortfolioPage() {
             </section>
 
             {/* Filter */}
-            <section className="py-8 border-y border-white/10 sticky top-20 z-40 glass">
-                <div className="container mx-auto px-4">
-                    <div className="flex flex-wrap justify-center gap-3">
-                        {categories.map((category) => (
-                            <button
-                                key={category}
-                                onClick={() => setActiveCategory(category)}
-                                className={`px-6 py-2 rounded-lg font-medium transition-all ${activeCategory === category
-                                        ? "bg-cyan-gradient text-dark"
-                                        : "glass text-white/70 hover:text-white border border-white/10"
-                                    }`}
-                            >
-                                {category}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <StickyFilter
+                categories={categories}
+                activeCategory={activeCategory}
+                onCategoryChange={setActiveCategory}
+            />
 
             {/* Projects Grid */}
             <section className="py-20">
