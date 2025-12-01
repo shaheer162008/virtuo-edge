@@ -1,0 +1,7 @@
+Theme: Modern Minimalist
+Primary Color: #1A202C (Dark Blue-Gray)
+Accent Color: #38BDF8 (Sky Blue)
+Background Color: #F8FAFC (Very Light Gray)
+Text Color: #0F172A (Almost Black)
+
+The overall theme is clean, professional, and easy on the eyes, with high contrast for readability. Accent colors are used for buttons and highlights. The design is intended to feel modern and trustworthy, suitable for a tech or creative portfolio.
