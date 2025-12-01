@@ -47,9 +47,9 @@ export const Business = () => {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.98 }}
-                            className="px-10 py-4 bg-gradient-to-r from-primary to-cyan-bright rounded-xl font-bold text-lg text-dark hover:opacity-90 hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60"
+                            className="px-10 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                         >
-                            Get Started
+                            See Pricing
                         </motion.button>
                     </motion.div>
 

@@ -86,7 +86,7 @@ export const Pricing = () => {
                 </div>
 
                 {/* Pricing Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
                     {pricingPlans.map((plan, index) => (
                         <motion.div
                             key={index}
@@ -94,9 +94,9 @@ export const Pricing = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className={`relative rounded-2xl p-8 backdrop-blur-sm transition-all duration-300 h-full flex flex-col ${
+                            className={`relative rounded-2xl p-6 md:p-8 backdrop-blur-sm transition-all duration-300 h-full flex flex-col ${
                                 plan.popular
-                                    ? "bg-gradient-to-b from-primary/20 via-primary/10 to-transparent border-2 border-primary/50 shadow-xl shadow-primary/20 scale-105"
+                                    ? "bg-gradient-to-b from-primary/20 via-primary/10 to-transparent border-2 border-primary/50 shadow-xl shadow-primary/20 md:scale-105"
                                     : "bg-white/5 border border-white/10 hover:border-primary/30"
                             }`}
                         >
@@ -112,22 +112,22 @@ export const Pricing = () => {
 
                             <div className="flex-1">
                                 {/* Plan Name */}
-                                <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{plan.name}</h3>
                                 
                                 {/* Price */}
                                 <div className="mb-4">
-                                    <span className="text-5xl font-bold text-gradient">{plan.price}</span>
-                                    {plan.period && <span className="text-white/50 text-lg ml-2">{plan.period}</span>}
+                                    <span className="text-4xl md:text-5xl font-bold text-gradient">{plan.price}</span>
+                                    {plan.period && <span className="text-white/50 text-base md:text-lg ml-2">{plan.period}</span>}
                                 </div>
 
                                 {/* Description */}
-                                <p className="text-white/60 mb-6 leading-relaxed">{plan.description}</p>
+                                <p className="text-white/60 text-sm md:text-base mb-6 leading-relaxed">{plan.description}</p>
 
                                 {/* Features */}
-                                <ul className="space-y-3 mb-8">
+                                <ul className="space-y-3 mb-6 md:mb-8">
                                     {plan.features.map((feature, i) => (
                                         <li key={i} className="flex items-start gap-3">
-                                            <div className={`mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
+                                            <div className={`mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
                                                 plan.popular ? "bg-primary/20" : "bg-white/10"
                                             }`}>
                                                 <Check size={14} className="text-primary" />
@@ -138,16 +138,16 @@ export const Pricing = () => {
                                 </ul>
                             </div>
 
-                            {/* CTA Button */}
+                            {/* CTA Button - Updated Style */}
                             <Link
                                 href="/contact"
-                                className={`block w-full text-center px-6 py-4 rounded-xl font-bold transition-all duration-300 ${
+                                className={`block w-full text-center px-6 py-3.5 md:py-4 rounded-xl font-bold text-sm md:text-base transition-all duration-300 ${
                                     plan.popular
-                                        ? "bg-gradient-to-r from-primary to-cyan-bright text-dark hover:opacity-90 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60 hover:scale-105"
-                                        : "bg-white/10 text-white border-2 border-white/20 hover:bg-white/20 hover:border-white/40 hover:scale-105"
+                                        ? "bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50"
+                                        : "bg-white/10 text-white border-2 border-white/20 hover:bg-white/20 hover:border-white/40"
                                 }`}
                             >
-                                {plan.name === "Enterprise" ? "Contact Sales" : "Get Started"}
+                                {plan.name === "Enterprise" ? "Contact Sales" : "Choose Plan"}
                             </Link>
                         </motion.div>
                     ))}
@@ -166,7 +166,7 @@ export const Pricing = () => {
                     </p>
                     <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-cyan-bright rounded-xl font-bold text-dark hover:opacity-90 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60 hover:scale-105 active:scale-95 transition-all duration-300"
+                        className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                     >
                         <Sparkles size={20} />
                         Get Free Consultation

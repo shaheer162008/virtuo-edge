@@ -61,9 +61,9 @@ export const Navbar = () => {
                     {/* CTA Button (Desktop) */}
                     <Link
                         href="/contact"
-                        className="hidden md:inline-flex px-6 py-3 bg-gradient-to-r from-primary to-cyan-bright rounded-xl text-sm font-bold text-dark hover:opacity-90 hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60"
+                        className="hidden md:inline-flex px-6 py-3 bg-white/10 text-white border-2 border-white/30 rounded-xl text-sm font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                     >
-                        Free Consultation
+                        See Pricing
                     </Link>
 
                     {/* Mobile Menu Toggle */}
@@ -118,9 +118,9 @@ export const Navbar = () => {
                                 <Link
                                     href="/contact"
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="block w-full px-6 py-4 bg-gradient-to-r from-primary to-cyan-bright rounded-xl text-base font-bold text-dark text-center hover:opacity-90 hover:scale-[1.02] active:scale-95 transition-all duration-300 shadow-lg shadow-primary/50 hover:shadow-xl"
+                                    className="block w-full px-6 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl text-base font-bold text-center hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                                 >
-                                    Get Started
+                                    See Pricing
                                 </Link>
                             </motion.div>
                         </nav>

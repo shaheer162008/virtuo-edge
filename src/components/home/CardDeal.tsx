@@ -24,8 +24,8 @@ export const CardDeal = () => {
                         <p className="text-xl text-white/60 mb-12 leading-relaxed">
                             Get custom AI automation solutions tailored to your specific needs. Our streamlined process makes it easy to transform your business.
                         </p>
-                        <button className="px-10 py-4 bg-gradient-to-r from-primary to-cyan-bright rounded-xl font-bold text-lg text-dark hover:opacity-90 hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60">
-                            Get Started
+                        <button className="px-10 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-300">
+                            See Pricing
                         </button>
                     </motion.div>
 

@@ -1,56 +1,164 @@
 "use client";
 import { Button } from "@/components/ui/Button";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
     return (
-        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-            {/* Background Gradients */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-purple-500/20 rounded-full blur-[100px] -z-10" />
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/20 rounded-full blur-[100px] -z-10" />
+        <section className="relative min-h-screen overflow-hidden">
+            {/* ========== FULL SCREEN GRADIENT BACKGROUND ========== */}
+            {/* Base dark background */}
+            <div className="absolute inset-0 bg-[#0a0a0f] -z-30" />
+            
+            {/* Main large gradient blob - center-right position like Flowrix */}
+            <div 
+                className="absolute top-0 right-0 w-[100vw] h-[100vh] -z-20"
+                style={{
+                    background: `
+                        radial-gradient(ellipse 80% 70% at 60% 40%, 
+                            rgba(139, 92, 246, 0.4) 0%, 
+                            rgba(147, 51, 234, 0.3) 20%,
+                            rgba(249, 115, 22, 0.35) 40%,
+                            rgba(251, 146, 60, 0.25) 55%,
+                            rgba(59, 130, 246, 0.15) 70%,
+                            transparent 85%
+                        )
+                    `
+                }}
+            />
+            
+            {/* Orange/amber glow - right side */}
+            <div 
+                className="absolute top-1/4 right-1/4 w-[700px] h-[700px] -z-10"
+                style={{
+                    background: 'radial-gradient(circle, rgba(249, 115, 22, 0.5) 0%, rgba(251, 146, 60, 0.3) 30%, transparent 70%)',
+                    filter: 'blur(80px)'
+                }}
+            />
+            
+            {/* Purple/violet deep glow - center */}
+            <div 
+                className="absolute top-1/3 left-1/3 w-[600px] h-[600px] -z-10"
+                style={{
+                    background: 'radial-gradient(circle, rgba(139, 92, 246, 0.4) 0%, rgba(91, 33, 182, 0.25) 40%, transparent 70%)',
+                    filter: 'blur(100px)'
+                }}
+            />
+            
+            {/* Blue accent glow - bottom */}
+            <div 
+                className="absolute bottom-0 left-1/4 w-[500px] h-[400px] -z-10"
+                style={{
+                    background: 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 60%)',
+                    filter: 'blur(80px)'
+                }}
+            />
 
-            <div className="container relative z-10 flex flex-col items-center text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-sm text-white/60 mb-8 backdrop-blur-sm"
-                >
-                    <span className="flex h-2 w-2 rounded-full bg-purple-500" />
-                    <span>Version 2.0 is here</span>
-                </motion.div>
+            {/* Dark overlay for text readability on edges */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0f]/80 via-transparent to-transparent -z-5" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f]/60 via-transparent to-[#0a0a0f]/40 -z-5" />
 
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/40 mb-6 max-w-4xl"
-                >
-                    AI-driven solutions for modern startups
-                </motion.h1>
+            {/* ========== CONTENT LAYER ========== */}
+            <div className="container relative z-10 min-h-screen flex items-center px-4 py-20">
+                <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
+                    {/* Left Content */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="space-y-6"
+                    >
+                        {/* Badge */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 bg-primary/10 text-sm text-primary backdrop-blur-sm font-medium"
+                        >
+                            <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
+                            <span>Available For Projects</span>
+                        </motion.div>
 
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="text-lg md:text-xl text-white/60 max-w-2xl mb-10"
-                >
-                    Harness the power of artificial intelligence to streamline your workflow, optimize operations, and scale your business faster than ever before.
-                </motion.p>
+                        {/* Small Description */}
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="text-primary text-sm md:text-base font-medium"
+                        >
+                            Nexiler Helps You Turn Your Ideas Into
+                            <br />
+                            <span className="text-white/70">Something People Remember.</span>
+                        </motion.p>
 
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="flex flex-col md:flex-row items-center gap-4"
-                >
-                    <Button size="lg" className="h-12 px-8 text-base bg-white text-black hover:bg-white/90">
-                        Get Started for Free
-                    </Button>
-                    <Button size="lg" variant="outline" className="h-12 px-8 text-base border-white/20 hover:bg-white/10 text-white">
-                        Watch Demo
-                    </Button>
-                </motion.div>
+                        {/* Main Heading */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                        >
+                            <h1 className="text-7xl md:text-8xl lg:text-[10rem] font-bold text-white leading-[0.85] tracking-tight">
+                                Nexiler
+                            </h1>
+                        </motion.div>
+                    </motion.div>
+
+                    {/* Right Content - Services Card */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                        className="relative lg:pl-8"
+                    >
+                        {/* Top Info Text */}
+                        <motion.p
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.5 }}
+                            className="text-right text-sm text-white/60 mb-6 font-medium leading-relaxed"
+                        >
+                            We Provide <span className="text-white">AI/UX Design</span> And
+                            <br />
+                            <span className="text-white">Development</span> Services As Well As
+                            <br />
+                            <span className="text-white">Branding</span> Services
+                        </motion.p>
+
+                        {/* Services Card */}
+                        <div className="relative">
+                            <div className="relative rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-5 shadow-2xl">
+                                {/* Pricing Header */}
+                                <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                                    <span className="text-lg font-semibold text-white">Our Services</span>
+                                    <Button size="sm" className="bg-white/10 text-white border-2 border-white/30 font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300 px-5 py-2 text-sm rounded-lg">
+                                        See Pricing
+                                    </Button>
+                                </div>
+
+                                {/* Services List */}
+                                <div className="space-y-2">
+                                    {[
+                                        "AI UX Design",
+                                        "Development",
+                                        "Website Design",
+                                        "Motion Design"
+                                    ].map((service, index) => (
+                                        <motion.div
+                                            key={service}
+                                            initial={{ opacity: 0, x: 20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+                                            className="group flex items-center justify-between py-3 px-4 rounded-xl hover:bg-white/5 transition-all cursor-pointer border border-transparent hover:border-white/10"
+                                        >
+                                            <span className="text-white/90 font-medium text-sm">{service}</span>
+                                            <ArrowRight className="h-4 w-4 text-white/40 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

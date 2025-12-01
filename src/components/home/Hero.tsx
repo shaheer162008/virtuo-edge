@@ -83,14 +83,14 @@ export const Hero = () => {
                     >
                         <Link
                             href="/contact"
-                            className="group w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-primary to-cyan-bright rounded-xl font-bold text-base md:text-lg text-dark hover:opacity-90 hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60 inline-flex items-center justify-center gap-3"
+                            className="group w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold text-base md:text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-300 inline-flex items-center justify-center gap-3"
                         >
                             Get Free Consultation
                             <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform duration-300" />
                         </Link>
                         <Link
                             href="/portfolio"
-                            className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 glass rounded-xl font-bold text-base md:text-lg text-white hover:bg-white/10 hover:scale-105 transition-all duration-300 border-2 border-white/30 hover:border-white/50 inline-flex items-center justify-center shadow-lg shadow-white/10"
+                            className="w-full sm:w-auto px-8 md:px-10 py-4 md:py-5 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold text-base md:text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-300 inline-flex items-center justify-center"
                         >
                             See Success Stories
                         </Link>

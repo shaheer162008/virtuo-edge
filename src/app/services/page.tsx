@@ -167,7 +167,7 @@ export default function ServicesPage() {
                         </p>
                         <Link
                             href="/contact"
-                            className="inline-flex px-8 py-4 bg-gradient-to-r from-primary to-cyan-bright rounded-xl font-bold text-dark hover:opacity-90 hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60"
+                            className="inline-flex px-8 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                         >
                             Schedule a Consultation
                         </Link>

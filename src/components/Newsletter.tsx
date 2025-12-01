@@ -71,7 +71,7 @@ export const Newsletter = () => {
                             disabled={status === "loading" || status === "success"}
                             whileHover={{ scale: status === "idle" ? 1.05 : 1 }}
                             whileTap={{ scale: status === "idle" ? 0.95 : 1 }}
-                            className="px-8 py-4 bg-gradient-to-r from-primary to-cyan-bright rounded-xl font-bold text-dark hover:opacity-90 transition-all duration-300 shadow-lg shadow-primary/50 hover:shadow-xl hover:shadow-primary/60 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 min-w-[140px]"
+                            className="px-8 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2 min-w-[140px]"
                         >
                             {status === "loading" && (
                                 <div className="size-5 border-2 border-dark/30 border-t-dark rounded-full animate-spin" />
