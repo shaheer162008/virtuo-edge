@@ -38,6 +38,12 @@ const config: Config = {
                 '7xl': ['6rem', { lineHeight: '1' }],
                 '8xl': ['8rem', { lineHeight: '1' }],
             },
+            animation: {
+                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'pulse-slower': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'pulse-slowest': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'pulse-ultra': 'pulse 7s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
             colors: {
                 primary: {
                     DEFAULT: "#33BBCF",

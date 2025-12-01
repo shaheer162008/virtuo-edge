@@ -4,7 +4,7 @@ import Image from "next/image";
 export const Logo = ({ className = "" }: { className?: string }) => {
     return (
         <Link href="/" className={`flex items-center ${className}`}>
-            <div className="relative h-16 md:h-20 w-56 md:w-72">
+            <div className="relative h-12 md:h-14 w-40 md:w-48">
                 <Image 
                     src="/Nexiler.png" 
                     alt="Nexiler Logo" 
