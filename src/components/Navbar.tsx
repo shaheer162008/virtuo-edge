@@ -45,10 +45,15 @@ export const Navbar = () => {
         <header
             className="fixed top-0 left-0 right-0 z-50 bg-[#00040F] border-b border-white/10 shadow-lg overflow-hidden"
         >
-            {/* Smooth Spotlight Effect */}
+            {/* Smooth Ambient Lighting */}
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] bg-primary/[0.08] rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '4s' }} />
-                <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[400px] h-[150px] bg-cyan-bright/[0.06] rounded-full blur-[80px] animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+                <div 
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[200px] opacity-30"
+                    style={{
+                        background: 'radial-gradient(ellipse at center, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 50%, transparent 80%)',
+                        filter: 'blur(80px)',
+                    }}
+                />
             </div>
             <div className="container mx-auto px-4 md:px-6">
                 <div className="flex items-center justify-between h-16 md:h-20">

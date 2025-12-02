@@ -34,7 +34,13 @@ export const Footer = () => {
     return (
         <footer className="border-t border-white/10 bg-dark-secondary relative overflow-hidden">
             {/* Smooth Spotlight */}
-            <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-white/[0.03] rounded-full blur-[120px] animate-pulse pointer-events-none -z-10" style={{ animationDuration: '7s' }} />
+            <div 
+                className="absolute top-0 left-1/4 w-[600px] h-[600px] opacity-20 pointer-events-none -z-10"
+                style={{
+                    background: 'radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 0%, transparent 70%)',
+                    filter: 'blur(100px)',
+                }}
+            />
             
             <div className="container mx-auto px-4 py-16 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
