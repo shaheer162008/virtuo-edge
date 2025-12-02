@@ -6,7 +6,7 @@ import { Sparkles, ArrowRight } from "lucide-react";
 
 export const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-16">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
             {/* Cone-shaped Spotlight from Badge */}
             <div className="absolute inset-0 -z-10">
                 {/* Main cone spreading from top */}
@@ -51,15 +51,15 @@ export const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
-                        className="flex justify-center mb-12"
+                        className="flex justify-center mb-8"
                     >
-                        <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full glass border border-primary/30 hover:border-primary/50 transition-all duration-500">
-                            <Sparkles size={20} className="text-primary animate-pulse" />
+                        <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full glass border border-primary/30 hover:border-primary/50 transition-all duration-500">
+                            <Sparkles size={18} className="text-primary animate-pulse" />
                             <span className="text-sm md:text-base text-white/80 font-medium">Next-Gen AI Automation • Trusted by 230+ Companies</span>
                         </div>
                     </motion.div>
 
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                         {/* Left Content */}
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -72,7 +72,7 @@ export const Hero = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+                                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight"
                             >
                                 <span className="block text-white mb-2">Transform Your</span>
                                 <span className="block text-gradient">Business with AI</span>
@@ -140,28 +140,28 @@ export const Hero = () => {
                             </motion.div>
                         </motion.div>
 
-                        {/* Right Image - Larger Size */}
+                        {/* Right Image - 1536x1536 (1.5x of 1024) */}
                         <motion.div
                             initial={{ opacity: 0, x: 50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                            className="relative group"
+                            className="relative group flex items-center justify-center"
                         >
-                            <div className="relative w-full aspect-[4/3] lg:aspect-[3/2] rounded-2xl overflow-hidden">
-                                <motion.div
-                                    whileHover={{ scale: 1.1 }}
-                                    transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
-                                    className="w-full h-full"
-                                >
-                                    <Image
-                                        src="/hero.png"
-                                        alt="AI Business Transformation"
-                                        fill
-                                        className="object-contain transition-transform duration-700"
-                                        priority
-                                    />
-                                </motion.div>
-                            </div>
+                            <motion.div
+                                whileHover={{ scale: 1.08 }}
+                                transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+                                className="relative"
+                                style={{ width: '1536px', height: '1536px', maxWidth: '100%', maxHeight: '70vh' }}
+                            >
+                                <Image
+                                    src="/hero.png"
+                                    alt="AI Business Transformation"
+                                    width={1536}
+                                    height={1536}
+                                    className="object-contain transition-transform duration-700"
+                                    priority
+                                />
+                            </motion.div>
                             {/* Subtle Glow Effect on Hover */}
                             <motion.div
                                 initial={{ opacity: 0 }}
