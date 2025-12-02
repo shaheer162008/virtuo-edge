@@ -102,10 +102,10 @@ export const Pricing = () => {
                         >
                             {/* Popular Badge */}
                             {plan.popular && (
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                                    <div className="px-4 py-1 rounded-full bg-gradient-to-r from-primary to-cyan-bright text-dark text-sm font-bold flex items-center gap-1 shadow-lg">
-                                        <Zap size={14} />
-                                        Most Popular
+                                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
+                                    <div className="px-6 py-1.5 rounded-full bg-[#00040F] text-white text-xs md:text-sm font-semibold flex items-center justify-center gap-1.5 shadow-xl whitespace-nowrap border-2 border-white/10">
+                                        <Zap size={14} className="flex-shrink-0" />
+                                        <span>Most Popular</span>
                                     </div>
                                 </div>
                             )}

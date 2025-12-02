@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Newsletter } from "@/components/Newsletter";
 import { Bot, Code, Database, Zap, Workflow, HeadphonesIcon, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import { CTA } from "@/components/home/CTA";
 
 // Metadata is set in layout.tsx for client components
 
@@ -150,30 +151,7 @@ export default function ServicesPage() {
             </section>
 
             {/* CTA */}
-            <section className="py-20 border-t border-white/10">
-                <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-center max-w-3xl mx-auto"
-                    >
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                            <span className="text-white">Ready to Get </span>
-                            <span className="text-gradient">Started?</span>
-                        </h2>
-                        <p className="text-lg text-white/60 mb-8">
-                            Let's discuss which solutions are right for your business.
-                        </p>
-                        <Link
-                            href="/contact"
-                            className="inline-flex px-8 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
-                        >
-                            Schedule a Consultation
-                        </Link>
-                    </motion.div>
-                </div>
-            </section>
+            <CTA />
 
             <Newsletter />
             <Footer />
