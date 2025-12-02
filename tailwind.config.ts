@@ -8,6 +8,9 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+            },
             container: {
                 center: true,
                 padding: {
