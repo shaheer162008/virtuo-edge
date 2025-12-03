@@ -16,7 +16,7 @@ import { Pricing } from "@/components/Pricing";
 import { Newsletter } from "@/components/Newsletter";
 import { homeMetadata } from "@/lib/metadata";
 
-export const metadata = homeMetadata;
+export const metadata = homeMetadata
 
 export default function Home() {
 

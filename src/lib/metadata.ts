@@ -114,6 +114,7 @@ export function generateMetadata({
 export const homeMetadata = generateMetadata({
   title: "AI Automation & Custom Development Solutions",
   description: "Transform your business with Nexiler's custom AI automation solutions and traditional development services. Trusted by 230+ companies. Get started today!",
+  path: "",
   keywords: ["AI automation", "custom development", "business transformation", "intelligent systems"],
 });
 
