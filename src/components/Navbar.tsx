@@ -76,10 +76,10 @@ export const Navbar = () => {
 
                     {/* CTA Button (Desktop) */}
                     <Link
-                        href="/pricing"
+                        href="/consultation"
                         className="hidden lg:inline-flex px-5 xl:px-6 py-2.5 xl:py-3 bg-white/10 text-white border-2 border-white/30 rounded-xl text-sm xl:text-base font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                     >
-                        See Pricing
+                        Get Free Consultation
                     </Link>
 
                     {/* Mobile Menu Toggle - Larger touch target */}
@@ -143,11 +143,11 @@ export const Navbar = () => {
                                 className="mt-4 pt-4 border-t border-white/10"
                             >
                                 <Link
-                                    href="/pricing"
+                                    href="/consultation"
                                     onClick={() => setMobileMenuOpen(false)}
                                     className="block w-full px-6 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl text-base sm:text-lg font-bold text-center hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                                 >
-                                    See Pricing
+                                    Get Free Consultation
                                 </Link>
                             </motion.div>
                         </nav>

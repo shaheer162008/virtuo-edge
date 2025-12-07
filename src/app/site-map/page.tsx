@@ -21,6 +21,7 @@ const sitemapSections = [
       { href: "/portfolio", label: "Portfolio" },
       { href: "/pricing", label: "Pricing" },
       { href: "/blogs", label: "Blog" },
+      { href: "/consultation", label: "Free Consultation" },
       { href: "/contact", label: "Contact" },
     ],
   },

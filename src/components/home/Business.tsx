@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Shield, Star, Send } from "lucide-react";
+import Link from "next/link";
 
 const features = [
     {
@@ -42,14 +43,16 @@ export const Business = () => {
                         <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 sm:mb-10 md:mb-12 leading-relaxed">
                             With the right AI automation and custom solutions, your business can scale efficiently. We help you focus on growth while we handle the technology.
                         </p>
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.98 }}
-                            transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                            className="px-8 sm:px-10 py-3 sm:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold text-base sm:text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-500"
-                        >
-                            See Pricing
-                        </motion.button>
+                        <Link href="/consultation">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.98 }}
+                                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                                className="px-8 sm:px-10 py-3 sm:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold text-base sm:text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-500"
+                            >
+                                Get Free Consultation
+                            </motion.button>
+                        </Link>
                     </motion.div>
 
                     {/* Right: Features */}

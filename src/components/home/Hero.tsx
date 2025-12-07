@@ -69,7 +69,7 @@ export const Hero = () => {
                                 className="flex flex-col md:flex-row md:justify-center lg:justify-start gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12"
                             >
                                 <Link
-                                    href="/contact"
+                                    href="/consultation"
                                     className="group w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-semibold text-sm sm:text-base hover:bg-white/20 hover:border-white/50 transition-all duration-500 inline-flex items-center justify-center gap-2"
                                 >
                                     Get Free Consultation

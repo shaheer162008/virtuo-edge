@@ -11,9 +11,9 @@ const footerLinks = {
     ],
     resources: [
         { label: "Case Studies", href: "/portfolio" },
-        { label: "Pricing", href: "/services" },
+        { label: "Pricing", href: "/pricing" },
+        { label: "Free Consultation", href: "/consultation" },
         { label: "Contact", href: "/contact" },
-        { label: "FAQ", href: "/about" },
     ],
     legal: [
         { label: "Privacy Policy", href: "/privacy-policy" },

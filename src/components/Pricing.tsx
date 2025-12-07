@@ -140,7 +140,7 @@ export const Pricing = () => {
 
                             {/* CTA Button */}
                             <Link
-                                href="/contact"
+                                href="/consultation"
                                 className={`block w-full text-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base transition-all duration-300 ${
                                     plan.popular
                                         ? "bg-primary text-dark hover:bg-primary/90 shadow-lg shadow-primary/30 hover:shadow-primary/50"
@@ -165,7 +165,7 @@ export const Pricing = () => {
                         Not sure which plan is right for you?
                     </p>
                     <Link
-                        href="/contact"
+                        href="/consultation"
                         className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-white/10 text-white border-2 border-white/30 font-bold text-sm sm:text-base hover:bg-white/20 hover:border-white/50 transition-all duration-300"
                     >
                         Schedule Free Consultation

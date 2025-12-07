@@ -56,7 +56,7 @@ export const CTA = () => {
                             transition={{ duration: 0.5, delay: 0.3, ease: [0.4, 0, 0.2, 1] }}
                         >
                             <Link
-                                href="/contact"
+                                href="/consultation"
                                 className="group/btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold text-sm sm:text-base md:text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-500"
                             >
                                 Get Free Consultation
