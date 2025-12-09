@@ -20,36 +20,71 @@ export default function ConsultationForm() {
     timezoneOffset: "",
     message: "",
   });
-  
+
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [isDetecting, setIsDetecting] = useState(false);
+  
+  // NEW STATE: To hold the list of times already booked from the backend API
+  const [bookedTimes, setBookedTimes] = useState<string[]>([]);
+  // NEW STATE: To track the loading status of the booked times data
+  const [isTimesLoading, setIsTimesLoading] = useState(true);
 
   // Auto-detect user's timezone on component mount
   useEffect(() => {
     detectTimezone();
   }, []);
 
+  // NEW useEffect: Fetch booked times from the API on mount or when the selected date changes
+  useEffect(() => {
+    const fetchBookedTimes = async () => {
+      setIsTimesLoading(true);
+      try {
+        // We will pass the selected date as a query parameter to the API
+        // NOTE: The backend API you provided only returns ALL times. 
+        // For a full solution, you would need to update the backend to filter by date.
+        // For now, we'll fetch all times.
+        const response = await fetch(`/api/availableTimeSlots?date=${formData.date}`);
+        
+        if (response.ok) {
+          const data = await response.json();
+          // Assuming the API returns an object like: { times: ["10:00 AM", "11:00 AM", ...] }
+          // We convert the fetched times to a Set for O(1) lookup efficiency when checking if a time is booked
+          setBookedTimes(data.times || []);
+        } else {
+          console.error("Failed to fetch booked times");
+        }
+      } catch (error) {
+        console.error("Network error fetching booked times:", error);
+      } finally {
+        setIsTimesLoading(false);
+      }
+    };
+    
+    // Only fetch if a date is selected, or fetch all times initially
+    fetchBookedTimes();
+  }, [formData.date]); // Re-run when the selected date changes
+
   const detectTimezone = () => {
     setIsDetecting(true);
-    
+
     // Get timezone from browser
     const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const offset = getTimezoneOffset(browserTimezone);
-    
+
     setFormData(prev => ({ 
       ...prev, 
       timezone: browserTimezone,
       timezoneOffset: offset
     }));
-    
+
     setIsDetecting(false);
   };
 
   const handleManualTimezoneChange = (e: { target: { name: string; value: string } }) => {
     const selectedTimezone = e.target.value;
     const offset = getTimezoneOffset(selectedTimezone);
-    
+
     setFormData(prev => ({
       ...prev,
       timezone: selectedTimezone,
@@ -75,6 +110,13 @@ export default function ConsultationForm() {
     e.preventDefault();
     setStatus("loading");
     setErrorMessage("");
+    
+    // FINAL VALIDATION: Check if the selected time is in the bookedTimes array just before submission
+    if (bookedTimes.includes(formData.time)) {
+        setStatus("error");
+        setErrorMessage(`The time slot ${formData.time} is no longer available. Please select another time.`);
+        return;
+    }
 
     try {
       const response = await fetch('/api/consultation', {
@@ -89,7 +131,7 @@ export default function ConsultationForm() {
         setStatus("success");
         const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
         const offset = getTimezoneOffset(browserTimezone);
-        
+
         setFormData({
           name: "",
           email: "",
@@ -102,6 +144,8 @@ export default function ConsultationForm() {
           timezoneOffset: offset,
           message: "",
         });
+        // Refetch booked times after successful submission to update the list
+        // The useEffect hook will handle this since formData.date will likely be cleared or changed.
       } else {
         setStatus("error");
         setErrorMessage("Something went wrong. Please try again.");
@@ -263,7 +307,7 @@ export default function ConsultationForm() {
             name="time"
             value={formData.time}
             onChange={handleDropdownChange}
-            label="Preferred Time"
+            label={isTimesLoading ? "Loading Slots..." : "Preferred Time"} // Display loading state
             required
           />
         </div>

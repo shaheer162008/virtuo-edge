@@ -24,7 +24,6 @@ export default function RootLayout({
         <meta name="theme-color" content="#00040F" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
         
         {/* Structured Data - Organization */}
         <script

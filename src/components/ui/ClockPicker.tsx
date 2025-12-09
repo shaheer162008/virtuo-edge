@@ -362,7 +362,7 @@ export default function ClockPicker({
                 <button
                   type="button"
                   onClick={handleQuickBook}
-                  className="w-full py-4 bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-primary-500/30 flex items-center justify-center gap-2"
+                  className="w-full py-4 bg-linear-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-primary-500/30 flex items-center justify-center gap-2"
                 >
                   <Zap className="w-5 h-5" />
                   Book Now
