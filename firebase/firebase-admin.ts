@@ -1,5 +1,6 @@
-import { credential, firestore } from "firebase-admin";
+import { credential} from "firebase-admin";
 import { getApp, getApps, initializeApp } from "firebase-admin/app";
+import { getFirestore } from "firebase-admin/firestore";
 
 if(!process.env.PROJECT_ID || !process.env.CLIENT_EMAIL || !process.env.PRIVATE_KEY) {
   throw new Error("Missing Firebase admin environment variables");
@@ -14,4 +15,4 @@ const adminCredentials = {
 };
 
 const firebaseAdminApp = getApps().length === 0 ? initializeApp(adminCredentials) : getApp();
-export const admindb = firestore(firebaseAdminApp);
+export const admindb = getFirestore(firebaseAdminApp);
