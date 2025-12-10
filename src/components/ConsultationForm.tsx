@@ -35,35 +35,34 @@ export default function ConsultationForm() {
     detectTimezone();
   }, []);
 
-  // NEW useEffect: Fetch booked times from the API on mount or when the selected date changes
-  // useEffect(() => {
-  //   const fetchBookedTimes = async () => {
-  //     setIsTimesLoading(true);
-  //     try {
-  //       // We will pass the selected date as a query parameter to the API
-  //       // NOTE: The backend API you provided only returns ALL times. 
-  //       // For a full solution, you would need to update the backend to filter by date.
-  //       // For now, we'll fetch all times.
-  //       const response = await fetch(`/api/availableTimeSlots?date=${formData.date}`);
+  useEffect(() => {
+    const fetchBookedTimes = async () => {
+      setIsTimesLoading(true);
+      try {
+        // We will pass the selected date as a query parameter to the API
+        // NOTE: The backend API you provided only returns ALL times. 
+        // For a full solution, you would need to update the backend to filter by date.
+        // For now, we'll fetch all times.
+        const response = await fetch(`/api/availableTimeSlots?date=${formData.date}`);
         
-  //       if (response.ok) {
-  //         const data = await response.json();
-  //         // Assuming the API returns an object like: { times: ["10:00 AM", "11:00 AM", ...] }
-  //         // We convert the fetched times to a Set for O(1) lookup efficiency when checking if a time is booked
-  //         setBookedTimes(data.times || []);
-  //       } else {
-  //         console.error("Failed to fetch booked times");
-  //       }
-  //     } catch (error) {
-  //       console.error("Network error fetching booked times:", error);
-  //     } finally {
-  //       setIsTimesLoading(false);
-  //     }
-  //   };
+        if (response.ok) {
+          const data = await response.json();
+          // Assuming the API returns an object like: { times: ["10:00 AM", "11:00 AM", ...] }
+          // We convert the fetched times to a Set for O(1) lookup efficiency when checking if a time is booked
+          setBookedTimes(data.times || []);
+        } else {
+          console.error("Failed to fetch booked times");
+        }
+      } catch (error) {
+        console.error("Network error fetching booked times:", error);
+      } finally {
+        setIsTimesLoading(false);
+      }
+    };
     
-  //   // Only fetch if a date is selected, or fetch all times initially
-  //   fetchBookedTimes();
-  // }, [formData.date]); // Re-run when the selected date changes
+    // Only fetch if a date is selected, or fetch all times initially
+    fetchBookedTimes();
+  }, [formData.date]); // Re-run when the selected date changes
 
   const detectTimezone = () => {
     setIsDetecting(true);
@@ -308,6 +307,8 @@ export default function ConsultationForm() {
             value={formData.time}
             onChange={handleDropdownChange}
             label={isTimesLoading ? "Loading Slots..." : "Preferred Time"} // Display loading state
+            disabled={isTimesLoading}
+            bookedTimes={bookedTimes} // Pass booked times to disable them
             required
           />
         </div>

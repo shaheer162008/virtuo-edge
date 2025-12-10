@@ -10,6 +10,8 @@ interface ClockPickerProps {
   onChange: (e: { target: { name: string; value: string } }) => void;
   label?: string;
   required?: boolean;
+  disabled: boolean;
+  bookedTimes: string[];
 }
 
 // Generate time slots
@@ -17,19 +19,19 @@ const generateTimeSlots = () => {
   const slots = [];
   for (let hour = 0; hour < 24; hour++) {
     for (let minute = 0; minute < 60; minute += 30) {
-      const hourStr = hour.toString().padStart(2, '0');
-      const minuteStr = minute.toString().padStart(2, '0');
+      const hourStr = hour.toString().padStart(2, "0");
+      const minuteStr = minute.toString().padStart(2, "0");
       const nextMinute = minute + 30;
       const nextHour = nextMinute >= 60 ? hour + 1 : hour;
-      const nextMinuteStr = (nextMinute % 60).toString().padStart(2, '0');
-      const nextHourStr = nextHour.toString().padStart(2, '0');
-      
+      const nextMinuteStr = (nextMinute % 60).toString().padStart(2, "0");
+      const nextHourStr = nextHour.toString().padStart(2, "0");
+
       const value = `${hourStr}:${minuteStr}-${nextHourStr}:${nextMinuteStr}`;
-      
-      slots.push({ 
-        value, 
-        hour, 
-        minute
+
+      slots.push({
+        value,
+        hour,
+        minute,
       });
     }
   }
@@ -43,21 +45,23 @@ const getNextAvailableSlot = () => {
   const now = new Date();
   const currentHour = now.getHours();
   const currentMinute = now.getMinutes();
-  
+
   // Add 1 hour buffer
   let nextHour = currentHour + 1;
   let nextMinute = currentMinute >= 30 ? 0 : 30;
-  
+
   if (currentMinute >= 30) {
     nextHour += 1;
   }
-  
+
   // Handle day overflow
   if (nextHour >= 24) {
     nextHour = 0;
   }
-  
-  const slot = TIME_SLOTS.find(s => s.hour === nextHour && s.minute === nextMinute);
+
+  const slot = TIME_SLOTS.find(
+    (s) => s.hour === nextHour && s.minute === nextMinute
+  );
   return slot?.value || TIME_SLOTS[0].value;
 };
 
@@ -68,27 +72,26 @@ export default function ClockPicker({
   onChange,
   label,
   required = false,
+  disabled,
+  bookedTimes,
 }: ClockPickerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedHour, setSelectedHour] = useState(7);
   const [selectedMinute, setSelectedMinute] = useState(0);
-  const [selectedPeriod, setSelectedPeriod] = useState<"AM" | "PM">("AM");
   const [mode, setMode] = useState<"manual" | "quick">("manual");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Initialize from value
   useEffect(() => {
     if (value) {
-      const [start] = value.split('-');
-      const [hourStr, minuteStr] = start.split(':');
+      const [start] = value.split("-");
+      const [hourStr, minuteStr] = start.split(":");
       const hour = parseInt(hourStr);
       const minute = parseInt(minuteStr);
-      
+
       if (hour >= 12) {
-        setSelectedPeriod("PM");
         setSelectedHour(hour === 12 ? 12 : hour - 12);
       } else {
-        setSelectedPeriod("AM");
         setSelectedHour(hour === 0 ? 12 : hour);
       }
       setSelectedMinute(minute);
@@ -98,7 +101,10 @@ export default function ClockPicker({
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -115,53 +121,50 @@ export default function ClockPicker({
   // Get display label for selected value
   const getDisplayValue = () => {
     if (!value) return "Select consultation time";
-    const [start] = value.split('-');
-    const [hourStr, minuteStr] = start.split(':');
+    const [start] = value.split("-");
+    const [hourStr, minuteStr] = start.split(":");
     const hour = parseInt(hourStr);
     const minute = parseInt(minuteStr);
-    
+
     const displayHour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
-    const period = hour < 12 ? 'AM' : 'PM';
-    
-    return `${displayHour}:${minuteStr} ${period}`;
+    const period = hour < 12 ? "AM" : "PM";
+
+    return `${displayHour}:${minuteStr} PM`;
   };
 
   const handleQuickBook = () => {
-    const nextSlot = getNextAvailableSlot();
+    const available = TIME_SLOTS.find((slot) => {
+      const hour = parseInt(slot.value.substring(0, 2));
+      const hour12 = hour % 12 === 0 ? 12 : hour % 12;
+      return !bookedHours.includes(hour12);
+    });
+
+    if (!available) return;
+
     onChange({
       target: {
         name,
-        value: nextSlot,
+        value: available.value,
       },
     });
+
     setIsOpen(false);
   };
 
   const handleApply = () => {
-    // Convert 12-hour to 24-hour
-    let hour24 = selectedHour;
-    if (selectedPeriod === "PM" && selectedHour !== 12) {
-      hour24 = selectedHour + 12;
-    } else if (selectedPeriod === "AM" && selectedHour === 12) {
-      hour24 = 0;
-    }
-    
-    const hourStr = hour24.toString().padStart(2, '0');
-    const minuteStr = selectedMinute.toString().padStart(2, '0');
-    
+    let hour24 = selectedHour === 12 ? 12 : selectedHour + 12;
+
+    const hourStr = hour24.toString().padStart(2, "0");
+    const minuteStr = selectedMinute.toString().padStart(2, "0");
+
     const nextMinute = selectedMinute + 30;
     const nextHour = nextMinute >= 60 ? hour24 + 1 : hour24;
-    const nextMinuteStr = (nextMinute % 60).toString().padStart(2, '0');
-    const nextHourStr = nextHour.toString().padStart(2, '0');
-    
+    const nextMinuteStr = (nextMinute % 60).toString().padStart(2, "0");
+    const nextHourStr = nextHour.toString().padStart(2, "0");
+
     const timeValue = `${hourStr}:${minuteStr}-${nextHourStr}:${nextMinuteStr}`;
-    
-    onChange({
-      target: {
-        name,
-        value: timeValue,
-      },
-    });
+
+    onChange({ target: { name, value: timeValue } });
     setIsOpen(false);
   };
 
@@ -175,10 +178,20 @@ export default function ClockPicker({
     setSelectedHour(hour);
   };
 
+
+  const bookedHours = bookedTimes.map((s) => {
+    const h = parseInt(s.substring(0, 2));
+    return h % 12 || 12;
+  });
+  const allowedHours = [11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
   return (
     <div className="w-full" ref={dropdownRef}>
       {label && (
-        <label htmlFor={id} className="block text-sm font-medium text-gray-200 mb-2">
+        <label
+          htmlFor={id}
+          className="block text-sm font-medium text-gray-200 mb-2"
+        >
           {label}
           {required && <span className="text-red-400 ml-1">*</span>}
         </label>
@@ -214,6 +227,10 @@ export default function ClockPicker({
             className="absolute z-50 mt-2 bg-gray-800 border border-gray-700 rounded-lg shadow-xl overflow-hidden"
             style={{ width: "min(400px, 90vw)" }}
           >
+            <div className="text-center text-sm text-gray-400 py-2 border-b border-gray-700">
+              Available timings: 11:00 AM to 10:00 PM
+            </div>
+
             {/* Mode Toggle */}
             <div className="flex border-b border-gray-700">
               <button
@@ -250,42 +267,38 @@ export default function ClockPicker({
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
-                      onClick={() => setSelectedHour(h => h === 12 ? 1 : h + 1)}
-                      className="w-20 h-24 bg-primary-500/20 hover:bg-primary-500/30 border-2 border-primary-500 rounded-lg flex items-center justify-center text-4xl font-bold text-primary-400 transition-all"
+                      disabled={
+                        bookedHours.includes(selectedHour) ||
+                        !allowedHours.includes(selectedHour)
+                      }
+                      onClick={() => {
+                        const next = selectedHour === 12 ? 1 : selectedHour + 1;
+                        if (
+                          !bookedHours.includes(next) &&
+                          allowedHours.includes(next)
+                        )
+                          setSelectedHour(next);
+                      }}
+                      className={`w-20 h-24 border-2 rounded-lg flex items-center justify-center text-4xl font-bold transition-all
+    ${
+      bookedHours.includes(selectedHour)
+        ? "bg-gray-700/50 border-gray-600 text-gray-500 cursor-not-allowed"
+        : "bg-primary-500/20 hover:bg-primary-500/30 border-primary-500 text-primary-400"
+    }
+  `}
                     >
-                      {selectedHour.toString().padStart(2, '0')}
+                      {selectedHour.toString().padStart(2, "0")}
                     </button>
+
                     <span className="text-3xl font-bold text-gray-400">:</span>
                     <button
                       type="button"
-                      onClick={() => setSelectedMinute(m => m === 30 ? 0 : 30)}
+                      onClick={() =>
+                        setSelectedMinute((m) => (m === 30 ? 0 : 30))
+                      }
                       className="w-20 h-24 bg-gray-700/50 hover:bg-gray-700 border-2 border-gray-600 rounded-lg flex items-center justify-center text-4xl font-bold text-gray-300 transition-all"
                     >
-                      {selectedMinute.toString().padStart(2, '0')}
-                    </button>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setSelectedPeriod("AM")}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                        selectedPeriod === "AM"
-                          ? "bg-primary-500 text-white"
-                          : "bg-gray-700/50 text-gray-400 hover:bg-gray-700"
-                      }`}
-                    >
-                      AM
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setSelectedPeriod("PM")}
-                      className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                        selectedPeriod === "PM"
-                          ? "bg-primary-500 text-white"
-                          : "bg-gray-700/50 text-gray-400 hover:bg-gray-700"
-                      }`}
-                    >
-                      PM
+                      {selectedMinute.toString().padStart(2, "0")}
                     </button>
                   </div>
                 </div>
@@ -293,27 +306,35 @@ export default function ClockPicker({
                 {/* Analog Clock */}
                 <div className="relative w-64 h-64 mx-auto mb-6">
                   <div className="absolute inset-0 rounded-full bg-gray-700/30 border-4 border-gray-600"></div>
-                  
+
                   {/* Clock Numbers */}
-                  {[12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((hour, index) => {
+                  {allowedHours.map((hour, index) => {
                     const angle = (index * 30 - 90) * (Math.PI / 180);
                     const x = 50 + 38 * Math.cos(angle);
                     const y = 50 + 38 * Math.sin(angle);
-                    const isSelected = selectedHour === hour;
-                    
+
+                    const isBooked = bookedHours.includes(hour);
+                    const isSelected = selectedHour === hour && !isBooked;
+
                     return (
                       <button
                         key={hour}
                         type="button"
-                        onClick={() => handleClockClick(hour)}
-                        className={`absolute w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all transform -translate-x-1/2 -translate-y-1/2 ${
-                          isSelected
-                            ? "bg-primary-500 text-white scale-110 shadow-lg"
-                            : "text-gray-300 hover:bg-gray-600/50 hover:scale-105"
-                        }`}
+                        disabled={isBooked}
+                        onClick={() => !isBooked && handleClockClick(hour)}
+                        className={`absolute w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all transform -translate-x-1/2 -translate-y-1/2
+        ${
+          isBooked
+            ? "bg-gray-700 text-red-500 cursor-not-allowed border border-red-500"
+            : isSelected
+            ? "bg-primary-500 text-white scale-110 shadow-lg"
+            : "text-gray-300 hover:bg-gray-600/50 hover:scale-105"
+        }
+      `}
                         style={{ left: `${x}%`, top: `${y}%` }}
                       >
-                        {hour}
+                        {/* If booked show cross, else show hour */}
+                        {isBooked ? "✖" : hour}
                       </button>
                     );
                   })}
