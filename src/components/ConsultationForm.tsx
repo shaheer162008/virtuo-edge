@@ -25,44 +25,13 @@ export default function ConsultationForm() {
   const [errorMessage, setErrorMessage] = useState("");
   const [isDetecting, setIsDetecting] = useState(false);
   
-  // NEW STATE: To hold the list of times already booked from the backend API
-  const [bookedTimes, setBookedTimes] = useState<string[]>([]);
-  // NEW STATE: To track the loading status of the booked times data
-  const [isTimesLoading, setIsTimesLoading] = useState(true);
+  // Booked times - empty for now since API doesn't exist
+  const [bookedTimes] = useState<string[]>([]);
 
   // Auto-detect user's timezone on component mount
   useEffect(() => {
     detectTimezone();
   }, []);
-
-  useEffect(() => {
-    const fetchBookedTimes = async () => {
-      setIsTimesLoading(true);
-      try {
-        // We will pass the selected date as a query parameter to the API
-        // NOTE: The backend API you provided only returns ALL times. 
-        // For a full solution, you would need to update the backend to filter by date.
-        // For now, we'll fetch all times.
-        const response = await fetch(`/api/availableTimeSlots?date=${formData.date}`);
-        
-        if (response.ok) {
-          const data = await response.json();
-          // Assuming the API returns an object like: { times: ["10:00 AM", "11:00 AM", ...] }
-          // We convert the fetched times to a Set for O(1) lookup efficiency when checking if a time is booked
-          setBookedTimes(data.times || []);
-        } else {
-          console.error("Failed to fetch booked times");
-        }
-      } catch (error) {
-        console.error("Network error fetching booked times:", error);
-      } finally {
-        setIsTimesLoading(false);
-      }
-    };
-    
-    // Only fetch if a date is selected, or fetch all times initially
-    fetchBookedTimes();
-  }, [formData.date]); // Re-run when the selected date changes
 
   const detectTimezone = () => {
     setIsDetecting(true);
@@ -246,9 +215,9 @@ export default function ConsultationForm() {
             onChange={handleChange}
             required
             className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all duration-300 hover:border-white/20"
-            placeholder="+92 300 1234567 (with country code)"
+            placeholder="+1 (555) 123-4567"
           />
-          <p className="text-xs text-white/50 mt-1.5">Please include country code (e.g.,+1 for USA, +44 for UK)</p>
+          <p className="text-xs text-white/50 mt-1.5">Please include country code (e.g., +1 for USA, +44 for UK)</p>
         </div>
 
         {/* Service Interested In */}
@@ -306,9 +275,9 @@ export default function ConsultationForm() {
             name="time"
             value={formData.time}
             onChange={handleDropdownChange}
-            label={isTimesLoading ? "Loading Slots..." : "Preferred Time"} // Display loading state
-            disabled={isTimesLoading}
-            bookedTimes={bookedTimes} // Pass booked times to disable them
+            label="Preferred Time"
+            disabled={false}
+            bookedTimes={bookedTimes}
             required
           />
         </div>
