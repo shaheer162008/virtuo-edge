@@ -69,7 +69,7 @@ export const Pricing = () => {
     return (
         <section className="py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden">
             {/* Simplified Spotlight */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10 opacity-50" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10 opacity-50" />
             
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
                 {/* Header */}

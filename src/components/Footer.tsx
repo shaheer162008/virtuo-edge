@@ -6,11 +6,11 @@ const footerLinks = {
     company: [
         { label: "About Us", href: "/about" },
         { label: "Services", href: "/services" },
-        { label: "Portfolio", href: "/portfolio" },
+        { label: "Our Work", href: "/our-work" },
         { label: "Blog", href: "/blogs" },
     ],
     resources: [
-        { label: "Case Studies", href: "/portfolio" },
+        { label: "Case Studies", href: "/our-work" },
         { label: "Packages", href: "/packages" },
         { label: "Free Consultation", href: "/consultation" },
         { label: "Contact", href: "/contact" },
@@ -41,8 +41,8 @@ export const Footer = () => {
                     {/* Brand Column */}
                     <div className="col-span-2 sm:col-span-2 lg:col-span-2">
                         <Logo className="mb-4" />
-                        <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-sm">
-                            We help ambitious businesses unlock growth through AI-powered automation, stunning web experiences, and strategic digital solutions. From startups to enterprises, we&apos;re your partner in building the future.
+                        <p className="text-white/70 text-sm sm:text-base leading-relaxed mb-6 max-w-sm">
+                            We help ambitious businesses unlock growth through intelligent automation, stunning web experiences, and strategic digital solutions. From startups to enterprises, we&apos;re your partner in building the future.
                         </p>
                         <div className="flex gap-3 flex-wrap">
                             {socialLinks.map(({ Icon, href, label }) => (
@@ -62,13 +62,13 @@ export const Footer = () => {
 
                     {/* Company Links */}
                     <div>
-                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Company</h3>
-                        <ul className="space-y-2 sm:space-y-3">
+                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-base sm:text-lg">Company</h3>
+                        <ul className="space-y-2.5 sm:space-y-3">
                             {footerLinks.company.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-white/60 hover:text-primary text-xs sm:text-sm transition-all duration-300 hover:translate-x-1 inline-block"
+                                        className="text-white/70 hover:text-primary text-sm sm:text-base transition-all duration-300 hover:translate-x-1 inline-block"
                                     >
                                         {link.label}
                                     </Link>
@@ -79,13 +79,13 @@ export const Footer = () => {
 
                     {/* Resources Links */}
                     <div>
-                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Resources</h3>
-                        <ul className="space-y-2 sm:space-y-3">
+                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-base sm:text-lg">Resources</h3>
+                        <ul className="space-y-2.5 sm:space-y-3">
                             {footerLinks.resources.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-white/60 hover:text-primary text-xs sm:text-sm transition-all duration-300 hover:translate-x-1 inline-block"
+                                        className="text-white/70 hover:text-primary text-sm sm:text-base transition-all duration-300 hover:translate-x-1 inline-block"
                                     >
                                         {link.label}
                                     </Link>
@@ -96,13 +96,13 @@ export const Footer = () => {
 
                     {/* Legal Links */}
                     <div className="col-span-2 sm:col-span-1">
-                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Legal</h3>
-                        <ul className="space-y-2 sm:space-y-3 flex flex-row sm:flex-col gap-4 sm:gap-0 flex-wrap">
+                        <h3 className="text-white font-semibold mb-3 sm:mb-4 text-base sm:text-lg">Legal</h3>
+                        <ul className="space-y-2.5 sm:space-y-3 flex flex-row sm:flex-col gap-4 sm:gap-0 flex-wrap">
                             {footerLinks.legal.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-white/60 hover:text-primary text-xs sm:text-sm transition-all duration-300 hover:translate-x-1 inline-block"
+                                        className="text-white/70 hover:text-primary text-sm sm:text-base transition-all duration-300 hover:translate-x-1 inline-block"
                                     >
                                         {link.label}
                                     </Link>
@@ -114,11 +114,11 @@ export const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
-                    <p className="text-white/40 text-xs sm:text-sm text-center sm:text-left">
+                    <p className="text-white/50 text-sm text-center sm:text-left">
                         © {new Date().getFullYear()} Nexiler. All rights reserved.
                     </p>
-                    <p className="text-white/40 text-xs sm:text-sm text-center sm:text-right">
-                        Created by Team Nexiler
+                    <p className="text-white/50 text-sm text-center sm:text-right">
+                        Developed by Team Nexiler
                     </p>
                 </div>
             </div>

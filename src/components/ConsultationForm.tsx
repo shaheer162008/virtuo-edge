@@ -1,11 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, Loader2, MapPin, RefreshCw } from "lucide-react";
+import { Send, CheckCircle2, Loader2, Globe, Clock, MapPin, RefreshCw } from "lucide-react";
 import Dropdown from "./ui/Dropdown";
 import DatePicker from "./ui/DatePicker";
 import ClockPicker from "./ui/ClockPicker";
-import { TIMEZONES, getTimezoneOffset } from "@/lib/timezones";
+import { getTimezoneOffset } from "@/lib/timezones";
 
 export default function ConsultationForm() {
   const [formData, setFormData] = useState({
@@ -16,6 +16,7 @@ export default function ConsultationForm() {
     budget: "",
     date: "",
     time: "",
+    // Start empty on first render to match server HTML and avoid hydration mismatch.
     timezone: "",
     timezoneOffset: "",
     message: "",
@@ -24,48 +25,102 @@ export default function ConsultationForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
   const [isDetecting, setIsDetecting] = useState(false);
+  const [locationStatus, setLocationStatus] = useState<"idle" | "requesting" | "success" | "denied">("idle");
   
   // Booked times - empty for now since API doesn't exist
   const [bookedTimes] = useState<string[]>([]);
 
-  // Auto-detect user's timezone on component mount
-  useEffect(() => {
-    detectTimezone();
-  }, []);
+  const localTime = useMemo(() => {
+    if (!formData.timezone) return '';
+    try {
+      return new Intl.DateTimeFormat('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+        timeZone: formData.timezone,
+      }).format(new Date());
+    } catch (e) {
+      return new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+    }
+  }, [formData.timezone]);
 
-  const detectTimezone = () => {
+  const detectTimezone = useCallback(() => {
     setIsDetecting(true);
 
     // Get timezone from browser
     const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const offset = getTimezoneOffset(browserTimezone);
 
-    // Console log for testing - shows what data will be sent
-    console.log('🌍 Timezone Detection:');
-    console.log('Browser Timezone:', browserTimezone);
-    console.log('UTC Offset:', offset);
-    console.log('Current Local Time:', new Date().toLocaleString());
-    console.log('Current UTC Time:', new Date().toUTCString());
-
-    setFormData(prev => ({ 
-      ...prev, 
+    setFormData(prev => ({
+      ...prev,
       timezone: browserTimezone,
-      timezoneOffset: offset
+      timezoneOffset: offset,
     }));
 
     setIsDetecting(false);
-  };
+  }, [setFormData]);
 
-  const handleManualTimezoneChange = (e: { target: { name: string; value: string } }) => {
-    const selectedTimezone = e.target.value;
-    const offset = getTimezoneOffset(selectedTimezone);
+  // Detect timezone after client mount to avoid SSR/client hydration mismatch
+  useEffect(() => {
+    try {
+      detectTimezone();
+    } catch (e) {
+      // swallow any detection errors; we'll keep timezone empty instead of causing mismatch
+      console.warn('Timezone detection failed on mount', e);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-    setFormData(prev => ({
-      ...prev,
-      timezone: selectedTimezone,
-      timezoneOffset: offset
-    }));
-  };
+  const requestLocationPermission = useCallback(() => {
+    setLocationStatus("requesting");
+
+    // If geolocation isn't supported, fall back to browser timezone
+    if (!navigator.geolocation) {
+      detectTimezone();
+      setLocationStatus("success");
+      return;
+    }
+
+    // Use Permissions API if available to provide friendlier UX
+    const handleDetect = () => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          // We don't need coordinates for timezone detection; calling detectTimezone is enough
+          detectTimezone();
+          setLocationStatus("success");
+        },
+        (error) => {
+          // If user denies, mark denied; otherwise fall back to browser timezone
+          detectTimezone();
+          setLocationStatus(error.code === 1 ? "denied" : "success");
+        },
+        { timeout: 8000 }
+      );
+    };
+
+    if (navigator.permissions && (navigator.permissions as any).query) {
+      // @ts-ignore - permissions types vary by browser
+      navigator.permissions.query({ name: 'geolocation' }).then((permStatus: any) => {
+        if (permStatus.state === 'granted') {
+          // Already granted — still call to ensure consistent state
+          handleDetect();
+        } else if (permStatus.state === 'prompt') {
+          // Will trigger browser prompt
+          handleDetect();
+        } else {
+          // denied
+          detectTimezone();
+          setLocationStatus('denied');
+        }
+      }).catch(() => {
+        // Permissions API not reliable — fallback to direct prompt
+        handleDetect();
+      });
+    } else {
+      // Fallback: directly request position which triggers prompt
+      handleDetect();
+    }
+  }, [detectTimezone]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -86,11 +141,31 @@ export default function ConsultationForm() {
     setStatus("loading");
     setErrorMessage("");
     
+    // Simple client-side validation: ensure required fields are filled
+    const requiredFields: Array<{ key: keyof typeof formData; label: string }> = [
+      { key: 'name', label: 'Full Name' },
+      { key: 'email', label: 'Email' },
+      { key: 'phone', label: 'WhatsApp Number' },
+      { key: 'service', label: 'Service Interested In' },
+      { key: 'budget', label: 'Budget Range' },
+      { key: 'date', label: 'Preferred Date' },
+      { key: 'time', label: 'Preferred Time' },
+      { key: 'message', label: 'Project Details' },
+    ];
+
+    for (const field of requiredFields) {
+      if (!formData[field.key] || String(formData[field.key]).trim() === "") {
+        setStatus("error");
+        setErrorMessage(`${field.label} is required. Please fill it before scheduling.`);
+        return;
+      }
+    }
+
     // FINAL VALIDATION: Check if the selected time is in the bookedTimes array just before submission
     if (bookedTimes.includes(formData.time)) {
-        setStatus("error");
-        setErrorMessage(`The time slot ${formData.time} is no longer available. Please select another time.`);
-        return;
+      setStatus("error");
+      setErrorMessage(`The selected time slot is no longer available. Please select another time.`);
+      return;
     }
 
     // Console log for testing - shows what data will be sent to backend
@@ -149,16 +224,21 @@ export default function ConsultationForm() {
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-white/5 backdrop-blur-sm border border-primary/30 rounded-2xl p-8 text-center"
+        className="bg-linear-to-br from-primary/20 to-primary/5 backdrop-blur-sm border border-primary/30 rounded-2xl p-8 sm:p-10 text-center"
       >
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mb-6">
-          <CheckCircle2 size={32} className="text-primary" />
-        </div>
-        <h3 className="text-2xl font-bold text-white mb-4">
-          Consultation Booked Successfully! 
+        <motion.div 
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+          className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/20 mb-6"
+        >
+          <CheckCircle2 size={40} className="text-primary" />
+        </motion.div>
+        <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+          Consultation Booked! 🎉
         </h3>
-        <p className="text-white/70 mb-6">
-          Thank you for booking a consultation with us. We'll send you a confirmation email shortly and reach out within 24 hours to confirm your appointment.
+        <p className="text-white/70 mb-8 max-w-md mx-auto">
+          Thank you for booking a consultation with us. We&apos;ll send you a confirmation email shortly and reach out within 24 hours to confirm your appointment.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -175,14 +255,14 @@ export default function ConsultationForm() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8"
+      className="bg-linear-to-br from-white/8 to-white/2 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl"
     >
-      <div className="mb-6">
+      <div className="mb-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
           Book Your Free Consultation
         </h2>
         <p className="text-white/60 text-sm">
-          Fill out the form below and we'll get back to you within 24 hours
+          Tell us about your project and we&apos;ll get back to you within 24 hours
         </p>
       </div>
 
@@ -249,13 +329,23 @@ export default function ConsultationForm() {
           label="Service Interested In"
           placeholder="Select a service"
           options={[
-            { value: "ai-automation", label: "AI Automation" },
-            { value: "custom-development", label: "Custom Development" },
-            { value: "process-optimization", label: "Process Optimization" },
-            { value: "data-solutions", label: "Data Solutions" },
+            { value: "not-sure", label: "Not Sure / Need Guidance" },
+            { value: "custom-package", label: "Create My Own Package" },
+            { value: "website-development", label: "Website Development" },
+            { value: "ai-automation-setup", label: "AI Automation Setup" },
+            { value: "ai-chatbot-integration", label: "AI Chatbot Integration" },
+            { value: "full-brand-creation", label: "Full Brand Creation" },
+            { value: "motion-graphics", label: "Motion Graphics" },
+            { value: "video-editing-short", label: "Video Editing (Short Form)" },
+            { value: "video-editing-long", label: "Video Editing (Long Form)" },
+            { value: "ai-automation-maintenance", label: "AI Automation Maintenance" },
+            { value: "seo-optimization", label: "SEO Optimization" },
+            { value: "social-media-ads", label: "Social Media Ads" },
+            { value: "graphic-design", label: "Graphic Design" },
+            { value: "website-maintenance", label: "Website Maintenance" },
+            { value: "3d-modeling", label: "3D Modeling & Rendering" },
             { value: "api-integration", label: "API Integration" },
-            { value: "consulting", label: "Consulting & Support" },
-            { value: "other", label: "Other" },
+            { value: "custom-software", label: "Custom Software Development" },
           ]}
         />
 
@@ -265,16 +355,17 @@ export default function ConsultationForm() {
           name="budget"
           value={formData.budget}
           onChange={handleDropdownChange}
+          required
           label="Budget Range"
           placeholder="Select budget range"
           options={[
+            { value: "not-sure", label: "Not Sure Yet" },
             { value: "under-1k", label: "Under $1,000" },
             { value: "1k-5k", label: "$1,000 - $5,000" },
             { value: "5k-10k", label: "$5,000 - $10,000" },
             { value: "10k-25k", label: "$10,000 - $25,000" },
             { value: "25k-50k", label: "$25,000 - $50,000" },
             { value: "50k-plus", label: "$50,000+" },
-            { value: "not-sure", label: "Not Sure Yet" },
           ]}
         />
 
@@ -294,7 +385,7 @@ export default function ConsultationForm() {
             name="time"
             value={formData.time}
             onChange={handleDropdownChange}
-            label="Preferred Time"
+            label="Preferred Time of Consultation"
             disabled={false}
             bookedTimes={bookedTimes}
             required
@@ -304,7 +395,7 @@ export default function ConsultationForm() {
         {/* Message */}
         <div>
           <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-            Tell Us About Your Project
+            Tell Us About Your Project <span className="text-primary">*</span>
           </label>
           <textarea
             id="message"
@@ -312,6 +403,7 @@ export default function ConsultationForm() {
             value={formData.message}
             onChange={handleChange}
             rows={4}
+            required
             className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all duration-300 resize-none hover:border-white/20"
             placeholder="Describe your business challenges, goals, and what you'd like to discuss..."
           />
@@ -328,75 +420,88 @@ export default function ConsultationForm() {
           </motion.div>
         )}
 
-        {/* Timezone Selection */}
-        <div className="space-y-3">
-          <div className="flex items-center justify-between mb-2">
-            <label className="block text-sm font-medium text-white">
-              Your Timezone <span className="text-primary">*</span>
-            </label>
-            <button
-              type="button"
-              onClick={detectTimezone}
-              disabled={isDetecting}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/20 text-white text-xs font-medium hover:bg-white/10 hover:border-primary/50 transition-all duration-300 disabled:opacity-50"
-            >
-              {isDetecting ? (
-                <>
-                  <Loader2 size={14} className="animate-spin" />
-                  Detecting...
-                </>
-              ) : (
-                <>
-                  <RefreshCw size={14} />
-                  Auto-Detect
-                </>
-              )}
-            </button>
-          </div>
-
-          <Dropdown
-            id="timezone"
-            name="timezone"
-            value={formData.timezone}
-            onChange={handleManualTimezoneChange}
-            placeholder="Select your timezone"
-            required
-            options={TIMEZONES.map(tz => ({ value: tz.value, label: tz.label }))}
-          />
-
-          {/* Current Time Display */}
-          {formData.timezone && formData.timezoneOffset && (
-            <div className="bg-white/5 border border-white/10 rounded-xl p-3">
-              <div className="flex items-center gap-2 text-sm text-white/70">
-                <MapPin size={16} className="text-primary" />
-                <span>
-                  Your Time: <strong className="text-white">{new Date().toLocaleTimeString('en-US', { 
-                    hour: '2-digit', 
-                    minute: '2-digit',
-                    hour12: true,
-                    timeZone: formData.timezone 
-                  })}</strong> <span className="text-primary">({formData.timezoneOffset})</span>
-                </span>
+        {/* Auto-Detected Timezone Display */}
+        <div className="bg-linear-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-xl p-4">
+          <div className="flex flex-row flex-wrap items-center justify-between gap-3">
+            {/* Left: timezone label + value */}
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="p-2 bg-primary/20 rounded-lg flex-shrink-0">
+                <Globe className="w-5 h-5 text-primary" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-xs text-white/50 mb-0.5">Your Timezone</p>
+                {formData.timezone ? (
+                  <p className="text-white font-semibold text-sm sm:text-base max-w-[180px] truncate">{formData.timezone}</p>
+                ) : (
+                  <p className="text-white/50 text-sm">Detecting...</p>
+                )}
               </div>
             </div>
-          )}
+
+            {/* Right: time + UTC + button (keeps compact on mobile) */}
+            <div className="flex items-center gap-3 ml-2">
+              {formData.timezone && (
+                <div className="flex flex-col sm:flex-row items-start sm:items-center text-left">
+                    <div className="flex items-center gap-2 text-primary font-bold text-base sm:text-lg">
+                    <Clock className="w-4 h-4" />
+                    <span className="inline-block">{localTime}</span>
+                  </div>
+                  <p className="text-xs text-white/50 sm:ml-3">UTC {formData.timezoneOffset}</p>
+                </div>
+              )}
+
+              <button
+                type="button"
+                onClick={requestLocationPermission}
+                disabled={locationStatus === "requesting" || isDetecting}
+                aria-label="Auto-sync timezone"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 transition-all duration-300 text-sm text-white disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {locationStatus === "requesting" ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span className="inline text-xs">Auto-syncing...</span>
+                  </>
+                ) : (
+                  <>
+                    <MapPin className="w-4 h-4" />
+                    {/* Show short label on mobile, fuller label on larger screens */}
+                    <span className="inline sm:hidden text-xs">Auto-sync</span>
+                    <span className="hidden sm:inline">Re-detect</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
         </div>
+          {locationStatus === "denied" && (
+            <p className="text-xs text-amber-400/80 mt-3 flex items-center gap-2">
+              <RefreshCw className="w-3 h-3" />
+              Location access was denied. We&apos;re using your browser&apos;s timezone instead.
+            </p>
+          )}
+          
+          {!formData.timezone && locationStatus !== "requesting" && (
+            <p className="text-xs text-white/50 mt-3">
+              Allow location access for accurate timezone detection, or we&apos;ll use your browser settings.
+            </p>
+          )}
 
         {/* Submit Button */}
         <button
           type="submit"
           disabled={status === "loading"}
-          className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-base font-bold transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50 hover:scale-105 active:scale-95 w-full h-12 px-6 py-3"
+          className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-base font-bold transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 px-5 py-3 bg-white/10 text-white border-2 border-white/30 hover:bg-white/20 hover:border-white/50"
         >
           {status === "loading" ? (
             <>
               <Loader2 size={20} className="animate-spin" />
-              Booking...
+              Scheduling...
             </>
           ) : (
             <>
               <Send size={20} />
-              Schedule Free Consultation
+              Schedule My Free Consultation
             </>
           )}
         </button>

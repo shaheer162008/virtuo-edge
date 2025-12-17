@@ -7,7 +7,7 @@ export const CallToAction = () => {
     return (
         <section className="py-20 md:py-32 relative overflow-hidden">
             {/* Manual Spotlight */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/[0.08] rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] sm:w-[420px] sm:h-[420px] lg:w-[700px] lg:h-[700px] bg-primary/[0.08] rounded-full blur-3xl pointer-events-none" />
             
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-purple-900/20 -z-10" />
 

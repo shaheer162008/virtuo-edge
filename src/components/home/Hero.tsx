@@ -46,8 +46,8 @@ export const Hero = () => {
                                 transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
                                 className="text-5xl md:text-7xl font-bold mb-4 sm:mb-5 md:mb-6 leading-[1.1]"
                             >
-                                <span className="text-white">Transform Your</span>{' '}
-                                <span className="text-gradient">Business with AI</span>
+                                <span className="text-white">Transform Your </span>
+                                <span className="text-gradient whitespace-nowrap">Business with AI</span>
                             </motion.h1>
 
                             {/* Subheadline */}
@@ -57,8 +57,8 @@ export const Hero = () => {
                                 transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
                                 className="text-lg sm:text-xl md:text-xl lg:text-2xl text-white/70 mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0"
                             >
-                                Custom AI automation solutions and traditional development services tailored to your unique needs.
-                                We build intelligent systems that scale your business exponentially.
+                                We build modern websites, automate your workflows, and create strategies that actually grow your business. 
+                                Real results, not just promises.
                             </motion.p>
 
                             {/* CTA Buttons */}
@@ -76,7 +76,7 @@ export const Hero = () => {
                                     <ArrowRight size={16} className="sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-500" />
                                 </Link>
                                 <Link
-                                    href="/portfolio"
+                                    href="/our-work"
                                     className="w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-semibold text-sm sm:text-base hover:bg-white/20 hover:border-white/50 transition-all duration-500 inline-flex items-center justify-center"
                                 >
                                     See Success Stories
@@ -88,24 +88,24 @@ export const Hero = () => {
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: 0.8, ease: [0.4, 0, 0.2, 1] }}
-                                className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 max-w-3xl mx-auto lg:mx-0"
+                                className="flex gap-4 sm:gap-6 md:gap-8 justify-center lg:justify-start mx-auto lg:mx-0"
                             >
                                 {[
-                                    { value: "3900+", label: "Active Users" },
-                                    { value: "230+", label: "Trusted Companies" },
-                                    { value: "$230M+", label: "Transaction Volume" },
+                                    { value: "50+", label: "Clients" },
+                                    { value: "91%", label: "Positive Feedback" },
+                                    { value: "50+", label: "Projects Delivered" },
                                     { value: "24/7", label: "Support" },
                                 ].map((stat, index) => (
                                     <motion.div
                                         key={index}
                                         whileHover={{ scale: 1.05, y: -5 }}
                                         transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                                        className="text-center lg:text-left"
+                                        className="flex flex-col items-center lg:items-start"
                                     >
-                                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-1">
+                                        <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient whitespace-nowrap mb-1">
                                             {stat.value}
                                         </div>
-                                        <div className="text-xs sm:text-sm text-white/50">
+                                        <div className="text-xs sm:text-sm text-white/70 whitespace-nowrap">
                                             {stat.label}
                                         </div>
                                     </motion.div>

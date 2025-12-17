@@ -158,7 +158,7 @@ export default function PackagesPage() {
 
             {/* Hero Section */}
             <section className="pt-28 sm:pt-32 pb-16 relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10 opacity-50" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] h-[220px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none -z-10 opacity-50" />
                 
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <div className="text-center max-w-4xl mx-auto">

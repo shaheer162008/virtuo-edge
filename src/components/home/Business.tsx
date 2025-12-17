@@ -6,18 +6,18 @@ import Link from "next/link";
 const features = [
     {
         icon: Shield,
-        title: "Enterprise Security",
-        description: "Your data and systems are protected with industry-leading security protocols and best practices.",
+        title: "Secure & Reliable",
+        description: "Your data stays safe with proper security measures. We build systems you can trust.",
     },
     {
         icon: Zap,
-        title: "Rapid Deployment",
-        description: "From concept to launch in weeks, not months. We deliver quality solutions on your timeline.",
+        title: "Fast Delivery",
+        description: "We move quickly without cutting corners. Launch in weeks, not months.",
     },
     {
         icon: Clock,
-        title: "24/7 Support",
-        description: "Round-the-clock technical support ensures your systems run smoothly without interruption.",
+        title: "Always Available",
+        description: "Need help? We're here. Your systems run smoothly with our ongoing support.",
     },
 ];
 
@@ -41,7 +41,7 @@ export const Business = () => {
                             <span className="text-gradient">we'll handle the automation.</span>
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 sm:mb-10 md:mb-12 leading-relaxed">
-                            With the right AI automation and custom solutions, your business can scale efficiently. We help you focus on growth while we handle the technology.
+                            Focus on growing your business while we build and maintain the tech. From websites to automation, we've got you covered.
                         </p>
                         <Link href="/consultation">
                             <motion.button

@@ -15,7 +15,7 @@ export const LogoTicker = () => {
     return (
         <section className="py-20 md:py-24 border-y border-white/5 bg-white/5 relative overflow-hidden">
             {/* Manual Spotlight */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] sm:w-[320px] sm:h-[320px] lg:w-[500px] lg:h-[500px] bg-white/[0.02] rounded-full blur-3xl pointer-events-none" />
             
             <div className="container relative z-10">
                 <div className="flex items-center gap-5">

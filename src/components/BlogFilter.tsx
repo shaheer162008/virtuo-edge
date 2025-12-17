@@ -14,7 +14,7 @@ export const BlogFilter = ({ categories, activeCategory, onCategoryChange }: Blo
             <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#00040F] via-[#00040F]/95 to-[#00040F]" />
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
                 <div 
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px]"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[120px] sm:w-[400px] sm:h-[180px] lg:w-[600px] lg:h-[200px]"
                     style={{
                         background: 'radial-gradient(ellipse at center, rgba(51, 187, 207, 0.15), rgba(51, 187, 207, 0.08) 50%, transparent 80%)',
                         filter: 'blur(50px)',

@@ -23,13 +23,37 @@ export const TIMEZONES = [
 ];
 
 export function getTimezoneOffset(timezone: string): string {
+  // First check predefined list
   const tz = TIMEZONES.find(t => t.value === timezone);
-  if (!tz) return "UTC+00:00";
+  if (tz) {
+    const offset = tz.offset;
+    const hours = Math.floor(Math.abs(offset));
+    const minutes = Math.abs((offset % 1) * 60);
+    const sign = offset >= 0 ? '+' : '-';
+    return `UTC${sign}${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  }
   
-  const offset = tz.offset;
-  const hours = Math.floor(Math.abs(offset));
-  const minutes = Math.abs((offset % 1) * 60);
-  const sign = offset >= 0 ? '+' : '-';
-  
-  return `UTC${sign}${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  // Dynamically calculate offset for any timezone using browser APIs
+  try {
+    const now = new Date();
+    // Get UTC time
+    const utcDate = new Date(now.toLocaleString('en-US', { timeZone: 'UTC' }));
+    // Get time in target timezone
+    const tzDate = new Date(now.toLocaleString('en-US', { timeZone: timezone }));
+    // Calculate difference in minutes
+    const diffMinutes = (tzDate.getTime() - utcDate.getTime()) / (1000 * 60);
+    
+    const hours = Math.floor(Math.abs(diffMinutes) / 60);
+    const minutes = Math.abs(diffMinutes) % 60;
+    const sign = diffMinutes >= 0 ? '+' : '-';
+    
+    return `UTC${sign}${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  } catch {
+    // Fallback: calculate from local timezone offset
+    const offsetMinutes = -new Date().getTimezoneOffset();
+    const hours = Math.floor(Math.abs(offsetMinutes) / 60);
+    const minutes = Math.abs(offsetMinutes) % 60;
+    const sign = offsetMinutes >= 0 ? '+' : '-';
+    return `UTC${sign}${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
+  }
 }

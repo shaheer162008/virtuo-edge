@@ -53,7 +53,7 @@ export const FeaturedWork = () => {
                         transition={{ duration: 0.6 }}
                     >
                         <Link
-                            href="/portfolio"
+                            href="/our-work"
                             className="px-6 py-3 glass rounded-lg font-semibold text-white hover:bg-white/10 hover:scale-105 transition-all duration-300 border border-white/20 inline-flex items-center gap-2"
                         >
                             View All Projects

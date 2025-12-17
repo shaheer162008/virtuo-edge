@@ -26,7 +26,7 @@ export const Testimonials = () => {
     return (
         <section className="py-20 md:py-32 border-t border-white/5 relative overflow-hidden">
             {/* Manual Spotlight */}
-            <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-purple-500/[0.05] rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-1/4 right-1/3 w-[180px] h-[180px] sm:w-[320px] sm:h-[320px] lg:w-[500px] lg:h-[500px] bg-purple-500/[0.05] rounded-full blur-3xl pointer-events-none" />
             
             <div className="container relative z-10">
                 <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-center mb-16">

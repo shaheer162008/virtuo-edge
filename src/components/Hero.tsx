@@ -69,7 +69,7 @@ export const Hero = () => {
                                 <ArrowRight className="ml-2" size={20} />
                             </Button>
                         </Link>
-                        <Link href="/portfolio">
+                        <Link href="/our-work">
                             <Button size="lg" variant="outline" className="w-full sm:w-auto min-w-[200px]">
                                 See Success Stories
                             </Button>

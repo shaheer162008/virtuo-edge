@@ -39,7 +39,7 @@ export const Features = () => {
     return (
         <section className="py-20 md:py-32 relative overflow-hidden">
             {/* Manual Spotlight */}
-            <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-blue-500/[0.06] rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-1/2 left-1/4 w-[220px] h-[220px] sm:w-[420px] sm:h-[420px] lg:w-[600px] lg:h-[600px] bg-blue-500/[0.06] rounded-full blur-3xl pointer-events-none" />
             
             <div className="container relative z-10">
                 <div className="text-center max-w-3xl mx-auto mb-16">

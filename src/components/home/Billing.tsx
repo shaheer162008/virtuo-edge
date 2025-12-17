@@ -4,9 +4,9 @@ import { Bot, Workflow, BarChart3, Cpu } from "lucide-react";
 import Link from "next/link";
 
 const automationFeatures = [
-    { icon: Workflow, label: "Smart Workflows" },
-    { icon: BarChart3, label: "Real-time Analytics" },
-    { icon: Cpu, label: "AI Processing" },
+    { icon: Workflow, label: "Auto Workflows" },
+    { icon: BarChart3, label: "Live Data" },
+    { icon: Cpu, label: "Smart Processing" },
 ];
 
 export const Billing = () => {
@@ -83,7 +83,7 @@ export const Billing = () => {
                             <span className="text-gradient">amplify results.</span>
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 sm:mb-10 md:mb-12 leading-relaxed">
-                            Nexiler&apos;s AI-powered automation eliminates repetitive tasks, reduces errors, and frees your team to focus on what matters most: growing your business.
+                            Stop wasting time on repetitive work. We build automation that handles the boring stuff so your team can focus on growth.
                         </p>
                         <div className="flex flex-row gap-3 sm:gap-4">
                             {automationFeatures.map((feature, index) => (

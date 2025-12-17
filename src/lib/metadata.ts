@@ -3,25 +3,25 @@ import { Metadata } from "next";
 // Base configuration
 const siteConfig = {
   name: "Nexiler",
-  description: "Custom AI automation solutions and traditional development services. Transform your business with intelligent systems that scale exponentially.",
+  description: "We help businesses grow through modern websites, smart automation, and proven strategies. Real solutions that deliver results.",
   url: "https://nexiler.tech",
   ogImage: "https://nexiler.tech/og-image.jpg",
   keywords: [
-    "AI automation",
-    "custom development",
-    "AI solutions",
-    "business automation",
+    "business growth",
+    "automation solutions",
     "web development",
-    "mobile app development",
-    "AI integration",
-    "process automation",
     "digital transformation",
-    "machine learning",
+    "business automation",
     "custom software",
-    "enterprise AI",
+    "mobile app development",
+    "process automation",
+    "tech solutions",
+    "enterprise solutions",
     "automation services",
-    "AI consulting",
-    "tech solutions"
+    "consulting",
+    "growth strategies",
+    "digital solutions",
+    "business scaling"
   ],
   creator: "Nexiler",
   authors: [{ name: "Nexiler Team", url: "https://nexiler.tech" }],
@@ -112,58 +112,58 @@ export function generateMetadata({
 
 // Home page metadata
 export const homeMetadata = generateMetadata({
-  title: "AI Automation & Custom Development Solutions",
-  description: "Transform your business with Nexiler's custom AI automation solutions and traditional development services. Trusted by 230+ companies. Get started today!",
+  title: "Transform Your Business with AI",
+  description: "We build modern websites, automate workflows, and create strategies that grow your business. Trusted by 230+ companies. Real results, not just promises.",
   path: "",
-  keywords: ["AI automation", "custom development", "business transformation", "intelligent systems"],
+  keywords: ["business growth", "automation", "web development", "digital agency", "modern websites"],
 });
 
 // About page metadata
 export const aboutMetadata = generateMetadata({
-  title: "About Us - Leading AI Automation Experts",
-  description: "Learn about Nexiler's mission to transform businesses through cutting-edge AI automation and custom development solutions. Meet our expert team.",
+  title: "About Us | Your Partners in Growth",
+  description: "We help businesses grow through smart technology and proven strategies. Meet the team behind your success.",
   path: "/about",
-  keywords: ["about nexiler", "AI experts", "automation specialists", "tech team"],
+  keywords: ["about nexiler", "digital agency", "growth partners", "our team"],
 });
 
 // Services page metadata
 export const servicesMetadata = generateMetadata({
-  title: "Our Services - AI Automation & Development",
-  description: "Comprehensive AI automation, custom development, API integration, and consulting services. Scalable solutions tailored to your business needs.",
+  title: "Our Services | Web Development, Automation & Growth",
+  description: "From custom websites to workflow automation, we offer services that help your business scale. Real solutions for real growth.",
   path: "/services",
-  keywords: ["AI services", "automation services", "custom development", "API integration", "consulting"],
+  keywords: ["web development", "automation", "custom software", "business growth", "digital services"],
 });
 
-// Portfolio page metadata
+// Our Work page metadata
 export const portfolioMetadata = generateMetadata({
-  title: "Portfolio - Our Success Stories",
-  description: "Explore Nexiler's portfolio of successful AI automation and development projects. See how we've helped businesses transform digitally.",
-  path: "/portfolio",
-  keywords: ["portfolio", "case studies", "success stories", "project showcase"],
+  title: "Our Work | Projects That Deliver Results",
+  description: "See how we've helped businesses grow. Real projects, real results. From websites to automation systems.",
+  path: "/our-work",
+  keywords: ["portfolio", "case studies", "our work", "client projects", "success stories"],
 });
 
 // Pricing page metadata
 export const pricingMetadata = generateMetadata({
-  title: "Transparent Pricing Plans - Choose Your Growth Plan",
-  description: "Affordable AI automation and development pricing plans. From startups to enterprises. Get started from $999. Free consultation included.",
+  title: "Pricing | Clear, Honest Pricing",
+  description: "Transparent pricing for businesses of all sizes. No hidden fees. Free consultation to get you started.",
   path: "/pricing",
-  keywords: ["pricing", "plans", "cost", "affordable AI", "development pricing"],
+  keywords: ["pricing", "packages", "plans", "affordable", "business pricing"],
 });
 
 // Blog page metadata
 export const blogMetadata = generateMetadata({
-  title: "Blog - AI Automation & Tech Insights",
-  description: "Stay updated with the latest insights on AI automation, development trends, and digital transformation strategies from Nexiler experts.",
+  title: "Blog | Business Growth Tips & Tech Insights",
+  description: "Practical advice on growing your business with technology. Tips on automation, web development, and digital strategy.",
   path: "/blogs",
-  keywords: ["blog", "AI insights", "tech articles", "automation tips", "development guides"],
+  keywords: ["blog", "business tips", "tech insights", "growth strategies", "automation guides"],
 });
 
 // Contact page metadata
 export const contactMetadata = generateMetadata({
-  title: "Contact Us - Get Free Consultation",
-  description: "Ready to transform your business? Contact Nexiler for a free consultation. Fast response within 24 hours. Let's discuss your project.",
+  title: "Contact Us | Let's Talk About Your Project",
+  description: "Ready to grow your business? Get in touch for a free consultation. We respond fast and we're here to help.",
   path: "/contact",
-  keywords: ["contact", "free consultation", "get in touch", "project inquiry"],
+  keywords: ["contact", "get in touch", "free consultation", "business inquiry"],
 });
 
 // Generate dynamic blog post metadata

@@ -18,7 +18,7 @@ const sitemapSections = [
       { href: "/", label: "Home" },
       { href: "/about", label: "About Us" },
       { href: "/services", label: "Services" },
-      { href: "/portfolio", label: "Portfolio" },
+      { href: "/our-work", label: "Our Work" },
       { href: "/pricing", label: "Pricing" },
       { href: "/blogs", label: "Blog" },
       { href: "/consultation", label: "Free Consultation" },
@@ -40,7 +40,7 @@ const sitemapSections = [
     title: "Resources",
     links: [
       { href: "/blogs", label: "All Blog Posts" },
-      { href: "/portfolio", label: "Case Studies" },
+      { href: "/our-work", label: "Case Studies" },
       { href: "/pricing", label: "Pricing Plans" },
       { href: "/about#faq", label: "FAQ" },
     ],
