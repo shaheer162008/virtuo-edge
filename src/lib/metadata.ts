@@ -3,7 +3,7 @@ import { Metadata } from "next";
 // Base configuration
 const siteConfig = {
   name: "Nexiler",
-  description: "We help businesses grow through intelligent automation, modern web development, and strategic digital solutions. Transform your operations and scale your success with Nexiler.",
+  description: "We help businesses grow through modern websites, smart automation, and proven strategies. Real solutions that deliver results.",
   url: "https://nexiler.tech",
   ogImage: "https://nexiler.tech/og-image.jpg",
   keywords: [
@@ -112,58 +112,58 @@ export function generateMetadata({
 
 // Home page metadata
 export const homeMetadata = generateMetadata({
-  title: "Grow Your Business with Smart Automation & Web Solutions",
-  description: "Nexiler helps businesses unlock growth through intelligent automation, stunning websites, and strategic digital solutions. Trusted by 230+ companies worldwide. Start your transformation today.",
+  title: "Transform Your Business with AI",
+  description: "We build modern websites, automate workflows, and create strategies that grow your business. Trusted by 230+ companies. Real results, not just promises.",
   path: "",
-  keywords: ["business growth", "automation", "web development", "digital solutions"],
+  keywords: ["business growth", "automation", "web development", "digital agency", "modern websites"],
 });
 
 // About page metadata
 export const aboutMetadata = generateMetadata({
-  title: "About Us | Your Growth Partner",
-  description: "Nexiler is on a mission to help businesses grow through smart automation and modern development. Meet our team of experts dedicated to your success.",
+  title: "About Us | Your Partners in Growth",
+  description: "We help businesses grow through smart technology and proven strategies. Meet the team behind your success.",
   path: "/about",
-  keywords: ["about nexiler", "growth partner", "automation experts", "development team"],
+  keywords: ["about nexiler", "digital agency", "growth partners", "our team"],
 });
 
 // Services page metadata
 export const servicesMetadata = generateMetadata({
-  title: "Our Services | Automation, Web Development & More",
-  description: "From intelligent automation to custom web development, we offer comprehensive services to help your business grow. Scalable solutions tailored to your needs.",
+  title: "Our Services | Web Development, Automation & Growth",
+  description: "From custom websites to workflow automation, we offer services that help your business scale. Real solutions for real growth.",
   path: "/services",
-  keywords: ["automation services", "web development", "custom software", "API integration", "consulting"],
+  keywords: ["web development", "automation", "custom software", "business growth", "digital services"],
 });
 
 // Our Work page metadata
 export const portfolioMetadata = generateMetadata({
-  title: "Our Work | Success Stories & Client Projects",
-  description: "Explore our portfolio of successful projects. See how we have helped businesses grow through automation, web development, and digital transformation.",
+  title: "Our Work | Projects That Deliver Results",
+  description: "See how we've helped businesses grow. Real projects, real results. From websites to automation systems.",
   path: "/our-work",
-  keywords: ["our work", "case studies", "success stories", "client projects", "portfolio"],
+  keywords: ["portfolio", "case studies", "our work", "client projects", "success stories"],
 });
 
 // Pricing page metadata
 export const pricingMetadata = generateMetadata({
-  title: "Pricing | Transparent & Affordable Plans",
-  description: "Flexible pricing plans for businesses of all sizes. From startups to enterprises, find the perfect plan to grow your business. Free consultation included.",
+  title: "Pricing | Clear, Honest Pricing",
+  description: "Transparent pricing for businesses of all sizes. No hidden fees. Free consultation to get you started.",
   path: "/pricing",
-  keywords: ["pricing", "plans", "affordable", "business packages", "growth plans"],
+  keywords: ["pricing", "packages", "plans", "affordable", "business pricing"],
 });
 
 // Blog page metadata
 export const blogMetadata = generateMetadata({
-  title: "Blog | Insights & Tips for Business Growth",
-  description: "Stay updated with the latest insights on automation, web development, and digital strategies. Expert tips to help your business grow faster.",
+  title: "Blog | Business Growth Tips & Tech Insights",
+  description: "Practical advice on growing your business with technology. Tips on automation, web development, and digital strategy.",
   path: "/blogs",
-  keywords: ["blog", "business insights", "tech articles", "growth tips", "development guides"],
+  keywords: ["blog", "business tips", "tech insights", "growth strategies", "automation guides"],
 });
 
 // Contact page metadata
 export const contactMetadata = generateMetadata({
-  title: "Contact Us | Get Your Free Consultation",
-  description: "Ready to grow your business? Contact Nexiler for a free consultation. We respond within 24 hours. Let us discuss how we can help you succeed.",
+  title: "Contact Us | Let's Talk About Your Project",
+  description: "Ready to grow your business? Get in touch for a free consultation. We respond fast and we're here to help.",
   path: "/contact",
-  keywords: ["contact", "free consultation", "get in touch", "business inquiry"],
+  keywords: ["contact", "get in touch", "free consultation", "business inquiry"],
 });
 
 // Generate dynamic blog post metadata

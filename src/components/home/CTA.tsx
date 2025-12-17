@@ -28,7 +28,7 @@ export const CTA = () => {
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
                         >
                             <span className="text-white">Ready to </span>
-                            <span className="text-gradient">Build Something Amazing?</span>
+                            <span className="text-gradient">Grow Your Business?</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export const CTA = () => {
                             transition={{ duration: 0.5, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
                             className="text-base sm:text-lg md:text-xl text-white/70 mb-3 sm:mb-4 max-w-2xl mx-auto"
                         >
-                            Whether it&apos;s a stunning website, AI automation, or complete digital transformation, Nexiler has the expertise to bring your vision to life.
+                            Let's talk about your project. We'll help you figure out what you need and how to get there.
                         </motion.p>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export const CTA = () => {
                             className="text-xs sm:text-sm text-primary/80 mb-8 sm:mb-9 md:mb-10 flex items-center justify-center gap-2"
                         >
                             <span className="size-2 bg-primary rounded-full animate-pulse" />
-                            Free consultation • Transparent pricing • 24/7 support
+                            Free consultation • No hidden fees • Fast replies
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}

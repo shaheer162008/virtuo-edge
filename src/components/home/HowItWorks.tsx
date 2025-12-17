@@ -5,23 +5,23 @@ import { ClipboardCheck, Lightbulb, Code2, Rocket } from "lucide-react";
 const steps = [
     {
         icon: Lightbulb,
-        title: "Discover & Consult",
-        description: "We analyze your needs and craft a custom strategy tailored to your business goals.",
+        title: "Talk & Plan",
+        description: "We chat about what you need and figure out the best approach together.",
     },
     {
         icon: ClipboardCheck,
-        title: "Plan & Design",
-        description: "Our team creates detailed blueprints and prototypes for your solution.",
+        title: "Design It",
+        description: "We map out exactly what we're building before writing any code.",
     },
     {
         icon: Code2,
-        title: "Develop & Test",
-        description: "We build your solution with cutting-edge tech and rigorous quality assurance.",
+        title: "Build It",
+        description: "We code your solution and make sure everything works perfectly.",
     },
     {
         icon: Rocket,
-        title: "Deploy & Scale",
-        description: "Launch your solution and continuously optimize for maximum performance.",
+        title: "Launch It",
+        description: "We go live and stick around to make sure it runs smoothly.",
     },
 ];
 
@@ -43,7 +43,7 @@ export const HowItWorks = () => {
                             <span className="text-gradient">Work</span>
                         </h2>
                         <p className="text-base sm:text-lg text-white/60">
-                            Our proven 4-step process ensures seamless delivery from concept to deployment.
+                            Simple process, powerful results. Here's how we work.
                         </p>
                     </motion.div>
                 </div>

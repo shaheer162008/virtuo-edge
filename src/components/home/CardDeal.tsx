@@ -26,12 +26,12 @@ export const CardDeal = () => {
                         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 sm:mb-6 md:mb-8 leading-tight">
-                            <span className="text-white">Your vision, our expertise.</span>
+                            <span className="text-white">Everything you need,</span>
                             <br />
-                            <span className="text-gradient">Built to perfection.</span>
+                            <span className="text-gradient">one team.</span>
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 sm:mb-10 md:mb-12 leading-relaxed">
-                            From stunning websites to intelligent AI solutions, Nexiler delivers end-to-end digital services that transform ideas into powerful business assets. One team, complete solutions.
+                            Websites, automation, branding, video, you name it. We handle it all so you don't have to juggle multiple agencies.
                         </p>
                         <Link href="/consultation">
                             <motion.button 
