@@ -1,7 +1,7 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, ChevronDown, Zap } from "lucide-react";
+import { ChevronDown, Check } from "lucide-react";
 
 interface ClockPickerProps {
   id?: string;
@@ -14,56 +14,11 @@ interface ClockPickerProps {
   bookedTimes: string[];
 }
 
-// Generate time slots
-const generateTimeSlots = () => {
-  const slots = [];
-  for (let hour = 0; hour < 24; hour++) {
-    for (let minute = 0; minute < 60; minute += 30) {
-      const hourStr = hour.toString().padStart(2, "0");
-      const minuteStr = minute.toString().padStart(2, "0");
-      const nextMinute = minute + 30;
-      const nextHour = nextMinute >= 60 ? hour + 1 : hour;
-      const nextMinuteStr = (nextMinute % 60).toString().padStart(2, "0");
-      const nextHourStr = nextHour.toString().padStart(2, "0");
+const TIME_OPTIONS = Array.from({ length: 12 }, (_, i) =>
+  ["00", "30"].map(m => `${(i + 1).toString().padStart(2, "0")}:${m}`)
+).flat();
 
-      const value = `${hourStr}:${minuteStr}-${nextHourStr}:${nextMinuteStr}`;
-
-      slots.push({
-        value,
-        hour,
-        minute,
-      });
-    }
-  }
-  return slots;
-};
-
-const TIME_SLOTS = generateTimeSlots();
-
-// Get next available slot (current time + 1 hour, rounded to next 30 min)
-const getNextAvailableSlot = () => {
-  const now = new Date();
-  const currentHour = now.getHours();
-  const currentMinute = now.getMinutes();
-
-  // Add 1 hour buffer
-  let nextHour = currentHour + 1;
-  let nextMinute = currentMinute >= 30 ? 0 : 30;
-
-  if (currentMinute >= 30) {
-    nextHour += 1;
-  }
-
-  // Handle day overflow
-  if (nextHour >= 24) {
-    nextHour = 0;
-  }
-
-  const slot = TIME_SLOTS.find(
-    (s) => s.hour === nextHour && s.minute === nextMinute
-  );
-  return slot?.value || TIME_SLOTS[0].value;
-};
+const DURATIONS = [30, 45, 60];
 
 export default function ClockPicker({
   id,
@@ -71,335 +26,273 @@ export default function ClockPicker({
   value,
   onChange,
   label,
-  required = false,
-  disabled,
-  bookedTimes,
+  required,
 }: ClockPickerProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedHour, setSelectedHour] = useState(7);
-  const [selectedMinute, setSelectedMinute] = useState(0);
-  const [mode, setMode] = useState<"manual" | "quick">("manual");
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
+  const [startTime, setStartTime] = useState("09:00");
+  const [period, setPeriod] = useState<"AM" | "PM">("AM");
+  const [duration, setDuration] = useState(60);
+  const [timeDropdownOpen, setTimeDropdownOpen] = useState(false);
+  const [periodDropdownOpen, setPeriodDropdownOpen] = useState(false);
 
-  // Initialize from value
-  useEffect(() => {
-    if (value) {
-      const [start] = value.split("-");
-      const [hourStr, minuteStr] = start.split(":");
-      const hour = parseInt(hourStr);
-      const minute = parseInt(minuteStr);
+  const clockPickerRef = useRef<HTMLDivElement>(null);
 
-      if (hour >= 12) {
-        setSelectedHour(hour === 12 ? 12 : hour - 12);
-      } else {
-        setSelectedHour(hour === 0 ? 12 : hour);
-      }
-      setSelectedMinute(minute);
-    }
-  }, [value]);
-
-  // Close dropdown when clicking outside
+  // Click outside to close
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
+      if (clockPickerRef.current && !clockPickerRef.current.contains(event.target as Node)) {
+        setOpen(false);
+        setTimeDropdownOpen(false);
+        setPeriodDropdownOpen(false);
       }
     };
 
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen]);
-
-  // Get display label for selected value
-  const getDisplayValue = () => {
-    if (!value) return "Select consultation time";
+  useEffect(() => {
+    if (!value) return;
     const [start] = value.split("-");
-    const [hourStr, minuteStr] = start.split(":");
-    const hour = parseInt(hourStr);
-    const minute = parseInt(minuteStr);
+    let hour = parseInt(start.slice(0, 2));
+    setPeriod(hour >= 12 ? "PM" : "AM");
+    hour = hour % 12 || 12;
+    setStartTime(`${hour.toString().padStart(2, "0")}:${start.slice(3)}`);
+  }, [value]);
 
-    const displayHour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
-    const period = hour < 12 ? "AM" : "PM";
-
-    return `${displayHour}:${minuteStr} PM`;
+  const to24Hour = () => {
+    let h = parseInt(startTime.slice(0, 2));
+    if (period === "PM" && h !== 12) h += 12;
+    if (period === "AM" && h === 12) h = 0;
+    return h * 60 + parseInt(startTime.slice(3));
   };
 
-  const handleQuickBook = () => {
-    const available = TIME_SLOTS.find((slot) => {
-      const hour = parseInt(slot.value.substring(0, 2));
-      const hour12 = hour % 12 === 0 ? 12 : hour % 12;
-      return !bookedHours.includes(hour12);
-    });
+  // Format time for display in AM/PM format
+  const formatDisplayTime = (timeValue: string) => {
+    if (!timeValue) return "Select time";
+    const [start, end] = timeValue.split("-");
+    
+    const formatPart = (part: string) => {
+      let hour = parseInt(part.slice(0, 2));
+      const min = part.slice(3);
+      const ampm = hour >= 12 ? "PM" : "AM";
+      hour = hour % 12 || 12;
+      return `${hour}:${min} ${ampm}`;
+    };
+    
+    return `${formatPart(start)} - ${formatPart(end)}`;
+  };
 
-    if (!available) return;
+  const handleConfirm = () => {
+    const start24 = to24Hour();
+    const end24 = start24 + duration;
+
+    const startH = Math.floor(start24 / 60);
+    const startM = start24 % 60;
+    const endH = Math.floor(end24 / 60) % 24;
+    const endM = end24 % 60;
 
     onChange({
       target: {
         name,
-        value: available.value,
+        value: `${startH.toString().padStart(2, "0")}:${startM
+          .toString()
+          .padStart(2, "0")}-${endH
+          .toString()
+          .padStart(2, "0")}:${endM.toString().padStart(2, "0")}`,
       },
     });
 
-    setIsOpen(false);
+    setOpen(false);
   };
-
-  const handleApply = () => {
-    let hour24 = selectedHour === 12 ? 12 : selectedHour + 12;
-
-    const hourStr = hour24.toString().padStart(2, "0");
-    const minuteStr = selectedMinute.toString().padStart(2, "0");
-
-    const nextMinute = selectedMinute + 30;
-    const nextHour = nextMinute >= 60 ? hour24 + 1 : hour24;
-    const nextMinuteStr = (nextMinute % 60).toString().padStart(2, "0");
-    const nextHourStr = nextHour.toString().padStart(2, "0");
-
-    const timeValue = `${hourStr}:${minuteStr}-${nextHourStr}:${nextMinuteStr}`;
-
-    onChange({ target: { name, value: timeValue } });
-    setIsOpen(false);
-  };
-
-  // Calculate clock hand position
-  const getClockHandRotation = () => {
-    const hourAngle = (selectedHour % 12) * 30 + (selectedMinute / 60) * 30;
-    return hourAngle;
-  };
-
-  const handleClockClick = (hour: number) => {
-    setSelectedHour(hour);
-  };
-
-
-  const bookedHours = bookedTimes.map((s) => {
-    const h = parseInt(s.substring(0, 2));
-    return h % 12 || 12;
-  });
-  const allowedHours = [11, 12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
-    <div className="w-full" ref={dropdownRef}>
+    <div className="relative w-full" ref={clockPickerRef}>
       {label && (
-        <label
-          htmlFor={id}
-          className="block text-sm font-medium text-gray-200 mb-2"
-        >
-          {label}
-          {required && <span className="text-red-400 ml-1">*</span>}
+        <label htmlFor={id} className="block text-sm text-white mb-2">
+          {label} {required && <span className="text-primary">*</span>}
         </label>
       )}
 
-      {/* Trigger Button */}
+      {/* Trigger */}
       <button
         type="button"
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-left text-gray-200 hover:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/50 transition-all duration-200 flex items-center justify-between group"
+        onClick={() => setOpen(!open)}
+        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white flex justify-between items-center hover:border-primary/50 transition"
       >
-        <span className="flex items-center gap-2">
-          <Clock className="w-5 h-5 text-primary-400" />
-          <span className={value ? "text-gray-200" : "text-gray-500"}>
-            {getDisplayValue()}
-          </span>
-        </span>
-        <ChevronDown
-          className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
+        {formatDisplayTime(value)}
+        <ChevronDown className={`transition ${open ? "rotate-180" : ""}`} />
       </button>
 
-      {/* Clock Picker Dropdown */}
       <AnimatePresence>
-        {isOpen && (
+        {open && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="absolute z-50 mt-2 bg-gray-800 border border-gray-700 rounded-lg shadow-xl overflow-hidden"
-            style={{ width: "min(400px, 90vw)" }}
+            exit={{ opacity: 0, y: 12 }}
+            className="
+              absolute z-50 mt-2
+              w-full sm:w-[350px]
+              bg-[#00040F]
+              border border-white/10
+              rounded-xl
+              p-5
+              shadow-2xl
+            "
           >
-            <div className="text-center text-sm text-gray-400 py-2 border-b border-gray-700">
-              Available timings: 11:00 AM to 10:00 PM
-            </div>
+            <h3 className="text-white text-base font-semibold mb-4">
+              Select Time
+            </h3>
 
-            {/* Mode Toggle */}
-            <div className="flex border-b border-gray-700">
-              <button
-                type="button"
-                onClick={() => setMode("manual")}
-                className={`flex-1 py-3 px-4 text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2 ${
-                  mode === "manual"
-                    ? "bg-primary-500 text-white"
-                    : "bg-gray-800/50 text-gray-400 hover:text-gray-200 hover:bg-gray-700/50"
-                }`}
-              >
-                <Clock className="w-4 h-4" />
-                Select Time
-              </button>
-              <button
-                type="button"
-                onClick={() => setMode("quick")}
-                className={`flex-1 py-3 px-4 text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2 ${
-                  mode === "quick"
-                    ? "bg-primary-500 text-white"
-                    : "bg-gray-800/50 text-gray-400 hover:text-gray-200 hover:bg-gray-700/50"
-                }`}
-              >
-                <Zap className="w-4 h-4" />
-                Quick Book
-              </button>
-            </div>
-
-            {/* Content */}
-            {mode === "manual" ? (
-              <div className="p-6">
-                {/* Time Display */}
-                <div className="flex items-center justify-center gap-4 mb-6">
-                  <div className="flex items-center gap-2">
-                    <button
-                      type="button"
-                      disabled={
-                        bookedHours.includes(selectedHour) ||
-                        !allowedHours.includes(selectedHour)
-                      }
-                      onClick={() => {
-                        const next = selectedHour === 12 ? 1 : selectedHour + 1;
-                        if (
-                          !bookedHours.includes(next) &&
-                          allowedHours.includes(next)
-                        )
-                          setSelectedHour(next);
-                      }}
-                      className={`w-20 h-24 border-2 rounded-lg flex items-center justify-center text-4xl font-bold transition-all
-    ${
-      bookedHours.includes(selectedHour)
-        ? "bg-gray-700/50 border-gray-600 text-gray-500 cursor-not-allowed"
-        : "bg-primary-500/20 hover:bg-primary-500/30 border-primary-500 text-primary-400"
-    }
-  `}
-                    >
-                      {selectedHour.toString().padStart(2, "0")}
-                    </button>
-
-                    <span className="text-3xl font-bold text-gray-400">:</span>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        setSelectedMinute((m) => (m === 30 ? 0 : 30))
-                      }
-                      className="w-20 h-24 bg-gray-700/50 hover:bg-gray-700 border-2 border-gray-600 rounded-lg flex items-center justify-center text-4xl font-bold text-gray-300 transition-all"
-                    >
-                      {selectedMinute.toString().padStart(2, "0")}
-                    </button>
-                  </div>
-                </div>
-
-                {/* Analog Clock */}
-                <div className="relative w-64 h-64 mx-auto mb-6">
-                  <div className="absolute inset-0 rounded-full bg-gray-700/30 border-4 border-gray-600"></div>
-
-                  {/* Clock Numbers */}
-                  {allowedHours.map((hour, index) => {
-                    const angle = (index * 30 - 90) * (Math.PI / 180);
-                    const x = 50 + 38 * Math.cos(angle);
-                    const y = 50 + 38 * Math.sin(angle);
-
-                    const isBooked = bookedHours.includes(hour);
-                    const isSelected = selectedHour === hour && !isBooked;
-
-                    return (
-                      <button
-                        key={hour}
-                        type="button"
-                        disabled={isBooked}
-                        onClick={() => !isBooked && handleClockClick(hour)}
-                        className={`absolute w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all transform -translate-x-1/2 -translate-y-1/2
-        ${
-          isBooked
-            ? "bg-gray-700 text-red-500 cursor-not-allowed border border-red-500"
-            : isSelected
-            ? "bg-primary-500 text-white scale-110 shadow-lg"
-            : "text-gray-300 hover:bg-gray-600/50 hover:scale-105"
-        }
-      `}
-                        style={{ left: `${x}%`, top: `${y}%` }}
-                      >
-                        {/* If booked show cross, else show hour */}
-                        {isBooked ? "✖" : hour}
-                      </button>
-                    );
-                  })}
-
-                  {/* Center Dot */}
-                  <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-primary-500 rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10 shadow-lg"></div>
-
-                  {/* Clock Hand */}
-                  <motion.div
-                    className="absolute top-1/2 left-1/2 w-1 bg-primary-500 origin-bottom rounded-full shadow-lg"
-                    style={{
-                      height: "35%",
-                      transformOrigin: "bottom center",
-                    }}
-                    animate={{
-                      rotate: getClockHandRotation(),
-                      y: "-100%",
-                    }}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                </div>
-
-                {/* Apply Button */}
+            {/* Time selectors */}
+            <div className="flex flex-col gap-4 mb-5">
+              {/* Start Time Dropdown */}
+              <div className="relative">
+                <p className="text-sm text-white/60 mb-2">Start Time</p>
                 <button
                   type="button"
-                  onClick={handleApply}
-                  className="w-full py-3 bg-primary-500 hover:bg-primary-600 text-white rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-primary-500/30"
+                  onClick={() => {
+                    setTimeDropdownOpen(!timeDropdownOpen);
+                    setPeriodDropdownOpen(false);
+                  }}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white flex justify-between items-center hover:border-primary/50 transition"
                 >
-                  Apply Time
+                  <span>{startTime}</span>
+                  <ChevronDown className={`w-5 h-5 transition ${timeDropdownOpen ? "rotate-180" : ""}`} />
                 </button>
+                <AnimatePresence>
+                  {timeDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute z-50 w-full mt-2 py-2 bg-[#00040F] border border-white/10 rounded-xl shadow-2xl backdrop-blur-xl max-h-60 overflow-y-auto custom-scrollbar"
+                    >
+                      {TIME_OPTIONS.map((t) => (
+                        <button
+                          key={t}
+                          type="button"
+                          onClick={() => {
+                            setStartTime(t);
+                            setTimeDropdownOpen(false);
+                          }}
+                          className={`w-full px-4 py-3 text-left flex items-center justify-between transition-all duration-200 ${
+                            startTime === t
+                              ? 'bg-primary/20 text-white'
+                              : 'text-white/70 hover:bg-white/5 hover:text-white'
+                          }`}
+                        >
+                          <span>{t}</span>
+                          {startTime === t && (
+                            <Check size={16} className="text-primary" />
+                          )}
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            ) : (
-              <div className="p-6">
-                <div className="text-center mb-6">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-500/20 rounded-full mb-4">
-                    <Zap className="w-8 h-8 text-primary-400" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-200 mb-2">
-                    Next Available Slot
-                  </h3>
-                  <p className="text-sm text-gray-400">
-                    Book the earliest available consultation slot
-                  </p>
-                </div>
 
+              {/* AM/PM Dropdown */}
+              <div className="relative">
+                <p className="text-sm text-white/60 mb-2">AM / PM</p>
                 <button
                   type="button"
-                  onClick={handleQuickBook}
-                  className="w-full py-4 bg-linear-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 text-white rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-primary-500/30 flex items-center justify-center gap-2"
+                  onClick={() => {
+                    setPeriodDropdownOpen(!periodDropdownOpen);
+                    setTimeDropdownOpen(false);
+                  }}
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white flex justify-between items-center hover:border-primary/50 transition"
                 >
-                  <Zap className="w-5 h-5" />
-                  Book Now
+                  <span>{period}</span>
+                  <ChevronDown className={`w-5 h-5 transition ${periodDropdownOpen ? "rotate-180" : ""}`} />
                 </button>
+                <AnimatePresence>
+                  {periodDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute z-50 w-full mt-2 py-2 bg-[#00040F] border border-white/10 rounded-xl shadow-2xl backdrop-blur-xl"
+                    >
+                      {(["AM", "PM"] as const).map((p) => (
+                        <button
+                          key={p}
+                          type="button"
+                          onClick={() => {
+                            setPeriod(p);
+                            setPeriodDropdownOpen(false);
+                          }}
+                          className={`w-full px-4 py-3 text-left flex items-center justify-between transition-all duration-200 ${
+                            period === p
+                              ? 'bg-primary/20 text-white'
+                              : 'text-white/70 hover:bg-white/5 hover:text-white'
+                          }`}
+                        >
+                          <span>{p}</span>
+                          {period === p && (
+                            <Check size={16} className="text-primary" />
+                          )}
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            )}
-
-            {/* Footer Info */}
-            <div className="px-4 py-3 bg-gray-900/50 border-t border-gray-700">
-              <p className="text-xs text-gray-400 text-center">
-                30-minute consultation slots • Available 24/7
-              </p>
             </div>
+
+            {/* Duration */}
+            <div className="mb-5">
+              <p className="text-sm text-white/60 mb-2">Duration</p>
+              <div className="grid grid-cols-3 gap-3">
+                {DURATIONS.map(d => (
+                  <button
+                    key={d}
+                    type="button"
+                    onClick={() => setDuration(d)}
+                    className={`rounded-xl py-3 border transition ${
+                      duration === d
+                        ? "bg-primary/20 border-primary text-primary"
+                        : "bg-white/5 border-white/10 text-white hover:border-primary/40"
+                    }`}
+                  >
+                    <div className="text-lg font-semibold">{d}</div>
+                    <div className="text-xs opacity-70">min</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Confirm */}
+            <button
+              type="button"
+              onClick={handleConfirm}
+              className="w-full py-3 rounded-xl bg-primary text-white cursor-pointer border font-bold hover:opacity-90 transition text-base"
+            >
+              Confirm
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
+
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(51, 187, 207, 0.5);
+          border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(51, 187, 207, 0.7);
+        }
+      `}</style>
     </div>
   );
 }

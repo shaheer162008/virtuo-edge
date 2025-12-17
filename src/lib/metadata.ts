@@ -134,12 +134,12 @@ export const servicesMetadata = generateMetadata({
   keywords: ["AI services", "automation services", "custom development", "API integration", "consulting"],
 });
 
-// Portfolio page metadata
+// Our Work page metadata
 export const portfolioMetadata = generateMetadata({
-  title: "Portfolio - Our Success Stories",
+  title: "Our Work - Success Stories & Projects",
   description: "Explore Nexiler's portfolio of successful AI automation and development projects. See how we've helped businesses transform digitally.",
   path: "/portfolio",
-  keywords: ["portfolio", "case studies", "success stories", "project showcase"],
+  keywords: ["our work", "case studies", "success stories", "project showcase"],
 });
 
 // Pricing page metadata

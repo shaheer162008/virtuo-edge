@@ -6,7 +6,7 @@ const footerLinks = {
     company: [
         { label: "About Us", href: "/about" },
         { label: "Services", href: "/services" },
-        { label: "Portfolio", href: "/portfolio" },
+        { label: "Our Work", href: "/portfolio" },
         { label: "Blog", href: "/blogs" },
     ],
     resources: [
