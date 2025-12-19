@@ -6,18 +6,18 @@ import Link from "next/link";
 const features = [
     {
         icon: Shield,
-        title: "Secure & Reliable",
-        description: "Your data stays safe with proper security measures. We build systems you can trust.",
+        title: "Built to Last",
+        description: "Secure, scalable systems that grow with your business. No surprises, no hidden technical debt.",
     },
     {
         icon: Zap,
-        title: "Fast Delivery",
-        description: "We move quickly without cutting corners. Launch in weeks, not months.",
+        title: "Launch in Weeks",
+        description: "We move fast without cutting corners. Your project goes from concept to live in a realistic timeframe.",
     },
     {
         icon: Clock,
-        title: "Always Available",
-        description: "Need help? We're here. Your systems run smoothly with our ongoing support.",
+        title: "Support That Sticks",
+        description: "We don't disappear after launch. Ongoing monitoring, updates, and optimization—we're here for the long haul.",
     },
 ];
 
@@ -36,12 +36,12 @@ export const Business = () => {
                         className="px-0 sm:px-4"
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 sm:mb-6 md:mb-8 leading-tight">
-                            <span className="text-white">You do the business,</span>
+                            <span className="text-white">Focus on your business.</span>
                             <br />
-                            <span className="text-gradient">we'll handle the automation.</span>
+                            <span className="text-gradient">Let Nexiler handle the tech.</span>
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 sm:mb-10 md:mb-12 leading-relaxed">
-                            Focus on growing your business while we build and maintain the tech. From websites to automation, we've got you covered.
+                            From website development to workflow automation, Nexiler handles all the technical heavy lifting. You stay focused on growth.
                         </p>
                         <Link href="/consultation">
                             <motion.button
@@ -83,7 +83,7 @@ export const Business = () => {
                                     <h3 className="text-xl sm:text-xl md:text-2xl font-semibold text-white mb-2 sm:mb-2 md:mb-3 group-hover:text-primary transition-colors duration-500">
                                         {feature.title}
                                     </h3>
-                                    <p className="text-sm sm:text-base text-white/60 leading-relaxed">
+                                    <p className="text-base sm:text-lg text-white/60 leading-relaxed">
                                         {feature.description}
                                     </p>
                                 </div>

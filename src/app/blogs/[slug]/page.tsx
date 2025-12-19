@@ -137,7 +137,7 @@ export default function BlogPostPage({
 
           {/* Header */}
           <div className="mb-12">
-            <div className="flex items-center gap-4 text-sm text-white/60 mb-4">
+            <div className="flex items-center gap-4 text-base sm:text-lg text-white/60 mb-4">
               <span className="text-primary">{blog.category}</span>
               <span>•</span>
               <span className="flex items-center gap-1">
@@ -242,7 +242,7 @@ const formatBlogContent = (content: string): React.ReactNode[] => {
         paragraphParts.push(
           <code
             key={`code-${paragraphIndex}-${match.index}`}
-            className="bg-white/10 text-cyan-bright px-2 py-1 rounded font-mono text-sm border border-cyan-bright/30"
+            className="bg-white/10 text-cyan-bright px-2 py-1 rounded font-mono text-base border border-cyan-bright/30"
           >
             {match[4]}
           </code>

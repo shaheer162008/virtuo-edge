@@ -6,17 +6,31 @@ import Link from "next/link";
 const services = [
     {
         icon: Globe,
-        title: "Website Development",
-        description: "Professional websites with modern tech, SEO optimization, and responsive design.",
+        title: "Website Development with Next.js",
+        description: "Modern, fast websites built to convert. We develop professional sites using cutting-edge technologies, optimized for search engines and designed to turn visitors into customers.",
         gradient: "from-blue-500 to-cyan-500",
         href: "/services/website-development",
     },
     {
         icon: Bot,
         title: "AI Automation Setup",
-        description: "Intelligent workflow automation to reduce costs and boost productivity.",
+        description: "Intelligent workflows that reduce manual work and lower operational costs. From lead qualification to data processing, your team gets back hours every week to focus on strategy and growth.",
         gradient: "from-purple-500 to-pink-500",
         href: "/services/ai-automation-setup",
+    },
+    {
+        icon: Wrench,
+        title: "Workflow Optimization and Integrations",
+        description: "Your tools don't talk to each other. We connect your systems—CRMs, email platforms, databases—so information flows seamlessly. Less friction, more efficiency.",
+        gradient: "from-orange-500 to-red-500",
+        href: "/services/workflow-optimization",
+    },
+    {
+        icon: Palette,
+        title: "Brand and Growth Strategy",
+        description: "A strong brand identity and consistent strategy build lasting customer relationships. We create complete brand systems and growth plans tailored to your business, not generic templates.",
+        gradient: "from-green-500 to-teal-500",
+        href: "/services/full-brand-creation",
     },
     {
         icon: Zap,
@@ -24,13 +38,6 @@ const services = [
         description: "24/7 automated customer support and lead qualification with smart chatbots.",
         gradient: "from-cyan-500 to-blue-500",
         href: "/services/ai-chatbot-integration",
-    },
-    {
-        icon: Settings,
-        title: "Full Brand Creation",
-        description: "Complete brand identity from logo to messaging and visual guidelines.",
-        gradient: "from-orange-500 to-red-500",
-        href: "/services/full-brand-creation",
     },
     {
         icon: Video,
@@ -104,9 +111,12 @@ export const Services = () => {
                         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 md:mb-6">
-                            <span className="text-white">Our </span>
-                            <span className="text-gradient">Services</span>
+                            <span className="text-white">What Nexiler </span>
+                            <span className="text-gradient">Delivers</span>
                         </h2>
+                        <p className="text-lg text-white/60">
+                            AI automation, web development, workflow optimization, and growth strategies that deliver measurable results. Nexiler combines expert web development with intelligent systems designed for real-world business challenges.
+                        </p>
                         <p className="text-lg text-white/60">
                             Comprehensive AI automation, web development, branding, and digital marketing solutions designed to accelerate your business growth.
                         </p>
@@ -124,8 +134,8 @@ export const Services = () => {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-7">
-                    {services.map((service, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-7">
+                    {services.slice(0, 3).map((service, index) => (
                         <Link key={index} href={service.href}>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -147,12 +157,12 @@ export const Services = () => {
                                 <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors duration-300">
                                     {service.title}
                                 </h3>
-                                <p className="text-white/60 text-sm leading-relaxed">
+                                <p className="text-white/60 text-base sm:text-lg leading-relaxed">
                                     {service.description}
                                 </p>
 
                                 {/* Learn More Arrow */}
-                                <div className="mt-4 flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <div className="mt-4 flex items-center gap-2 text-primary text-base sm:text-lg font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <span>Learn More</span>
                                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

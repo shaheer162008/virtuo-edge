@@ -21,52 +21,52 @@ export default function TermsOfServicePage() {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/20 rounded-full blur-3xl -z-10" />
                 
                 <div className="container mx-auto px-4 max-w-4xl">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center">
+                    <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 text-center">
                         <span className="text-gradient">Terms of Service</span>
                     </h1>
-                    <p className="text-white/60 text-center mb-8">Last updated: December 17, 2025</p>
+                    <p className="text-base sm:text-lg text-white/60 text-center mb-8">Last updated: December 17, 2025</p>
                     
-                    <div className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-purple-500/10 border border-primary/30 mb-8">
-                        <p className="text-white/90 leading-relaxed">
+                    <div className="p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-purple-500/10 border border-primary/30 mb-8">
+                        <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
                             Welcome to Nexiler. We're all about building honest partnerships that drive real results for your business. 
                             Whether you need a powerful web app, smart automation, or a strategy to scale your brand, these terms make sure 
                             we're on the same page from day one. We've kept this simple and clear because we believe great work starts with trust.
                         </p>
                     </div>
 
-                    <div className="p-6 rounded-2xl bg-primary/5 border border-primary/20 mb-10">
-                        <p className="text-white/80">
+                    <div className="p-4 sm:p-6 rounded-2xl bg-primary/5 border border-primary/20 mb-10">
+                        <p className="text-base sm:text-lg md:text-xl text-white/80">
                             <strong className="text-white">Summary:</strong> We build websites, automate workflows, and grow brands. 
                             Here's how it works: you approve a proposal, pay upfront to lock in your spot, and we deliver. If we promise a specific result, 
                             we stick with you until you get it. Simple as that.
                         </p>
                     </div>
 
-                    <div className="space-y-8 text-white/80 leading-relaxed">
-                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
-                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">1</span>
+                    <div className="space-y-6 sm:space-y-8 text-base sm:text-lg md:text-xl text-white/80 leading-relaxed">
+                        <section className="p-4 sm:p-6 md:p-8 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4 flex items-center gap-3">
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-base font-bold">1</span>
                                 Acceptance and Agreement
                             </h2>
-                            <p>
+                            <p className="text-sm sm:text-base md:text-lg">
                                 By accessing our website, engaging in consultations, or signing a proposal/Statement of Work (SOW) with Nexiler (the "Agency"), 
                                 you ("Client") agree to be bound by these Terms of Service. These terms apply to all digital services, including Web Development, 
                                 AI Automation, Branding, Digital Marketing, and Custom Solutions.
                             </p>
                         </section>
 
-                        <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
-                            <h2 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
+                        <section className="p-4 sm:p-6 md:p-8 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
+                            <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-4 flex items-center gap-3">
                                 <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">2</span>
                                 Services and Scope
                             </h2>
-                            <p className="mb-4">
+                            <p className="mb-4 text-sm sm:text-base md:text-lg">
                                 We help businesses grow using technology. Our sweet spot? Building systems that save you time, attract customers, 
                                 and scale your operations.
                             </p>
-                            <h3 className="text-xl font-semibold text-white mb-3 mt-6">2.1 Service Offerings</h3>
-                            <p className="mb-3">Our services include:</p>
-                            <ul className="list-disc pl-6 space-y-2">
+                            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-3 mt-6">2.1 Service Offerings</h3>
+                            <p className="mb-3 text-sm sm:text-base md:text-lg">Our services include:</p>
+                            <ul className="list-disc pl-6 space-y-2 text-sm sm:text-base md:text-lg">
                                 <li>Website Development and Custom Web Applications</li>
                                 <li>AI/ML Automation, Chatbot Integration, and Data Strategy</li>
                                 <li>Brand Identity and Graphic Design</li>
@@ -74,8 +74,8 @@ export default function TermsOfServicePage() {
                                 <li>Video Production, Motion Graphics, and 3D Visualization</li>
                                 <li><strong className="text-white">Custom Business Growth Packages and Consulting</strong></li>
                             </ul>
-                            <h3 className="text-xl font-semibold text-white mb-3 mt-6">2.2 What's Included</h3>
-                            <p>
+                            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-3 mt-6">2.2 What's Included</h3>
+                            <p className="text-sm sm:text-base md:text-lg">
                                 Every project gets a clear proposal that spells out exactly what we're building, when you'll get it, and what it costs. 
                                 If you want to add something later that wasn't in the original plan, we'll quote it separately and update the timeline.
                             </p>

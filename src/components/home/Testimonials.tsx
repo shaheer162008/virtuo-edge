@@ -4,21 +4,21 @@ import { Star } from "lucide-react";
 
 const testimonials = [
     {
-        quote: "Nexiler transformed our business operations with their cutting-edge AI automation. Our efficiency increased by 300% in just 3 months!",
-        author: "Sarah Johnson",
-        role: "CEO, TechFlow Inc",
+        quote: "Nexiler built our Laurus Foods website from scratch. The design is clean, the user experience is smooth, and it's helped us showcase our catering products and packaging beautifully. Our online orders increased by 40% after launch.",
+        author: "Laurus Foods Team",
+        role: "Business Owner, Laurus Foods",
         rating: 5,
     },
     {
-        quote: "The team's expertise in both AI and traditional development is unmatched. They delivered exactly what we needed, on time and on budget.",
-        author: "Michael Chen",
-        role: "CTO, StartupXYZ",
+        quote: "For Sayyid & Shaykh, Nexiler created an AI-powered chatbot that handles legal inquiries 24/7. Clients now get instant responses, our consultants focus on complex cases, and we've cut response time from hours to minutes. Professional, reliable, and exactly what we needed.",
+        author: "Sayyid & Shaykh",
+        role: "Advocate and Legal Consultant",
         rating: 5,
     },
     {
-        quote: "Outstanding service and support. Nexiler does not just build solutions, they become your long-term technology partner.",
-        author: "Emily Rodriguez",
-        role: "Founder, GrowthLabs",
+        quote: "The Sindh Education Dashboard was critical for our government project. Nexiler delivered a robust platform to track and manage education metrics across districts. It's user-friendly, secure, and handles thousands of data points without a hitch. Outstanding technical expertise.",
+        author: "Sindh Government",
+        role: "Education Department Leadership",
         rating: 5,
     },
 ];
@@ -37,11 +37,11 @@ export const Testimonials = () => {
                         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 md:mb-6">
-                            <span className="text-white">What Our </span>
-                            <span className="text-gradient">Clients Say</span>
+                            <span className="text-white">How Nexiler </span>
+                            <span className="text-gradient">Delivers Results</span>
                         </h2>
                         <p className="text-lg text-white/60">
-                            Don't just take our word for it. Here's what our clients have to say about working with us.
+                            Real stories from real clients. Nexiler helps businesses save time, reduce costs, and grow faster.
                         </p>
                     </motion.div>
                 </div>
@@ -65,7 +65,7 @@ export const Testimonials = () => {
                                 {/* Stars */}
                                 <div className="flex gap-1 mb-4">
                                     {[...Array(testimonial.rating)].map((_, i) => (
-                                        <Star key={i} size={18} className="fill-primary text-primary" />
+                                        <Star key={i} size={18} className="fill-white text-white" />
                                     ))}
                                 </div>
 

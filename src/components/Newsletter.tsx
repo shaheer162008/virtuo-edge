@@ -96,13 +96,13 @@ export const Newsletter = () => {
                         <motion.p
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="mt-4 text-primary text-sm"
+                            className="mt-4 text-primary text-base"
                         >
                             ✨ Thank you for subscribing! Check your inbox for confirmation.
                         </motion.p>
                     )}
 
-                    <p className="text-xs text-white/40 mt-6">
+                    <p className="text-sm text-white/40 mt-6">
                         We respect your privacy. Unsubscribe at any time.
                     </p>
                 </motion.div>

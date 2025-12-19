@@ -112,10 +112,19 @@ export function generateMetadata({
 
 // Home page metadata
 export const homeMetadata = generateMetadata({
-  title: "Transform Your Business with AI",
-  description: "We build modern websites, automate workflows, and create strategies that grow your business. Trusted by 230+ companies. Real results, not just promises.",
+  title: "Nexiler AI Automation and Web Development Solutions",
+  description: "Build smarter with Nexiler. AI automation, web development, workflow optimization, and organic growth strategies for SMBs and scaling businesses.",
   path: "",
-  keywords: ["business growth", "automation", "web development", "digital agency", "modern websites"],
+  keywords: [
+    "Nexiler",
+    "AI automation for small business",
+    "Nexiler web development agency",
+    "workflow automation services",
+    "AI automation solutions",
+    "custom web development",
+    "business automation platform",
+    "organic growth strategies",
+  ],
 });
 
 // About page metadata

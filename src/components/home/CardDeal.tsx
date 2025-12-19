@@ -26,12 +26,12 @@ export const CardDeal = () => {
                         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 sm:mb-6 md:mb-8 leading-tight">
-                            <span className="text-white">Everything you need,</span>
+                            <span className="text-white">One team. Complete solutions.</span>
                             <br />
-                            <span className="text-gradient">one team.</span>
+                            <span className="text-gradient">No juggling agencies.</span>
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 sm:mb-10 md:mb-12 leading-relaxed">
-                            Websites, automation, branding, video, you name it. We handle it all so you don't have to juggle multiple agencies.
+                            Websites, automation, branding, video, integrations Nexiler handles it all. Single point of contact, cohesive strategy, better results.
                         </p>
                         <Link href="/consultation">
                             <motion.button 
@@ -40,7 +40,7 @@ export const CardDeal = () => {
                                 transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                                 className="px-8 sm:px-10 py-3 sm:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold text-base sm:text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-500"
                             >
-                                Start Your Project
+                                Get Free Consultation
                             </motion.button>
                         </Link>
                     </motion.div>
@@ -65,7 +65,7 @@ export const CardDeal = () => {
                                             </div>
                                             <span className="text-white font-semibold">Nexiler Services</span>
                                         </div>
-                                        <div className="text-xs text-white/40">15+ Solutions</div>
+                                        <div className="text-base sm:text-lg text-white/40">15+ Solutions</div>
                                     </div>
                                     {/* Services Grid */}
                                     <div className="grid grid-cols-2 gap-3">
@@ -79,13 +79,13 @@ export const CardDeal = () => {
                                                 className="flex items-center gap-2 bg-white/5 rounded-lg p-3 border border-white/10 hover:border-primary/30 transition-all duration-300"
                                             >
                                                 <service.icon className={`w-5 h-5 ${service.color}`} />
-                                                <span className="text-xs text-white/70">{service.label}</span>
+                                                <span className="text-base sm:text-lg text-white/70">{service.label}</span>
                                             </motion.div>
                                         ))}
                                     </div>
                                     {/* Footer */}
                                     <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
-                                        <span className="text-xs text-white/40">Trusted by 230+ companies</span>
+                                        <span className="text-base sm:text-lg text-white/40">Trusted by 230+ companies</span>
                                         <div className="flex -space-x-2">
                                             {[1, 2, 3, 4].map((i) => (
                                                 <div key={i} className="w-6 h-6 rounded-full bg-gradient-to-br from-primary/40 to-purple-500/40 border-2 border-dark" />

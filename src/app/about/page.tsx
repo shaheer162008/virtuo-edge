@@ -49,11 +49,11 @@ export default function AboutPage() {
                         transition={{ duration: 0.6 }}
                         className="text-center max-w-4xl mx-auto"
                     >
-                        <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6">
                             <span className="text-white">Meet </span>
                             <span className="text-gradient">Team Nexiler</span>
                         </h1>
-                        <p className="text-lg md:text-xl text-white/70">
+                        <p className="text-base sm:text-lg md:text-xl text-white/70">
                             A passionate team of developers, designers, and strategists working together to help businesses grow globally.
                         </p>
                     </motion.div>
@@ -70,11 +70,11 @@ export default function AboutPage() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 text-center">
                                 <span className="text-gradient">Our Story</span>
                             </h2>
                             
-                            <div className="space-y-6 text-white/70 text-lg leading-relaxed">
+                            <div className="space-y-6 text-white/70 text-base sm:text-lg md:text-xl leading-relaxed">
                                 <p>
                                     Before Nexiler, we were all working individually freelancing, taking on projects solo, and doing our best to help clients one at a time. 
                                     But <strong className="text-white">Muhammad Shaheer</strong>, our founder, had a bigger vision.
@@ -84,39 +84,45 @@ export default function AboutPage() {
                                     AI automation, design, and video production to deliver complete solutions. Not just websites or apps, but real business growth.
                                 </p>
                                 <p>
-                                    In <strong className="text-white">2025</strong>, that vision became reality. Shaheer brought together a group of talented individuals                                     each an expert in their field and formed <strong className="text-white">Team Nexiler</strong>. 
+                                    In <strong className="text-white">2025</strong>, that vision became reality. Shaheer brought together a group of talented individuals, 
+                                    each an expert in their field. Alongside co-founders <strong className="text-white">Saim Khalid</strong> and <strong className="text-white">Rabbiya Sohail</strong>, 
+                                    and our core team, we formed <strong className="text-white">Team Nexiler</strong>. 
                                     Now, instead of working alone, we work as one team with one goal: to grow your business and solve your problems.
                                 </p>
                                 <p>
-                                    Our mission is simple provide solutions that actually work and save you time. We handle the tech so you can focus on what you do best.
+                                    Our mission is simple: provide solutions that actually work and save you time. We handle the tech so you can focus on what you do best.
                                 </p>
 
                                 <p>
-                                    We are not here just to make money. We want to solve real problems — to help clients reach meaningful outcomes and grow the way they envision. We focus on lasting impact, honest advice, and building tools that make work easier for people.
+                                    We are not here just to make money. We want to solve real problems and help clients reach meaningful outcomes and grow the way they envision. We focus on lasting impact, honest advice, and building tools that make work easier for people.
+                                </p>
+
+                                <p className="text-white/60 italic border-l-4 border-primary/50 pl-4 mt-8 text-base sm:text-lg md:text-xl">
+                                    <strong className="text-white">Note:</strong> My all team is my co-founder. Everyone here is invested in Nexiler's mission and contributes as a founder would. We share the same values, vision, and commitment to excellence.
                                 </p>
                             </div>
 
                             {/* Vision Cards */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-                                <div className="p-6 rounded-xl glass border border-white/10">
+                                <div className="p-4 sm:p-6 rounded-xl glass border border-white/10">
                                     <div className="flex items-center gap-3 mb-4">
                                         <div className="p-2 rounded-lg bg-primary/10">
                                             <Lightbulb size={24} className="text-primary" />
                                         </div>
-                                        <h3 className="text-xl font-semibold text-white">The Vision</h3>
+                                        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">The Vision</h3>
                                     </div>
-                                    <p className="text-white/60">
+                                    <p className="text-sm sm:text-base md:text-lg text-white/60">
                                         Build a company that helps businesses worldwide with top-tier development, automation, and design all under one roof.
                                     </p>
                                 </div>
-                                <div className="p-6 rounded-xl glass border border-white/10">
+                                <div className="p-4 sm:p-6 rounded-xl glass border border-white/10">
                                     <div className="flex items-center gap-3 mb-4">
                                         <div className="p-2 rounded-lg bg-primary/10">
                                             <Globe size={24} className="text-primary" />
                                         </div>
-                                        <h3 className="text-xl font-semibold text-white">Our Goal</h3>
+                                        <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">Our Goal</h3>
                                     </div>
-                                    <p className="text-white/60">
+                                    <p className="text-sm sm:text-base md:text-lg text-white/60">
                                         Deliver solutions that save time, reduce stress, and help our clients grow whether they're startups or established businesses.
                                     </p>
                                 </div>
@@ -136,11 +142,11 @@ export default function AboutPage() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-6">
                                 <span className="text-white">Our </span>
                                 <span className="text-gradient">Expertise</span>
                             </h2>
-                            <p className="text-lg text-white/60">
+                            <p className="text-base sm:text-lg md:text-xl text-white/60">
                                 We have experts in every area you need to grow your business
                             </p>
                         </motion.div>
@@ -156,7 +162,7 @@ export default function AboutPage() {
                                 transition={{ duration: 0.3, delay: index * 0.05 }}
                                 className="px-5 py-3 rounded-full glass border border-white/10 hover:border-primary/50 transition-all"
                             >
-                                <span className="text-white/80">{expertise}</span>
+                                <span className="text-white/80 text-base sm:text-lg">{expertise}</span>
                             </motion.div>
                         ))}
                     </div>
@@ -173,11 +179,11 @@ export default function AboutPage() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-6">
                                 <span className="text-white">Meet the </span>
                                 <span className="text-gradient">Team</span>
                             </h2>
-                            <p className="text-lg text-white/60 leading-relaxed">
+                            <p className="text-base sm:text-lg md:text-xl text-white/60 leading-relaxed">
                                 We are a growing team of 11+ skilled professionals who share one goal, helping your business succeed. 
                                 Below are some of our key team members. Each one brings years of experience and a genuine passion for what they do. 
                                 We work together, we learn together, and we deliver together.
@@ -221,7 +227,7 @@ export default function AboutPage() {
                                 <h3 className="text-xl font-semibold text-white group-hover:text-[#0A66C2] transition-colors">
                                     Nexiler
                                 </h3>
-                                <p className="text-white/60 text-sm">
+                                <p className="text-white/60 text-base sm:text-lg">
                                     Web Development, AI Automation & Business Growth
                                 </p>
                             </div>
@@ -235,7 +241,10 @@ export default function AboutPage() {
                     {/* LinkedIn Profile Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                         {teamMembers.map((member, index) => {
-                            const isLastOdd = isOdd && index === teamMembers.length - 1;
+                            // First two members (Shaheer and Rabbiya) - 2 columns
+                            // Third member (Saim) - centered
+                            // Fourth member (Amir) - centered until another candidate joins, then 2 columns
+                            const isCentered = index === 2 || (index === 3 && index === teamMembers.length - 1);
                             return (
                                 <motion.div
                                     key={member.id}
@@ -243,7 +252,7 @@ export default function AboutPage() {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    className={isLastOdd ? "md:col-span-2 flex justify-center" : ""}
+                                    className={isCentered ? "md:col-span-2 flex justify-center" : ""}
                                 >
                                     <div className="w-full max-w-[380px]">
                                         <LinkedInProfile
@@ -252,6 +261,7 @@ export default function AboutPage() {
                                             headline={member.headline || member.role}
                                             imageUrl={member.imageUrl}
                                             isFounder={member.isFounder}
+                                            founderBadgeText={member.founderBadgeText}
                                             size="md"
                                         />
                                     </div>
@@ -279,7 +289,7 @@ export default function AboutPage() {
                                 <span className="text-white">Our </span>
                                 <span className="text-gradient">Values</span>
                             </h2>
-                            <p className="text-lg text-white/60">
+                            <p className="text-base sm:text-lg md:text-xl text-white/60">
                                 The principles that guide everything we do
                             </p>
                         </motion.div>
@@ -293,15 +303,15 @@ export default function AboutPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="p-6 rounded-xl glass border border-white/10 hover:border-primary/50 transition-all text-center"
+                                className="p-4 sm:p-6 rounded-xl glass border border-white/10 hover:border-primary/50 transition-all text-center"
                             >
                                 <div className="inline-flex p-3 rounded-lg bg-primary/10 mb-4">
                                     <value.icon size={28} className="text-primary" />
                                 </div>
-                                <h3 className="text-xl font-semibold text-white mb-2">
+                                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-2">
                                     {value.title}
                                 </h3>
-                                <p className="text-white/60 text-sm">
+                                <p className="text-white/60 text-sm sm:text-base md:text-lg">
                                     {value.description}
                                 </p>
                             </motion.div>

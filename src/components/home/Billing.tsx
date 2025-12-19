@@ -42,11 +42,11 @@ export const Billing = () => {
                                 <div className="grid grid-cols-2 gap-3 mb-6">
                                     <div className="bg-white/5 rounded-lg p-3 border border-white/10">
                                         <div className="text-2xl font-bold text-primary">87%</div>
-                                        <div className="text-xs text-white/50">Time Saved</div>
+                                        <div className="text-sm sm:text-base text-white/50">Time Saved</div>
                                     </div>
                                     <div className="bg-white/5 rounded-lg p-3 border border-white/10">
                                         <div className="text-2xl font-bold text-green-400">24/7</div>
-                                        <div className="text-xs text-white/50">Uptime</div>
+                                        <div className="text-sm sm:text-base text-white/50">Uptime</div>
                                     </div>
                                 </div>
                                 {/* Workflow Items */}
@@ -78,12 +78,12 @@ export const Billing = () => {
                         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 sm:mb-6 md:mb-8 leading-tight">
-                            <span className="text-white">Automate workflows,</span>
+                            <span className="text-white">Automate the tedious work.</span>
                             <br />
-                            <span className="text-gradient">amplify results.</span>
+                            <span className="text-gradient">Get time back.</span>
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 sm:mb-10 md:mb-12 leading-relaxed">
-                            Stop wasting time on repetitive work. We build automation that handles the boring stuff so your team can focus on growth.
+                            Workflow automation with AI removes repetitive tasks from your team's plate. Process data, qualify leads, send notifications all without manual intervention. Hours saved every week.
                         </p>
                         <div className="flex flex-row gap-3 sm:gap-4">
                             {automationFeatures.map((feature, index) => (
@@ -105,7 +105,7 @@ export const Billing = () => {
                                 transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
                                 className="px-8 sm:px-10 py-3 sm:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold text-base sm:text-lg hover:bg-white/20 hover:border-white/50 transition-all duration-500"
                             >
-                                Explore Our Services
+                                Explore Automation Services
                             </motion.button>
                         </Link>
                     </motion.div>

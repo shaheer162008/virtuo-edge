@@ -110,12 +110,12 @@ export default function ServicesPage() {
                                         <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors duration-300">
                                             {service.title}
                                         </h3>
-                                        <p className="text-white/60 text-sm leading-relaxed mb-3">
+                                        <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-3">
                                             {service.description}
                                         </p>
 
                                         {/* Pricing */}
-                                        <p className="text-primary text-sm font-medium mb-4">
+                                        <p className="text-primary text-base sm:text-lg font-medium mb-4">
                                             {service.pricingRange || service.pricing}
                                         </p>
 

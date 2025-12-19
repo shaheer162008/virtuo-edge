@@ -42,7 +42,7 @@ export const Footer = () => {
                         <div className="mb-4">
                             <Logo />
                         </div>
-                        <p className="text-white/65 text-sm leading-relaxed mb-6 max-w-xs">
+                        <p className="text-white/65 text-base sm:text-base md:text-lg leading-relaxed mb-6 max-w-xs">
                             Unlock growth through intelligent automation, stunning web experiences, and strategic digital solutions.
                         </p>
                         <div className="flex gap-2.5 flex-wrap">
@@ -64,13 +64,13 @@ export const Footer = () => {
 
                     {/* Company Links */}
                     <div>
-                        <h3 className="text-white font-bold mb-4 sm:mb-5 text-sm sm:text-base uppercase tracking-widest opacity-90">Company</h3>
+                        <h3 className="text-white font-bold mb-4 sm:mb-5 text-base sm:text-lg uppercase tracking-widest opacity-90">Company</h3>
                         <ul className="space-y-3">
                             {footerLinks.company.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-white/60 hover:text-primary text-sm transition-all duration-300 flex items-center gap-2 group"
+                                        className="text-white/60 hover:text-primary text-base sm:text-lg transition-all duration-300 flex items-center gap-2 group"
                                     >
                                         <span className="w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-2"></span>
                                         {link.label}
@@ -82,13 +82,13 @@ export const Footer = () => {
 
                     {/* Resources Links */}
                     <div>
-                        <h3 className="text-white font-bold mb-4 sm:mb-5 text-sm sm:text-base uppercase tracking-widest opacity-90">Resources</h3>
+                        <h3 className="text-white font-bold mb-4 sm:mb-5 text-base sm:text-lg uppercase tracking-widest opacity-90">Resources</h3>
                         <ul className="space-y-3">
                             {footerLinks.resources.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-white/60 hover:text-primary text-sm transition-all duration-300 flex items-center gap-2 group"
+                                        className="text-white/60 hover:text-primary text-base sm:text-lg transition-all duration-300 flex items-center gap-2 group"
                                     >
                                         <span className="w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-2"></span>
                                         {link.label}
@@ -100,13 +100,13 @@ export const Footer = () => {
 
                     {/* Legal Links */}
                     <div>
-                        <h3 className="text-white font-bold mb-4 sm:mb-5 text-sm sm:text-base uppercase tracking-widest opacity-90">Legal</h3>
+                        <h3 className="text-white font-bold mb-4 sm:mb-5 text-base sm:text-lg uppercase tracking-widest opacity-90">Legal</h3>
                         <ul className="space-y-3">
                             {footerLinks.legal.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-white/60 hover:text-primary text-sm transition-all duration-300 flex items-center gap-2 group"
+                                        className="text-white/60 hover:text-primary text-base sm:text-lg transition-all duration-300 flex items-center gap-2 group"
                                     >
                                         <span className="w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-2"></span>
                                         {link.label}
@@ -119,10 +119,10 @@ export const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="pt-8 sm:pt-10 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-                    <p className="text-white/40 text-xs sm:text-sm text-center sm:text-left">
+                    <p className="text-white/40 text-base sm:text-lg text-center sm:text-left">
                         © {new Date().getFullYear()} Nexiler. All rights reserved.
                     </p>
-                    <p className="text-white/40 text-xs sm:text-sm">
+                    <p className="text-white/40 text-base sm:text-lg">
                         Crafted with passion by Team Nexiler
                     </p>
                 </div>

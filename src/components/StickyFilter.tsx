@@ -31,7 +31,7 @@ export const StickyFilter = ({ categories, activeCategory, onCategoryChange }: S
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, delay: index * 0.05 }}
                             onClick={() => onCategoryChange(category)}
-                            className={`px-5 md:px-6 py-2 md:py-2.5 rounded-lg font-medium text-sm md:text-base transition-all duration-300 ${
+                            className={`px-5 md:px-6 py-2 md:py-2.5 rounded-lg font-medium text-base md:text-lg transition-all duration-300 ${
                                 activeCategory === category
                                     ? "bg-white/10 text-white border-2 border-white/30"
                                     : "bg-white/5 text-white/70 hover:text-white border-2 border-white/10 hover:border-white/20 hover:bg-white/10"

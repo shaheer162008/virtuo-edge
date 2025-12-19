@@ -35,7 +35,7 @@ export default function PrivacyPolicyPage() {
                     <div className="space-y-6 text-white/80 leading-relaxed">
                         <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
                             <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">1</span>
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-base font-bold">1</span>
                                 Information We Collect
                             </h2>
                             <p className="mb-4">
@@ -52,7 +52,7 @@ export default function PrivacyPolicyPage() {
 
                         <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
                             <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">2</span>
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-base font-bold">2</span>
                                 How We Use Your Information
                             </h2>
                             <p className="mb-4">We use the information we collect to:</p>
@@ -67,7 +67,7 @@ export default function PrivacyPolicyPage() {
 
                         <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
                             <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">3</span>
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-base font-bold">3</span>
                                 Information Sharing
                             </h2>
                             <p>
@@ -79,7 +79,7 @@ export default function PrivacyPolicyPage() {
 
                         <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
                             <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">4</span>
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-base font-bold">4</span>
                                 Data Security
                             </h2>
                             <p>
@@ -91,7 +91,7 @@ export default function PrivacyPolicyPage() {
 
                         <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
                             <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">5</span>
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-base font-bold">5</span>
                                 Your Rights
                             </h2>
                             <p className="mb-4">You have the right to:</p>
@@ -106,7 +106,7 @@ export default function PrivacyPolicyPage() {
 
                         <section className="p-6 rounded-xl bg-white/5 border border-white/10 hover:border-primary/30 transition-all">
                             <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">6</span>
+                                <span className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary text-base font-bold">6</span>
                                 Cookies
                             </h2>
                             <p>
@@ -118,7 +118,7 @@ export default function PrivacyPolicyPage() {
 
                         <section className="p-6 rounded-xl bg-primary/10 border border-primary/30">
                             <h2 className="text-xl font-semibold text-white mb-4 flex items-center gap-3">
-                                <span className="w-8 h-8 rounded-lg bg-primary/30 flex items-center justify-center text-primary text-sm font-bold">7</span>
+                                <span className="w-8 h-8 rounded-lg bg-primary/30 flex items-center justify-center text-primary text-base font-bold">7</span>
                                 Contact Us
                             </h2>
                             <p>

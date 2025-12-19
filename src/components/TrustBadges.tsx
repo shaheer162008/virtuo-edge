@@ -5,8 +5,8 @@ import { Shield, Award, Users, Zap, Clock, Globe } from "lucide-react";
 const trustBadges = [
     {
         icon: Shield,
-        title: "Secure & Compliant",
-        description: "Enterprise-grade security",
+        title: "Secure and Compliant",
+        description: "Enterprise grade security",
     },
     {
         icon: Award,
@@ -15,7 +15,7 @@ const trustBadges = [
     },
     {
         icon: Users,
-        title: "230+ Clients",
+        title: "50+ Clients",
         description: "Trusted worldwide",
     },
     {
@@ -50,8 +50,8 @@ export const TrustBadges = () => {
                     transition={{ duration: 0.5 }}
                     className="text-center"
                 >
-                    <h2 className="text-sm sm:text-base text-primary font-semibold uppercase tracking-wider mb-2">Why Choose Us</h2>
-                    <p className="text-white/60 text-sm sm:text-base max-w-lg mx-auto">Trusted by 230+ businesses worldwide for reliable AI automation solutions</p>
+                    <h2 className="text-base sm:text-lg text-primary font-semibold uppercase tracking-wider mb-2">Why Choose Nexiler</h2>
+                    <p className="text-white/60 text-base sm:text-lg max-w-lg mx-auto">Trusted by 50+ businesses worldwide for reliable AI automation solutions</p>
                 </motion.div>
             </div>
             
@@ -89,10 +89,10 @@ export const TrustBadges = () => {
                                     <badge.icon size={24} className="text-primary" />
                                 </div>
                                 <div className="text-left">
-                                    <h3 className="text-sm sm:text-base font-semibold text-white whitespace-nowrap">
+                                    <h3 className="text-base sm:text-lg font-semibold text-white whitespace-nowrap">
                                         {badge.title}
                                     </h3>
-                                    <p className="text-xs sm:text-sm text-white/50 whitespace-nowrap">
+                                    <p className="text-base sm:text-lg text-white/50 whitespace-nowrap">
                                         {badge.description}
                                     </p>
                                 </div>

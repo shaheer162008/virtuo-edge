@@ -46,50 +46,52 @@ export const Navbar = () => {
             {/* Navbar Gradient Effect */}
             <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#00040F]/95 via-[#00040F]/90 to-[#00040F]/85" />
             
-            <div className="container mx-auto px-4 sm:px-6 relative z-10">
-                <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
+            <div className="container mx-auto px-4 sm:px-6 z-10">
+                <div className="grid grid-cols-[auto_1fr_auto] items-center h-16 sm:h-18 md:h-20">
                     {/* Logo */}
-                    <div className="flex-shrink-0 z-50">
+                    <div className="flex-shrink-0 z-50 col-start-1 justify-self-start">
                         <Logo />
                     </div>
 
-                    {/* Desktop Navigation - Centered */}
-                    <nav className="hidden lg:flex items-center gap-6 xl:gap-8 absolute left-1/2 -translate-x-1/2">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className={`text-sm xl:text-base font-medium transition-all duration-300 hover:text-primary relative group ${pathname === link.href ? "text-primary" : "text-white/70"
-                                    }`}
-                            >
-                                {link.label}
-                                {pathname === link.href && (
-                                    <motion.div
-                                        layoutId="activeNav"
-                                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-cyan-gradient rounded-full"
-                                    />
-                                )}
-                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary/50 group-hover:w-full transition-all duration-300" />
-                            </Link>
-                        ))}
-                    </nav>
+                    {/* Desktop Navigation - centered column */}
+                    <div className="hidden md:flex justify-center pointer-events-auto z-40 col-start-2">
+                        <nav className="flex items-center gap-6 xl:gap-8">
+                            {navLinks.map((link) => (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className={`text-base xl:text-lg font-medium transition-all duration-300 hover:text-primary relative group whitespace-nowrap ${pathname === link.href ? "text-primary" : "text-white/70"}`}
+                                >
+                                    {link.label}
+                                    {pathname === link.href && (
+                                        <motion.div
+                                            layoutId="activeNav"
+                                            className="absolute -bottom-1 left-0 right-0 h-0.5 bg-cyan-gradient rounded-full"
+                                        />
+                                    )}
+                                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary/50 group-hover:w-full transition-all duration-300" />
+                                </Link>
+                            ))}
+                        </nav>
+                    </div>
 
-                    {/* CTA Button (Desktop) */}
-                    <Link
-                        href="/consultation"
-                        className="hidden lg:inline-flex px-5 xl:px-6 py-2.5 xl:py-3 bg-white/10 text-white border-2 border-white/30 rounded-xl text-sm xl:text-base font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
-                    >
-                        Get Free Consultation
-                    </Link>
+                    {/* Right column: CTA (desktop) and mobile menu toggle */}
+                    <div className="col-start-3 col-end-4 justify-self-end z-50 flex items-center gap-2">
+                        <Link
+                            href="/consultation"
+                            className="hidden md:inline-flex px-5 xl:px-6 py-2.5 xl:py-3 bg-white/10 text-white border-2 border-white/30 rounded-xl text-base xl:text-lg font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300 whitespace-nowrap"
+                        >
+                            Get Free Consultation
+                        </Link>
 
-                    {/* Mobile Menu Toggle - Larger touch target */}
-                    <button
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="lg:hidden p-3 rounded-lg text-white hover:text-primary hover:bg-white/5 transition-all duration-300 z-50"
-                        aria-label="Toggle menu"
-                    >
-                        {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-                    </button>
+                        <button
+                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                            className="md:hidden p-3 rounded-lg text-white hover:text-primary hover:bg-white/5 transition-all duration-300"
+                            aria-label="Toggle menu"
+                        >
+                            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -103,7 +105,7 @@ export const Navbar = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.25 }}
-                            className="lg:hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
+                            className="md:hidden fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
                             onClick={() => setMobileMenuOpen(false)}
                             style={{ top: '64px' }}
                         />
@@ -113,7 +115,7 @@ export const Navbar = () => {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ duration: 0.25, ease: "easeInOut" }}
-                            className="lg:hidden fixed inset-x-0 top-16 sm:top-18 md:top-20 bg-[#00040F]/98 border-b border-white/10 shadow-2xl z-50 backdrop-blur-xl"
+                            className="md:hidden fixed inset-x-0 top-16 sm:top-18 md:top-20 bg-[#00040F]/98 border-b border-white/10 shadow-2xl z-50 backdrop-blur-xl"
                             style={{ maxHeight: 'calc(100vh - 64px)', overflowY: 'auto' }}
                         >
                         <nav className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col gap-1">

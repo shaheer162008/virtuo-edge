@@ -24,11 +24,11 @@ export const FeaturedWork = () => {
                             transition={{ duration: 0.6 }}
                         >
                             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                                <span className="text-white">Featured </span>
-                                <span className="text-gradient">Projects</span>
+                                <span className="text-white">Nexiler's </span>
+                                <span className="text-gradient">Client Success Stories</span>
                             </h2>
                             <p className="text-lg text-white/60">
-                                Explore some of our recent success stories
+                                See how Nexiler has helped businesses build better websites, automate operations, and grow faster.
                             </p>
                         </motion.div>
                     </div>
@@ -88,7 +88,7 @@ export const FeaturedWork = () => {
                                     <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors duration-300">
                                         {project.title}
                                     </h3>
-                                    <p className="text-white/60 text-sm">
+                                    <p className="text-white/60 text-base sm:text-lg">
                                         {project.description}
                                     </p>
                                 </div>

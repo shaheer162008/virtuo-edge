@@ -55,7 +55,7 @@ export const Testimonials = () => {
                                 </div>
                                 <div>
                                     <div className="font-semibold">{testimonial.name}</div>
-                                    <div className="text-sm text-white/40">{testimonial.role}</div>
+                                    <div className="text-base sm:text-lg text-white/40">{testimonial.role}</div>
                                 </div>
                             </div>
                             </div>

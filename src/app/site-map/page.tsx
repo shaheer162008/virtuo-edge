@@ -5,10 +5,10 @@ import { Footer } from "@/components/Footer";
 import { generateMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = generateMetadata({
-  title: "Sitemap - All Pages",
-  description: "Complete sitemap of Nexiler website. Find all pages, services, portfolio, blog posts, and resources in one place.",
+  title: "Nexiler Sitemap - All Pages and Resources",
+  description: "Complete sitemap of Nexiler website. Find all pages, services, portfolio, blog posts, and resources in one place. Navigate Nexiler easily.",
   path: "/site-map",
-  keywords: ["sitemap", "site navigation", "all pages"],
+  keywords: ["nexiler sitemap", "site navigation", "all pages", "nexiler pages"],
 });
 
 const sitemapSections = [
@@ -16,24 +16,24 @@ const sitemapSections = [
     title: "Main Pages",
     links: [
       { href: "/", label: "Home" },
-      { href: "/about", label: "About Us" },
-      { href: "/services", label: "Services" },
+      { href: "/about", label: "About Nexiler" },
+      { href: "/services", label: "Nexiler Services" },
       { href: "/our-work", label: "Our Work" },
-      { href: "/pricing", label: "Pricing" },
+      { href: "/pricing", label: "Nexiler Pricing" },
       { href: "/blogs", label: "Blog" },
       { href: "/consultation", label: "Free Consultation" },
-      { href: "/contact", label: "Contact" },
+      { href: "/contact", label: "Contact Nexiler" },
     ],
   },
   {
-    title: "Services",
+    title: "Nexiler Services",
     links: [
       { href: "/services#ai-automation", label: "AI Automation" },
       { href: "/services#custom-development", label: "Custom Development" },
       { href: "/services#process-optimization", label: "Process Optimization" },
       { href: "/services#data-solutions", label: "Data Solutions" },
       { href: "/services#api-integration", label: "API Integration" },
-      { href: "/services#consulting", label: "Consulting & Support" },
+      { href: "/services#consulting", label: "Consulting and Support" },
     ],
   },
   {
@@ -74,11 +74,11 @@ export default function SitemapPage() {
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-white">Site</span>
-              <span className="text-gradient">map</span>
+              <span className="text-white">Nexiler</span>
+              <span className="text-gradient"> Sitemap</span>
             </h1>
             <p className="text-lg text-white/70">
-              Navigate through all pages and resources on Nexiler
+              Navigate through all Nexiler pages, services, resources and content in one place
             </p>
           </div>
 
@@ -97,7 +97,7 @@ export default function SitemapPage() {
                     <li key={linkIndex}>
                       <Link
                         href={link.href}
-                        className="text-white/70 hover:text-primary transition-colors duration-300 text-sm flex items-center gap-2 group"
+                        className="text-white/70 hover:text-primary transition-colors duration-300 text-base sm:text-lg flex items-center gap-2 group"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover:bg-primary transition-colors" />
                         {link.label}
@@ -111,14 +111,14 @@ export default function SitemapPage() {
 
           {/* Additional Info */}
           <div className="mt-16 text-center">
-            <p className="text-white/60 text-sm mb-4">
-              Looking for something specific? 
+            <p className="text-white/60 text-base sm:text-lg mb-4">
+              Looking for something specific on Nexiler?
             </p>
             <Link
               href="/contact"
               className="inline-flex px-6 py-3 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
             >
-              Contact Us
+              Contact Nexiler
             </Link>
           </div>
         </div>

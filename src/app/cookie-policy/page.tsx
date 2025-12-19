@@ -92,7 +92,7 @@ export default function CookiePolicyPage() {
                             </ul>
                             <div className="flex items-start gap-2 mt-4 p-3 rounded-lg bg-yellow-500/10 border border-yellow-500/20">
                                 <AlertTriangle className="w-4 h-4 text-yellow-400 mt-0.5 shrink-0" />
-                                <p className="text-white/60 text-sm">
+                                <p className="text-white/60 text-base sm:text-lg">
                                     Note: Blocking some types of cookies may impact your experience on our website 
                                     and limit the services we can provide.
                                 </p>

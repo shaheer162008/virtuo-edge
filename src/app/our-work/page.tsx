@@ -118,13 +118,13 @@ export default function OurWorkPage() {
 
                                 {/* Content */}
                                 <div className="p-6">
-                                    <div className="text-primary text-sm font-medium mb-2">
+                                    <div className="text-primary text-base sm:text-lg font-medium mb-2">
                                         {project.category}
                                     </div>
                                     <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors">
                                         {project.title}
                                     </h3>
-                                    <p className="text-white/60 text-sm">
+                                    <p className="text-white/60 text-base sm:text-lg">
                                         {project.description}
                                     </p>
                                 </div>

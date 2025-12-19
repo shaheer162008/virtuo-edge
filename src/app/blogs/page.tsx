@@ -99,11 +99,11 @@ export default function BlogPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="text-white">Insights & </span>
-              <span className="text-gradient">Updates</span>
+              <span className="text-white">Learn From </span>
+              <span className="text-gradient">Nexiler</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70">
-              Stay up to date with the latest trends in AI, automation, and software development.
+              Articles, insights, and expert tips on AI automation, web development, workflow optimization, and business growth. Stay informed with Nexiler's resource hub.
             </p>
           </motion.div>
         </div>

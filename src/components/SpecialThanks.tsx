@@ -35,7 +35,7 @@ export default function SpecialThanks({
                 </div>
 
                 <div className="flex items-center justify-center gap-4">
-                    <div className="text-sm text-white/60"><strong className="text-white">{signature}</strong></div>
+                    <div className="text-base sm:text-lg text-white/60"><strong className="text-white">{signature}</strong></div>
                 </div>
             </div>
         </motion.div>

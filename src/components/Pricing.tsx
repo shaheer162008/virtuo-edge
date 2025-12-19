@@ -82,7 +82,7 @@ export const Pricing = () => {
                     >
                         <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-primary/10 border border-primary/20 mb-4 sm:mb-6">
                             <Sparkles size={16} className="text-primary" />
-                            <span className="text-xs sm:text-sm text-primary font-semibold">Transparent Pricing</span>
+                            <span className="text-sm sm:text-base text-primary font-semibold">Transparent Pricing</span>
                         </div>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
                             <span className="text-white">Choose Your </span>
@@ -111,7 +111,7 @@ export const Pricing = () => {
                         >
                             {/* Popular Badge */}
                             {plan.popular && (
-                                <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 px-4 sm:px-5 py-1 sm:py-1.5 bg-[#00F6FF] rounded-full text-black text-dark font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-lg">
+                                <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 px-4 sm:px-5 py-1 sm:py-1.5 bg-[#00F6FF] rounded-full text-black text-dark font-bold text-sm sm:text-base flex items-center gap-1.5 shadow-lg">
                                     <Sparkles size={14} />
                                     Most Popular
                                 </div>
@@ -136,7 +136,7 @@ export const Pricing = () => {
                                         <span className="text-lg sm:text-xl font-medium text-white/50 ml-1">{plan.period}</span>
                                     )}
                                 </div>
-                                <p className="text-sm sm:text-base text-white/60 leading-relaxed">
+                                <p className="text-base sm:text-lg text-white/60 leading-relaxed">
                                     {plan.description}
                                 </p>
                             </div>
@@ -150,7 +150,7 @@ export const Pricing = () => {
                                         }`}>
                                             <Check size={14} className={plan.popular ? "text-primary" : "text-white"} />
                                         </div>
-                                        <span className="text-sm sm:text-base text-white/80 leading-relaxed">{feature}</span>
+                                        <span className="text-base sm:text-lg text-white/80 leading-relaxed">{feature}</span>
                                     </li>
                                 ))}
                             </ul>

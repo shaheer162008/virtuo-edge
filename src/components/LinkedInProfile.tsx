@@ -15,6 +15,8 @@ interface LinkedInProfileProps {
     imageUrl?: string;
     /** Show as founder badge */
     isFounder?: boolean;
+    /** Custom founder badge text (e.g., "Founder" or "Co-Founder") */
+    founderBadgeText?: string;
     /** Card size variant */
     size?: "sm" | "md" | "lg";
 }
@@ -42,6 +44,7 @@ export const LinkedInProfile = ({
     headline,
     imageUrl,
     isFounder = false,
+    founderBadgeText = "Co-Founder",
     size = "md",
 }: LinkedInProfileProps) => {
     const sizeClasses = {
@@ -51,7 +54,7 @@ export const LinkedInProfile = ({
             avatar: "w-12 h-12",
             avatarIcon: 24,
             name: "text-base",
-            headline: "text-xs",
+            headline: "text-sm",
         },
         md: {
             // Increased width for md so longer headlines fit on one line
@@ -60,7 +63,7 @@ export const LinkedInProfile = ({
             avatar: "w-16 h-16",
             avatarIcon: 32,
             name: "text-xl",
-            headline: "text-sm",
+            headline: "text-base",
         },
         lg: {
             // Larger max width for large cards
@@ -69,7 +72,7 @@ export const LinkedInProfile = ({
             avatar: "w-20 h-20",
             avatarIcon: 40,
             name: "text-2xl",
-            headline: "text-base",
+            headline: "text-lg",
         },
     };
 
@@ -113,11 +116,15 @@ export const LinkedInProfile = ({
 
                     {/* Info */}
                     <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 flex-wrap">
+                        <div className="flex flex-col gap-2">
                             <h3 className={`${s.name} font-semibold text-white group-hover:text-[#0A66C2] transition-colors truncate`}>
                                 {name}
                             </h3>
-                            {/* Founder badge removed to keep cards clean and uniform */}
+                            {isFounder && (
+                                <span className="px-2 py-1 text-xs font-semibold rounded-full bg-primary/20 text-primary border border-primary/50 w-fit">
+                                    {founderBadgeText}
+                                </span>
+                            )}
                         </div>
                         {displayedHeadline && (
                             <p className={`${s.headline} text-white/60 mt-1 whitespace-nowrap truncate`} title={headline}>

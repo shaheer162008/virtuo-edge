@@ -38,11 +38,11 @@ export default function ContactPage() {
                         className="text-center max-w-4xl mx-auto"
                     >
                         <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                            <span className="text-white">Let's Build </span>
-                            <span className="text-gradient">Together</span>
+                            <span className="text-white">Let's Talk About Your </span>
+                            <span className="text-gradient">Project</span>
                         </h1>
                         <p className="text-lg md:text-xl text-white/70">
-                            Ready to transform your business? Get in touch and let's create something amazing.
+                            Nexiler is ready to help. Whether you need a website, automation system, or brand strategy, reach out and we'll figure out what's next.
                         </p>
                     </motion.div>
                 </div>
@@ -59,9 +59,9 @@ export default function ContactPage() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
                         >
-                            <h2 className="text-3xl font-bold text-white mb-6">Get in Touch</h2>
+                            <h2 className="text-3xl font-bold text-white mb-6">Reach Nexiler</h2>
                             <p className="text-white/70 mb-8 leading-relaxed">
-                                Have a project in mind? Whether you need AI automation, custom development, or consulting services, we're here to help. Reach out and let's start a conversation.
+                                Have a project in mind? Whether you need AI automation, custom website development, or consulting, Nexiler is ready to help. Get in touch and let's start.
                             </p>
 
                             <div className="space-y-6">

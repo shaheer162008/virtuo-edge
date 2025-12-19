@@ -261,7 +261,7 @@ export default function ConsultationForm() {
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
           Book Your Free Consultation
         </h2>
-        <p className="text-white/60 text-sm">
+        <p className="text-white/60 text-base">
           Tell us about your project and we&apos;ll get back to you within 24 hours
         </p>
       </div>
@@ -269,7 +269,7 @@ export default function ConsultationForm() {
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Name */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+          <label htmlFor="name" className="block text-base font-medium text-white mb-2">
             Full Name <span className="text-primary">*</span>
           </label>
           <input
@@ -286,7 +286,7 @@ export default function ConsultationForm() {
 
         {/* Email */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+          <label htmlFor="email" className="block text-base font-medium text-white mb-2">
             Email Address <span className="text-primary">*</span>
           </label>
           <input
@@ -303,7 +303,7 @@ export default function ConsultationForm() {
 
         {/* WhatsApp */}
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-white mb-2">
+          <label htmlFor="phone" className="block text-base font-medium text-white mb-2">
             WhatsApp Number <span className="text-primary">*</span>
           </label>
           <input
@@ -316,7 +316,7 @@ export default function ConsultationForm() {
             className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/40 focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all duration-300 hover:border-white/20"
             placeholder="+1 (555) 123-4567"
           />
-          <p className="text-xs text-white/50 mt-1.5">Please include country code (e.g., +1 for USA, +44 for UK)</p>
+          <p className="text-sm text-white/50 mt-1.5">Please include country code (e.g., +1 for USA, +44 for UK)</p>
         </div>
 
         {/* Service Interested In */}
@@ -394,7 +394,7 @@ export default function ConsultationForm() {
 
         {/* Message */}
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+          <label htmlFor="message" className="block text-base font-medium text-white mb-2">
             Tell Us About Your Project <span className="text-primary">*</span>
           </label>
           <textarea
@@ -414,7 +414,7 @@ export default function ConsultationForm() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-red-400 text-sm"
+            className="bg-red-500/10 border border-red-500/30 rounded-xl p-4 text-red-400 text-base"
           >
             ⚠️ {errorMessage}
           </motion.div>
@@ -429,11 +429,11 @@ export default function ConsultationForm() {
                 <Globe className="w-5 h-5 text-primary" />
               </div>
               <div className="min-w-0">
-                <p className="text-xs text-white/50 mb-0.5">Your Timezone</p>
+                <p className="text-sm text-white/50 mb-0.5">Your Timezone</p>
                 {formData.timezone ? (
-                  <p className="text-white font-semibold text-sm sm:text-base max-w-[180px] truncate">{formData.timezone}</p>
+                  <p className="text-white font-semibold text-base sm:text-lg max-w-[180px] truncate">{formData.timezone}</p>
                 ) : (
-                  <p className="text-white/50 text-sm">Detecting...</p>
+                  <p className="text-white/50 text-base">Detecting...</p>
                 )}
               </div>
             </div>

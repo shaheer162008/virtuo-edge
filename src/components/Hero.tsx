@@ -26,7 +26,7 @@ export const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 bg-primary/10 text-xs sm:text-sm text-primary backdrop-blur-sm font-medium mb-6"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/40 bg-primary/10 text-sm sm:text-base text-primary backdrop-blur-sm font-medium mb-6"
                     >
                         <Sparkles size={16} className="text-primary" />
                         <span>Next Gen AI Automation • Trusted by 230+ Companies</span>
@@ -71,7 +71,7 @@ export const Hero = () => {
                         </Link>
                         <Link href="/our-work">
                             <Button size="lg" variant="outline" className="w-full sm:w-auto min-w-[200px]">
-                                See Success Stories
+                                View Our Work
                             </Button>
                         </Link>
                     </motion.div>
@@ -99,7 +99,7 @@ export const Hero = () => {
                                 <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-1">
                                     {stat.value}
                                 </div>
-                                <div className="text-xs sm:text-sm text-white/60">
+                                <div className="text-sm sm:text-base text-white/60">
                                     {stat.label}
                                 </div>
                             </motion.div>

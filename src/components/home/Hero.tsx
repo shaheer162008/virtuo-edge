@@ -46,8 +46,8 @@ export const Hero = () => {
                                 transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
                                 className="text-4xl md:text-6xl font-bold mb-4 sm:mb-5 md:mb-6 leading-[1.05]"
                             >
-                                <span className="text-white">Make your business work </span>
-                                <span className="text-gradient whitespace-nowrap">smarter with AI</span>
+                                <span className="text-white">Make Your Business Work </span>
+                                <span className="text-gradient whitespace-nowrap">Smarter with Nexiler</span>
                             </motion.h1>
 
                             {/* Subheadline */}
@@ -57,7 +57,7 @@ export const Hero = () => {
                                 transition={{ duration: 0.8, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
                                 className="text-base sm:text-lg md:text-xl text-white/70 mb-4 sm:mb-6 md:mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0"
                             >
-                                We build websites, automate workflows, and help brands grow organically. Our specialty is AI-driven automation that creates repeatable, sustainable growth.
+                                We build websites, automate workflows, and help brands grow organically through AI driven systems designed for real results.
                             </motion.p>
 
                             {/* CTA Buttons */}
@@ -71,14 +71,14 @@ export const Hero = () => {
                                     href="/consultation"
                                     className="group w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-semibold text-sm sm:text-base hover:bg-white/20 hover:border-white/50 transition-all duration-500 inline-flex items-center justify-center gap-2"
                                 >
-                                    Book a free consult
+                                    Get Free Consultation
                                     <ArrowRight size={16} className="sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-500" />
                                 </Link>
                                 <Link
                                     href="/our-work"
                                     className="w-full sm:w-auto px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-semibold text-sm sm:text-base hover:bg-white/20 hover:border-white/50 transition-all duration-500 inline-flex items-center justify-center"
                                 >
-                                    See Success Stories
+                                    View Our Work
                                 </Link>
                             </motion.div>
 
@@ -99,12 +99,12 @@ export const Hero = () => {
                                         key={index}
                                         whileHover={{ scale: 1.05, y: -5 }}
                                         transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                                        className="flex flex-col items-center lg:items-start"
+                                        className="flex flex-col items-center"
                                     >
-                                        <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gradient whitespace-nowrap mb-1">
+                                        <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gradient whitespace-nowrap mb-2">
                                             {stat.value}
                                         </div>
-                                        <div className="text-xs sm:text-sm text-white/70 whitespace-nowrap">
+                                        <div className="text-sm sm:text-base text-white/70 whitespace-nowrap">
                                             {stat.label}
                                         </div>
                                     </motion.div>
