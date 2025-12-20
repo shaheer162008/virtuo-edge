@@ -37,6 +37,7 @@ export const teamMembers: TeamMember[] = [
         linkedinUrl: "https://www.linkedin.com/in/rabbiya-sohail",
         isFounder: true,
         founderBadgeText: "Co-Founder",
+        imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQFsz1MKEsD3Ig/profile-displayphoto-crop_800_800/B4EZs320JQK0AI-/0/1766168675671?e=1767830400&v=beta&t=lStaPggUg1_B3g9gyFQu7y__RYGzS-pmj8NeY1cWWWk",
     },
     {
         id: "saim-khalid",

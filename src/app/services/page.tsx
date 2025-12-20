@@ -4,7 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Newsletter } from "@/components/Newsletter";
 import { CTA } from "@/components/home/CTA";
-import { Bot, Code, Box, Video, Palette, Search, Share2, Wrench, Globe, Zap, Settings, Film, Plug, Layers } from "lucide-react";
+import { Bot, Code, Box, Video, Palette, Search, Share2, Wrench, Globe, Zap, Settings, Film, Plug, Layers, ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { servicesContent } from "@/lib/siteContent";
 
@@ -46,90 +46,116 @@ export default function ServicesPage() {
         <main className="min-h-screen">
             <Navbar />
 
-            {/* Hero Section - Clean & Simple */}
+            {/* Premium Hero Section */}
             <section className="py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden">
+                <div className="absolute inset-0 -z-10">
+                    <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+                    <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-cyan-500/3 rounded-full blur-3xl" />
+                </div>
+
                 <div className="container mx-auto px-4 sm:px-6 relative z-10">
-                    <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-14">
+                    {/* Header Badge */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="flex justify-center mb-6 sm:mb-8"
+                    >
+                        <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 rounded-full border border-primary/40 bg-primary/5 backdrop-blur-sm">
+                            <Sparkles size={16} className="text-primary" />
+                            <span className="text-xs sm:text-sm text-white/80 font-medium">15+ Premium Services</span>
+                        </div>
+                    </motion.div>
+
+                    {/* Main Heading */}
+                    <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 md:mb-16">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
                         >
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6">
-                                <span className="text-white">Our </span>
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-[1.1]">
+                                <span className="text-white">Our Premium </span>
                                 <span className="text-gradient">Services</span>
                             </h1>
-                            <p className="text-lg text-white/60">
-                                {servicesContent.hero.subtitle}
+                            <p className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed">
+                                Comprehensive solutions engineered for excellence and designed to drive measurable business growth.
                             </p>
-                            <div className="mt-6 flex items-center justify-center gap-6 text-sm text-white/50">
+                            <div className="mt-6 sm:mt-8 flex items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-white/60">
                                 <span className="flex items-center gap-2">
-                                    <span className="size-2 bg-primary rounded-full animate-pulse" />
-                                    98% Client Satisfaction
+                                    <span className="w-2 h-2 bg-primary rounded-full" />
+                                    98% Satisfaction Rate
                                 </span>
-                                <span className="flex items-center gap-2">
-                                    <span className="size-2 bg-primary rounded-full animate-pulse" />
-                                    50+ Projects Delivered
+                                <span className="hidden sm:flex items-center gap-2">
+                                    <span className="w-2 h-2 bg-primary rounded-full" />
+                                    50+ Projects Success
                                 </span>
                             </div>
                         </motion.div>
                     </div>
 
-                    {/* Services Grid - Same style as homepage */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-7">
+                    {/* Premium Services Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8">
                         {servicesContent.services.map((service, index) => {
                             const Icon = serviceIcons[service.slug] || Code;
                             const gradient = gradients[index % gradients.length];
-                            const totalServices = servicesContent.services.length;
-                            const isLastItem = index === totalServices - 1;
-                            const isAloneInRow = totalServices % 3 === 1 && isLastItem;
                             
                             return (
                                 <Link 
                                     key={service.slug} 
                                     href={`/services/${service.slug}`}
-                                    className={isAloneInRow ? "lg:col-start-2" : ""}
                                 >
                                     <motion.div
                                         initial={{ opacity: 0, y: 20 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.5, delay: index * 0.05 }}
-                                        whileHover={{ y: -8, scale: 1.02 }}
-                                        className="group relative p-5 sm:p-6 md:p-7 rounded-2xl glass border border-white/10 hover:border-primary/50 transition-all duration-500 cursor-pointer h-full"
+                                        whileHover={{ y: -12, scale: 1.03 }}
+                                        className="group relative h-full rounded-2xl overflow-hidden cursor-pointer"
                                     >
-                                        {/* Card Spotlight */}
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/[0.08] via-primary/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                        {/* Premium Card Background */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-white/8 to-white/2 border border-white/20 rounded-2xl group-hover:border-primary/50 transition-all duration-500" />
+                                        
+                                        {/* Luxury Accent Line */}
+                                        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                        
+                                        {/* Shine Effect */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-white/[0.1] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
 
-                                        {/* Icon */}
-                                        <div className={`relative inline-flex p-3 rounded-lg bg-gradient-to-br ${gradient} mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-primary/50`}>
-                                            <Icon size={24} className="text-white" />
+                                        {/* Card Content */}
+                                        <div className="relative p-6 sm:p-7 md:p-8 h-full flex flex-col">
+                                            {/* Premium Icon */}
+                                            <motion.div
+                                                whileHover={{ scale: 1.2, rotate: 12 }}
+                                                transition={{ duration: 0.4 }}
+                                                className={`relative inline-flex p-4 sm:p-4.5 rounded-2xl bg-gradient-to-br ${gradient} mb-6 w-fit shadow-xl group-hover:shadow-2xl transition-all duration-300`}
+                                            >
+                                                <Icon size={28} className="text-white" />
+                                            </motion.div>
+
+                                            {/* Title */}
+                                            <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-primary group-hover:bg-clip-text transition-all duration-300 line-clamp-2">
+                                                {service.title}
+                                            </h3>
+                                            
+                                            {/* Description */}
+                                            <p className="text-sm sm:text-base text-white/65 leading-relaxed mb-5 line-clamp-3 group-hover:text-white/80 transition-colors duration-300 flex-grow">
+                                                {service.description}
+                                            </p>
+
+                                            {/* CTA Arrow */}
+                                            <motion.div
+                                                whileHover={{ x: 6 }}
+                                                className="flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all duration-300 mt-auto"
+                                            >
+                                                <span>Explore Service</span>
+                                                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                                            </motion.div>
                                         </div>
 
-                                        {/* Content */}
-                                        <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors duration-300">
-                                            {service.title}
-                                        </h3>
-                                        <p className="text-white/60 text-base sm:text-lg leading-relaxed mb-3">
-                                            {service.description}
-                                        </p>
-
-                                        {/* Pricing */}
-                                        <p className="text-primary text-base sm:text-lg font-medium mb-4">
-                                            {service.pricingRange || service.pricing}
-                                        </p>
-
-                                        {/* Learn More Arrow */}
-                                        <div className="flex items-center gap-2 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <span>Learn More</span>
-                                            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                            </svg>
-                                        </div>
-
-                                        {/* Hover Glow Effect */}
-                                        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10">
-                                            <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl" />
+                                        {/* Glow Effect */}
+                                        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 pointer-events-none">
+                                            <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-2xl" />
                                         </div>
                                     </motion.div>
                                 </Link>

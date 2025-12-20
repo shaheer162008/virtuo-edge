@@ -1,198 +1,174 @@
 "use client";
 import { motion } from "framer-motion";
-import { Bot, Code, Zap, Globe, Video, Palette, Search, Share2, Wrench, Box, Settings, Film } from "lucide-react";
+import { Bot, Zap, Globe, Video, Settings, Film, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-const services = [
+const topServices = [
     {
         icon: Globe,
-        title: "Website Development with Next.js",
-        description: "Modern, fast websites built to convert. We develop professional sites using cutting-edge technologies, optimized for search engines and designed to turn visitors into customers.",
+        title: "Website Development",
+        description: "High-performance, conversion-optimized websites built with cutting-edge technologies.",
         gradient: "from-blue-500 to-cyan-500",
         href: "/services/website-development",
     },
     {
         icon: Bot,
         title: "AI Automation Setup",
-        description: "Intelligent workflows that reduce manual work and lower operational costs. From lead qualification to data processing, your team gets back hours every week to focus on strategy and growth.",
+        description: "Intelligent workflows that reduce operational costs and eliminate manual work.",
         gradient: "from-purple-500 to-pink-500",
         href: "/services/ai-automation-setup",
     },
     {
-        icon: Wrench,
-        title: "Workflow Optimization and Integrations",
-        description: "Your tools don't talk to each other. We connect your systems—CRMs, email platforms, databases—so information flows seamlessly. Less friction, more efficiency.",
+        icon: Settings,
+        title: "Full Brand Creation",
+        description: "Complete brand identity with logo, guidelines, and comprehensive brand strategy.",
         gradient: "from-orange-500 to-red-500",
-        href: "/services/workflow-optimization",
-    },
-    {
-        icon: Palette,
-        title: "Brand and Growth Strategy",
-        description: "A strong brand identity and consistent strategy build lasting customer relationships. We create complete brand systems and growth plans tailored to your business, not generic templates.",
-        gradient: "from-green-500 to-teal-500",
         href: "/services/full-brand-creation",
     },
     {
         icon: Zap,
         title: "AI Chatbot Integration",
-        description: "24/7 automated customer support and lead qualification with smart chatbots.",
+        description: "24/7 automated customer support and intelligent lead qualification systems.",
         gradient: "from-cyan-500 to-blue-500",
         href: "/services/ai-chatbot-integration",
     },
     {
         icon: Video,
         title: "Motion Graphics",
-        description: "High-quality animation for explainer videos, ads, and engaging content.",
+        description: "Professional animations for explainer videos, ads, and engaging visual content.",
         gradient: "from-green-500 to-teal-500",
         href: "/services/motion-graphics",
     },
     {
         icon: Film,
         title: "Video Editing",
-        description: "Professional editing for short-form Reels and long-form YouTube content.",
+        description: "Professional editing for short-form Reels and YouTube long-form content.",
         gradient: "from-pink-500 to-purple-500",
         href: "/services/video-editing-short",
-    },
-    {
-        icon: Search,
-        title: "SEO Optimization",
-        description: "Comprehensive SEO strategy to dominate search rankings and drive traffic.",
-        gradient: "from-teal-500 to-green-500",
-        href: "/services/seo-optimization",
-    },
-    {
-        icon: Share2,
-        title: "Social Media Ads",
-        description: "Expert management of paid campaigns for maximum ROI and growth.",
-        gradient: "from-indigo-500 to-purple-500",
-        href: "/services/social-media-ads",
-    },
-    {
-        icon: Palette,
-        title: "Graphic Design",
-        description: "Professional design for social media, ads, and all marketing materials.",
-        gradient: "from-red-500 to-pink-500",
-        href: "/services/graphic-design",
-    },
-    {
-        icon: Wrench,
-        title: "Website Maintenance",
-        description: "Keep your site secure, fast, and updated with ongoing maintenance.",
-        gradient: "from-yellow-500 to-orange-500",
-        href: "/services/website-maintenance",
-    },
-    {
-        icon: Box,
-        title: "3D Modeling",
-        description: "Photorealistic 3D models and renders for products and architecture.",
-        gradient: "from-blue-500 to-indigo-500",
-        href: "/services/3d-modeling",
-    },
-    {
-        icon: Code,
-        title: "AI Automation Maintenance",
-        description: "Ongoing monitoring and optimization for your AI automation systems.",
-        gradient: "from-green-500 to-cyan-500",
-        href: "/services/ai-automation-maintenance",
     },
 ];
 
 export const Services = () => {
     return (
         <section className="py-16 sm:py-20 md:py-24 lg:py-32 relative overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute inset-0 -z-10">
+                <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+                <div className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-cyan-500/3 rounded-full blur-3xl" />
+            </div>
 
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
-                {/* Header */}
-                <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 md:mb-14">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-                    >
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 md:mb-6">
-                            <span className="text-white">What Nexiler </span>
-                            <span className="text-gradient">Delivers</span>
-                        </h2>
-                        <p className="text-lg text-white/60">
-                            AI automation, web development, workflow optimization, and growth strategies that deliver measurable results. Nexiler combines expert web development with intelligent systems designed for real-world business challenges.
-                        </p>
-                        <p className="text-lg text-white/60">
-                            Comprehensive AI automation, web development, branding, and digital marketing solutions designed to accelerate your business growth.
-                        </p>
-                        <div className="mt-6 flex items-center justify-center gap-6 text-sm text-white/50">
-                            <span className="flex items-center gap-2">
-                                <span className="size-2 bg-primary rounded-full animate-pulse" />
-                                98% Client Satisfaction
-                            </span>
-                            <span className="flex items-center gap-2">
-                                <span className="size-2 bg-primary rounded-full animate-pulse" />
-                                50+ Projects Delivered
-                            </span>
-                        </div>
-                    </motion.div>
-                </div>
+                {/* Premium Header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 md:mb-16"
+                >
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-[1.15]">
+                        <span className="text-white">What Nexiler </span>
+                        <span className="text-gradient">Delivers</span>
+                    </h2>
+                    <p className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed mb-4">
+                        AI automation, web development, branding, and growth strategies engineered for excellence.
+                    </p>
+                    <div className="mt-6 sm:mt-8 flex items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-white/60">
+                        <span className="flex items-center gap-2">
+                            <span className="w-2 h-2 bg-primary rounded-full" />
+                            98% Satisfaction
+                        </span>
+                        <span className="hidden sm:flex items-center gap-2">
+                            <span className="w-2 h-2 bg-primary rounded-full" />
+                            50+ Projects
+                        </span>
+                    </div>
+                </motion.div>
 
-                {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-7">
-                    {services.slice(0, 3).map((service, index) => (
+                {/* Premium Services Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 md:gap-8 mb-12 sm:mb-14">
+                    {topServices.map((service, index) => (
                         <Link key={index} href={service.href}>
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.05 }}
-                                whileHover={{ y: -8, scale: 1.02 }}
-                                className="group relative p-5 sm:p-6 md:p-7 rounded-2xl glass border border-white/10 hover:border-primary/50 transition-all duration-500 cursor-pointer h-full"
+                                transition={{ duration: 0.5, delay: index * 0.06 }}
+                                whileHover={{ y: -12, scale: 1.03 }}
+                                className="group relative h-full rounded-2xl overflow-hidden cursor-pointer"
                             >
-                                {/* Card Spotlight */}
-                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/[0.08] via-primary/[0.05] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                                {/* Icon */}
-                                <div className={`relative inline-flex p-3 rounded-lg bg-gradient-to-br ${service.gradient} mb-4 group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-primary/50`}>
-                                    <service.icon size={24} className="text-white" />
-                                </div>
+                                {/* Premium Card Background */}
+                                <div className="absolute inset-0 bg-linear-to-br from-white/8 to-white/2 border border-white/20 rounded-2xl group-hover:border-primary/50 transition-all duration-500" />
+                                
+                                {/* Top Accent Line */}
+                                <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                
+                                {/* Shine Effect */}
+                                <div className="absolute inset-0 bg-linear-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
 
                                 {/* Content */}
-                                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors duration-300">
-                                    {service.title}
-                                </h3>
-                                <p className="text-white/60 text-base sm:text-lg leading-relaxed">
-                                    {service.description}
-                                </p>
+                                <div className="relative p-6 sm:p-7 md:p-8 h-full flex flex-col">
+                                    {/* Premium Icon */}
+                                    <motion.div
+                                        whileHover={{ scale: 1.2, rotate: 12 }}
+                                        transition={{ duration: 0.4 }}
+                                        className={`relative inline-flex p-4 rounded-2xl bg-linear-to-br ${service.gradient} mb-5 w-fit shadow-xl group-hover:shadow-2xl transition-all duration-300`}
+                                    >
+                                        <service.icon size={28} className="text-white" />
+                                    </motion.div>
 
-                                {/* Learn More Arrow */}
-                                <div className="mt-4 flex items-center gap-2 text-primary text-base sm:text-lg font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <span>Learn More</span>
-                                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                    </svg>
+                                    {/* Title */}
+                                    <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-linear-to-r group-hover:from-white group-hover:to-primary group-hover:bg-clip-text transition-all duration-300 line-clamp-2">
+                                        {service.title}
+                                    </h3>
+                                    
+                                    {/* Description */}
+                                    <p className="text-base sm:text-lg text-white/65 leading-relaxed mb-5 line-clamp-3 group-hover:text-white/80 transition-colors duration-300 grow">
+                                        {service.description}
+                                    </p>
+
+                                    {/* CTA */}
+                                    <motion.div
+                                        whileHover={{ x: 6 }}
+                                        className="flex items-center gap-2 text-primary font-semibold text-base sm:text-lg group-hover:gap-3 transition-all duration-300"
+                                    >
+                                        <span>Explore</span>
+                                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                                    </motion.div>
                                 </div>
 
-                                {/* Hover Glow Effect */}
-                                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10">
-                                    <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-xl" />
+                                {/* Glow Effect */}
+                                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 pointer-events-none">
+                                    <div className="absolute inset-0 bg-primary/10 rounded-2xl blur-2xl" />
                                 </div>
                             </motion.div>
                         </Link>
                     ))}
                 </div>
 
-                {/* View All Services Button */}
+                {/* View All CTA */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="text-center mt-12"
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="text-center"
                 >
                     <Link href="/services">
-                        <button className="px-8 py-4 rounded-lg bg-primary hover:bg-primary-600 text-white font-medium transition-all duration-300 shadow-lg hover:shadow-primary/50 hover:scale-105">
-                            View All Services
-                        </button>
+                        <motion.button
+                            whileHover={{ scale: 1.06, boxShadow: "0 25px 50px rgba(51, 187, 207, 0.25)" }}
+                            whileTap={{ scale: 0.98 }}
+                            className="inline-flex items-center gap-2 px-7 sm:px-9 py-3.5 sm:py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-semibold text-base sm:text-lg transition-all duration-300 shadow-lg"
+                        >
+                            <span>Explore All Services</span>
+                            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                        </motion.button>
                     </Link>
+                    <p className="text-white/50 text-xs sm:text-sm mt-4 sm:mt-5">
+                        We offer 15+ specialized services tailored to your needs
+                    </p>
                 </motion.div>
             </div>
         </section>
     );
-};
+};;

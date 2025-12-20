@@ -199,15 +199,15 @@ export const homeContent = {
 // Services content
 export const servicesContent = {
     hero: {
-        title: "Our Services",
-        subtitle: "End-to-end digital solutions by Nexiler: from AI automation and custom web development to branding, video production, and everything in between. Transform your business with our expert team.",
+        title: "Premium Digital Solutions",
+        subtitle: "NEXILER delivers fast, conversion-focused services: AI automation, web development, branding, and video production. From startups to enterprises—get results in days, not months.",
     },
     services: [
         {
             title: "Website Development",
             slug: "website-development",
-            description: "High-performance websites built with Next.js, React, and modern technologies that convert visitors into customers.",
-            longDescription: "Nexiler creates stunning, fast-loading websites that rank higher on Google and convert visitors into loyal customers. From sleek business sites to powerful e-commerce platforms, we build responsive, SEO-optimized websites using cutting-edge technologies like Next.js and React.",
+            description: "Websites that turn visitors into customers. We build fast, mobile-optimized sites that rank on Google and generate leads 24/7. Your site never sleeps—let it work for you.",
+            longDescription: "Your website is your best sales rep. We build beautiful, lightning-fast sites that rank on Google, load instantly on mobile, and convert every visitor into a lead. No fluff—just results.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$1000 - $3500+",
             pricingDetails: "Basic: $1000 (Simple 4-5 page site). Custom: $1800 - $3500+ (Complex UI/UX, E-commerce, Portals).",
@@ -231,8 +231,8 @@ export const servicesContent = {
         {
             title: "AI Automation Setup",
             slug: "ai-automation-setup",
-            description: "Intelligent workflow automation that saves 70% of your team's time on repetitive tasks.",
-            longDescription: "Stop wasting hours on manual work. Nexiler's AI automation solutions transform repetitive tasks into intelligent workflows that run 24/7. We help businesses reduce costs, eliminate errors, and scale operations without hiring more staff.",
+            description: "Cut manual work by 70% with AI-powered automation. Your team gets back 20+ hours weekly. Scale without hiring. Costs drop. Errors disappear. Let us build it in days, not months.",
+            longDescription: "Imagine your team working 24/7 without hiring a single person. That's what AI automation does. We set up intelligent workflows that handle your repetitive tasks, freeing your team to focus on what actually makes money.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$1000 - $2500",
             pricingDetails: "Basic: $1000 (Simple 1-2 workflow setup). Advanced: $1500 - $2500 (Complex lead funnels, reporting automation).",
@@ -256,8 +256,8 @@ export const servicesContent = {
         {
             title: "AI Chatbot Integration",
             slug: "ai-chatbot-integration",
-            description: "Smart AI chatbots that handle customer support and qualify leads 24/7: never miss an inquiry.",
-            longDescription: "Let AI handle your customer conversations. Nexiler deploys intelligent chatbots that understand context, qualify leads automatically, and provide instant support across WhatsApp, your website, and social media: all while your team focuses on closing deals.",
+            description: "Never lose a lead again. Our AI chatbots answer instantly, qualify prospects, and capture contact details 24/7. Your team only talks to hot leads. Conversations to customers in days.",
+            longDescription: "Stop missing sales while you sleep. Our AI chatbots handle every customer inquiry instantly—on your website, WhatsApp, and Facebook. Qualify leads automatically. Let your team close deals, not answer FAQs.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$1000 - $1800",
             pricingDetails: "Basic: $1000 (Simple FAQ integration). Advanced: $1200 - $1800 (Trained, multi-flow lead qualification).",
@@ -281,8 +281,8 @@ export const servicesContent = {
         {
             title: "Full Brand Creation",
             slug: "full-brand-creation",
-            description: "Complete brand identity: logo, colors, voice, and guidelines: that makes your business unforgettable.",
-            longDescription: "Build a brand that stands out and sticks. Nexiler creates complete brand identities from scratch: logo design, visual guidelines, brand voice, and messaging strategy. Everything you need to make a powerful first impression and build lasting recognition.",
+            description: "Stand out in 3 seconds. Complete brand identity—logo, colors, voice, rules. Look expensive. Feel premium. Customers remember you. No confusion. Just clarity and confidence.",
+            longDescription: "Your brand is your first impression. We create complete brand identities that make customers trust you instantly—logo, colors, voice, everything. Done once, used forever.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$2500 - $4500",
             pricingDetails: "Logo Design, Brand Identity Guidelines, Tone of Voice, Visual Assets, and Primary Messaging Strategy.",
@@ -306,8 +306,8 @@ export const servicesContent = {
         {
             title: "Motion Graphics",
             slug: "motion-graphics",
-            description: "Eye-catching animations for ads, explainer videos, and social media that boost engagement.",
-            longDescription: "Capture attention with stunning motion graphics by Nexiler. From explainer videos to social media animations and product demos, we create visual content that stops the scroll and communicates your message in seconds.",
+            description: "Stop the scroll. Stunning animations that explain your idea in 3 seconds. Ads that convert. Videos that get shared. Professional quality that looks expensive.",
+            longDescription: "Video that makes people stop scrolling. Our motion graphics turn boring concepts into viral content. Explainer videos that convert. Ads that deliver ROI. Made for modern audiences.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$400 - $1200 per asset",
             pricingDetails: "High-quality animation for explanatory videos, ads, or website elements.",
@@ -331,8 +331,8 @@ export const servicesContent = {
         {
             title: "Video Editing (Short Content/Reels)",
             slug: "video-editing-short",
-            description: "Scroll-stopping Reels, TikToks, and Shorts edited for maximum engagement and virality.",
-            longDescription: "Dominate short-form content with Nexiler's professional video editing. We transform raw footage into viral-ready Reels, TikToks, and Shorts with trending effects, perfect timing, and hooks that stop the scroll.",
+            description: "Raw footage to viral-ready Reels. Trending effects. Perfect timing. Hooks that stop scrolls. 20 high-quality videos monthly. Your audience grows. Your schedule stays free.",
+            longDescription: "Turn raw footage into scroll-stopping Reels. We handle the editing. You handle the growth. Trending effects, perfect hooks, on-brand everything. Posted consistently, every month.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$800 - $1500/month",
             pricingDetails: "Editing 10-20 high-quality Reels/Shorts per month (up to 60 seconds each).",
@@ -356,8 +356,8 @@ export const servicesContent = {
         {
             title: "Video Editing (Long Content)",
             slug: "video-editing-long",
-            description: "YouTube-ready editing for podcasts, tutorials, and long-form content that keeps viewers watching.",
-            longDescription: "Create binge-worthy long-form content with Nexiler's expert video editing. From YouTube videos to podcasts and courses, we handle everything: cutting, color grading, graphics, and audio: so you can focus on creating.",
+            description: "YouTube quality without the headache. We edit 4-8 long videos monthly. Color grading. Graphics. Sound design. Professional in every frame. You create. We polish it.",
+            longDescription: "Upload raw footage. We deliver YouTube-ready videos. Color grading, graphics, sound design, everything. You stay focused on content. We handle the production.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$1200 - $2500/month",
             pricingDetails: "Editing 4-8 long-form videos (5-15 minutes) per month (e.g., YouTube/Podcast).",
@@ -381,8 +381,8 @@ export const servicesContent = {
         {
             title: "Monthly AI Automation Maintenance",
             slug: "ai-automation-maintenance",
-            description: "Keep your AI systems running at peak performance with 24/7 monitoring and optimization.",
-            longDescription: "Your automation deserves expert care. Nexiler provides ongoing monitoring, optimization, and support to ensure your AI systems deliver maximum ROI with zero downtime. Priority support included.",
+            description: "Your automation never sleeps. Neither do we. 24/7 monitoring. Performance tweaks monthly. Zero downtime. Problems fixed before you notice. Consistent ROI guaranteed.",
+            longDescription: "Set it and forget it—except we don't forget. We monitor, optimize, and maintain your automation systems. Issues solved before they impact your business.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$400 - $700/month",
             pricingDetails: "Monitoring, advanced troubleshooting, and optimization of AI systems.",
@@ -406,8 +406,8 @@ export const servicesContent = {
         {
             title: "SEO Optimization & Strategy",
             slug: "seo-optimization",
-            description: "Rank higher on Google and drive organic traffic that converts into paying customers.",
-            longDescription: "Get found by the customers who are already searching for you. Nexiler's data-driven SEO strategies boost your rankings, increase organic traffic by 200-300%, and turn search visibility into consistent revenue.",
+            description: "Get found on Google by customers ready to buy. Organic traffic that converts. Rankings that stick. 200-300% traffic increase. No ads needed. Just results.",
+            longDescription: "Stop buying expensive ads. Get found naturally by customers searching for exactly what you offer. Our SEO delivers organic growth that compounds every month.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$700 - $1500/month",
             pricingDetails: "Comprehensive SEO: Technical, On-page, Off-page, and Content Strategy.",
@@ -431,8 +431,8 @@ export const servicesContent = {
         {
             title: "Social Media Ads Management",
             slug: "social-media-ads",
-            description: "Paid ad campaigns on Facebook, Instagram, and TikTok that deliver real ROI.",
-            longDescription: "Stop wasting ad budget on guesswork. Nexiler manages your entire paid social strategy: creative, targeting, optimization, and scaling: across Facebook, Instagram, LinkedIn, and TikTok for maximum ROAS.",
+            description: "Ads that convert, not just get clicks. We manage everything—targeting, creative, testing. Lower cost per customer. Consistent ROI. Your budget works harder.",
+            longDescription: "Every dollar of ad spend should return $3-5. We make sure it does. Full management across Facebook, Instagram, and TikTok. Only paying for results.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$800 - $1500/month",
             pricingDetails: "Full management of paid social campaigns (excluding ad spend).",
@@ -456,8 +456,8 @@ export const servicesContent = {
         {
             title: "Graphic Design",
             slug: "graphic-design",
-            description: "Stunning visuals for social media, ads, and marketing that capture attention and convert.",
-            longDescription: "Look professional everywhere you show up. Nexiler creates scroll-stopping graphics for social media, ads, websites, and print: all on-brand, high-quality, and designed to drive action.",
+            description: "Look expensive everywhere. On-brand visuals for social, ads, websites. Posts that stop scrolls. Designs that get results. Consistency that builds recognition.",
+            longDescription: "Your brand across every platform. Professional designs that make you look premium. Consistent, high-quality, ready-to-post.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$600 - $1000/month",
             pricingDetails: "Dedicated design work for social media, ads, and website visuals.",
@@ -481,8 +481,8 @@ export const servicesContent = {
         {
             title: "Monthly Website Maintenance",
             slug: "website-maintenance",
-            description: "Keep your website secure, fast, and always online with expert monthly care.",
-            longDescription: "Your website is your 24/7 salesperson: keep it in top shape. Nexiler handles updates, security, backups, and performance optimization so your site stays fast, secure, and always available.",
+            description: "Website always on. Always fast. Always secure. We handle updates, backups, monitoring. You get peace of mind and a healthy site that sells.",
+            longDescription: "Your website is too important to neglect. We keep it secure, fast, and always online. Updates, backups, monitoring—handled.",
             pricing: "Book consultation to get a quote",
             pricingRange: "$350 - $600/month",
             pricingDetails: "Regular updates, backups, and security checks (not including hosting cost).",
@@ -506,8 +506,8 @@ export const servicesContent = {
         {
             title: "3D Modeling & Visualization",
             slug: "3d-modeling",
-            description: "Photorealistic 3D renders for products, architecture, and marketing that wow clients.",
-            longDescription: "See it before you build it. Nexiler creates stunning 3D models and photorealistic renders for products, architecture, and marketing: perfect for presentations, e-commerce, and immersive AR/VR experiences.",
+            description: "See it before you build it. Photorealistic 3D renders that impress clients and sell products. Show, don't tell. Professional quality that closes deals.",
+            longDescription: "Product looks stunning before manufacturing. Visualize architecture before breaking ground. 3D renders that wow and sell.",
             pricing: "$300 - $1500",
             pricingRange: "$300 - $1500",
             pricingDetails: "Simple product models: $300-$500, Complex product renders: $500-$800, Architectural visualization: $800-$1200, Character/Asset design: $600-$1000, AR/VR content: $1000-$1500. Final price depends on complexity and revisions needed.",
@@ -531,8 +531,8 @@ export const servicesContent = {
         {
             title: "API Integration & Development",
             slug: "api-integration",
-            description: "Connect your apps and automate data flow with custom API solutions that scale.",
-            longDescription: "Make your systems talk to each other. Nexiler builds custom APIs and integrations that connect your CRM, payment gateways, and third-party services: automating data flow and eliminating manual work.",
+            description: "Your apps talk to each other automatically. Data flows seamlessly. Manual work disappears. Systems sync in real-time. Built to scale with your growth.",
+            longDescription: "Connect everything. APIs that make your entire tech stack work as one. Automate data flow. Eliminate manual entries. Scale without friction.",
             pricing: "$800 - $2500",
             pricingRange: "$800 - $2500",
             pricingDetails: "Simple API integration: $800-$1200, Custom API development: $1500-$2000, Complex multi-system integration: $2000-$2500. Pricing varies based on complexity and number of endpoints.",
@@ -556,8 +556,8 @@ export const servicesContent = {
         {
             title: "Custom Software Solutions",
             slug: "custom-software",
-            description: "Bespoke web apps, dashboards, and tools built exactly for your business needs.",
-            longDescription: "Off-the-shelf software doesn't fit your business: custom software does. Nexiler develops tailored web applications, admin dashboards, and internal tools that streamline your unique workflows and scale with you.",
+            description: "Software built exactly for you. Not generic. Not off-the-shelf. Tailored dashboards. Custom tools. Built to solve your exact problems. Scales with your growth.",
+            longDescription: "One-size-fits-all software doesn't cut it. We build tools for your unique business. Dashboards that show what matters. Automation that saves time. Software that grows with you.",
             pricing: "$2000 - $5000+",
             pricingRange: "$2000 - $5000+",
             pricingDetails: "Internal tools & dashboards: $2000-$3000, Custom web applications: $3000-$4000, Enterprise solutions: $4000-$5000+. Complex projects quoted based on scope and requirements.",

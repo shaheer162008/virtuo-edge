@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Newsletter } from "@/components/Newsletter";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, MessageCircle, Twitter, Instagram, Linkedin, Github, Youtube, Facebook } from "lucide-react";
 
 // Metadata is set in layout.tsx for client components
 
@@ -71,7 +71,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <div className="font-semibold text-white mb-1">Email</div>
-                                        <a href="mailto:contact@nexiler.tech" className="text-white/70 hover:text-primary transition-colors">
+                                        <a href="mailto:contact@nexiler.tech" className="text-white/70 hover:text-primary transition-colors text-base sm:text-lg">
                                             contact@nexiler.tech
                                         </a>
                                     </div>
@@ -79,11 +79,11 @@ export default function ContactPage() {
 
                                 <div className="flex items-start gap-4">
                                     <div className="p-3 rounded-lg bg-primary/10">
-                                        <Phone size={24} className="text-primary" />
+                                        <MessageCircle size={24} className="text-primary" />
                                     </div>
                                     <div>
                                         <div className="font-semibold text-white mb-1">WhatsApp</div>
-                                        <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-primary transition-colors">
+                                        <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-primary transition-colors text-base sm:text-lg">
                                             Chat with us on WhatsApp
                                         </a>
                                     </div>
@@ -95,10 +95,37 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <div className="font-semibold text-white mb-1">Location</div>
-                                        <p className="text-white/70">
+                                        <p className="text-white/70 text-base sm:text-lg">
                                             Remote Team<br />
                                             Serving clients worldwide
                                         </p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div className="font-semibold text-white mb-4">Connect With Us</div>
+                                    <div className="flex gap-4 flex-wrap">
+                                        <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="WhatsApp">
+                                            <MessageCircle size={22} />
+                                        </a>
+                                        <a href="https://www.facebook.com/nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Facebook">
+                                            <Facebook size={22} />
+                                        </a>
+                                        <a href="https://www.linkedin.com/company/nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="LinkedIn">
+                                            <Linkedin size={22} />
+                                        </a>
+                                        <a href="https://x.com/NexilerOfficial" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Twitter">
+                                            <Twitter size={22} />
+                                        </a>
+                                        <a href="https://www.instagram.com/nexiler.official" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Instagram">
+                                            <Instagram size={22} />
+                                        </a>
+                                        <a href="https://github.com/nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="GitHub">
+                                            <Github size={22} />
+                                        </a>
+                                        <a href="https://www.youtube.com/@nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="YouTube">
+                                            <Youtube size={22} />
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +140,7 @@ export default function ContactPage() {
                         >
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
-                                    <label htmlFor="name" className="block text-white font-medium mb-2">
+                                    <label htmlFor="name" className="block text-white font-medium mb-2 text-base sm:text-lg">
                                         Your Name *
                                     </label>
                                     <input
@@ -122,13 +149,13 @@ export default function ContactPage() {
                                         required
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                        className="w-full px-4 py-3 rounded-lg glass border border-white/10 focus:border-primary/50 bg-transparent text-white placeholder-white/40 focus:outline-none transition-colors"
+                                        className="w-full px-4 py-3 rounded-lg glass border border-white/10 focus:border-primary/50 bg-transparent text-white placeholder-white/40 focus:outline-none transition-colors text-base"
                                         placeholder="John Doe"
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="email" className="block text-white font-medium mb-2">
+                                    <label htmlFor="email" className="block text-white font-medium mb-2 text-base sm:text-lg">
                                         Email Address *
                                     </label>
                                     <input
@@ -137,13 +164,13 @@ export default function ContactPage() {
                                         required
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        className="w-full px-4 py-3 rounded-lg glass border border-white/10 focus:border-primary/50 bg-transparent text-white placeholder-white/40 focus:outline-none transition-colors"
+                                        className="w-full px-4 py-3 rounded-lg glass border border-white/10 focus:border-primary/50 bg-transparent text-white placeholder-white/40 focus:outline-none transition-colors text-base"
                                         placeholder="john@example.com"
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="company" className="block text-white font-medium mb-2">
+                                    <label htmlFor="company" className="block text-white font-medium mb-2 text-base sm:text-lg">
                                         Company
                                     </label>
                                     <input
@@ -151,13 +178,13 @@ export default function ContactPage() {
                                         id="company"
                                         value={formData.company}
                                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                                        className="w-full px-4 py-3 rounded-lg glass border border-white/10 focus:border-primary/50 bg-transparent text-white placeholder-white/40 focus:outline-none transition-colors"
+                                        className="w-full px-4 py-3 rounded-lg glass border border-white/10 focus:border-primary/50 bg-transparent text-white placeholder-white/40 focus:outline-none transition-colors text-base"
                                         placeholder="Your Company"
                                     />
                                 </div>
 
                                 <div>
-                                    <label htmlFor="message" className="block text-white font-medium mb-2">
+                                    <label htmlFor="message" className="block text-white font-medium mb-2 text-base sm:text-lg">
                                         Message *
                                     </label>
                                     <textarea
@@ -166,14 +193,14 @@ export default function ContactPage() {
                                         rows={5}
                                         value={formData.message}
                                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                        className="w-full px-4 py-3 rounded-lg glass border border-white/10 focus:border-primary/50 bg-transparent text-white placeholder-white/40 focus:outline-none transition-colors resize-none"
+                                        className="w-full px-4 py-3 rounded-lg glass border border-white/10 focus:border-primary/50 bg-transparent text-white placeholder-white/40 focus:outline-none transition-colors resize-none text-base"
                                         placeholder="Tell us about your project..."
                                     />
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className="w-full px-8 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300 inline-flex items-center justify-center gap-2"
+                                    className="w-full px-8 py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300 inline-flex items-center justify-center gap-2 text-base sm:text-lg"
                                 >
                                     Send Message
                                     <Send size={20} />

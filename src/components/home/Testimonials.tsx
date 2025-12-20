@@ -70,7 +70,7 @@ export const Testimonials = () => {
                                 </div>
 
                                 {/* Quote */}
-                                <p className="text-white/80 mb-6 leading-relaxed">
+                                <p className="text-base sm:text-lg text-white/80 mb-6 leading-relaxed">
                                     "{testimonial.quote}"
                                 </p>
 
@@ -80,10 +80,10 @@ export const Testimonials = () => {
                                         {testimonial.author.charAt(0)}
                                     </div>
                                     <div>
-                                        <div className="font-semibold text-white">
+                                        <div className="font-semibold text-white text-base">
                                             {testimonial.author}
                                         </div>
-                                        <div className="text-sm text-white/60">
+                                        <div className="text-sm sm:text-base text-white/60">
                                             {testimonial.role}
                                         </div>
                                     </div>

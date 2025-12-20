@@ -199,7 +199,7 @@ export default function PackagesPage() {
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
                             Project-Based Packages
                         </h2>
-                        <p className="text-white/60 max-w-2xl mx-auto">
+                        <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto">
                             Complete solutions for businesses that need specific deliverables. Pay once, own forever.
                         </p>
                     </motion.div>
@@ -293,7 +293,7 @@ export default function PackagesPage() {
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
                             Ongoing Growth Packages
                         </h2>
-                        <p className="text-white/60 max-w-2xl mx-auto">
+                        <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto">
                             Consistent monthly support to keep your business growing. Cancel anytime with 30 days notice.
                         </p>
                     </motion.div>

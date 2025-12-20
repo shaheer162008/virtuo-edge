@@ -158,19 +158,19 @@ export default function BlogPage() {
                       {/* Content */}
                       <div className="p-6">
                         <div className="flex items-center gap-4 text-sm text-primary mb-3">
-                          <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
+                          <span className="px-2 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
                             {post.category}
                           </span>
                           <span className="text-white/40">•</span>
-                          <span className="flex items-center gap-1 text-white/60">
-                            <Clock size={14} />
+                          <span className="flex items-center gap-1 text-white/60 text-base">
+                            <Clock size={16} />
                             {post.time}
                           </span>
                         </div>
-                        <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                        <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2 group-hover:text-primary transition-colors line-clamp-2">
                           {post.title}
                         </h3>
-                        <p className="text-white/60 text-sm mb-4 line-clamp-2">
+                        <p className="text-white/60 text-base sm:text-lg mb-4 line-clamp-2">
                           {post.excerpt}
                         </p>
                         <div className="flex items-center justify-between">
