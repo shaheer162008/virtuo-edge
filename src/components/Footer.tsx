@@ -123,7 +123,7 @@ export const Footer = () => {
                         © {new Date().getFullYear()} Nexiler. All rights reserved.
                     </p>
                     <p className="text-white/40 text-base sm:text-lg">
-                        Crafted with passion by Team Nexiler
+                        Developed by Team Nexiler
                     </p>
                 </div>
             </div>

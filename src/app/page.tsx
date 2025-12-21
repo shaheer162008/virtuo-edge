@@ -10,7 +10,6 @@ import { FeaturedWork } from "@/components/home/FeaturedWork";
 import { Testimonials } from "@/components/home/Testimonials";
 import { CTA } from "@/components/home/CTA";
 import { TrustBadges } from "@/components/TrustBadges";
-import { Pricing } from "@/components/Pricing";
 import { Newsletter } from "@/components/Newsletter";
 import { homeMetadata } from "@/lib/metadata";
 
@@ -19,7 +18,7 @@ export const metadata = homeMetadata
 export default function Home() {
 
   return (
-    <main className="min-h-screen">
+    <main>
       <Navbar />
       <Hero />
       <TrustBadges />
@@ -28,7 +27,6 @@ export default function Home() {
       <Billing />
       <CardDeal />
       <HowItWorks />
-      <Pricing />
       <FeaturedWork />
       <Testimonials />
       <CTA />
