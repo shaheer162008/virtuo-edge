@@ -450,37 +450,6 @@ export function ServiceDetailClient({ service }: { service: ServiceData }) {
                 </div>
             </section>
 
-            {/* Final CTA Section */}
-            <section className="py-20">
-                <div className="container mx-auto px-4">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                        className="max-w-4xl mx-auto text-center rounded-xl border border-white/10 bg-white/5 p-8 sm:p-12 md:p-16 overflow-hidden relative"
-                    >
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
-                            Ready to Get Started?
-                        </h2>
-                        <p className="text-white/70 max-w-3xl mx-auto mb-6 text-base sm:text-lg leading-relaxed">
-                            Let us understand your specific needs and show you exactly how {service.title.toLowerCase()} can drive real growth for your business. We focus on quality partnerships that deliver measurable results.
-                        </p>
-                        <p className="text-white/60 max-w-3xl mx-auto mb-8 text-base sm:text-lg leading-relaxed">
-                            <strong className="text-white">Schedule your free consultation</strong> to discuss your project scope, timeline, budget, and get a precise quote tailored to your unique requirements.
-                        </p>
-
-                        <Link
-                            href="/consultation"
-                            className="inline-flex items-center gap-2 px-8 sm:px-10 py-3 sm:py-4 bg-white/10 text-white border-2 border-white/30 rounded-xl font-semibold transition-all duration-300 hover:bg-white/20 hover:border-white/50 text-base sm:text-lg group"
-                        >
-                            <span>Book Your Free Consultation</span>
-                            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                    </motion.div>
-                </div>
-            </section>
-
             {/* Newsletter & Footer */}
             <Newsletter />
             <Footer />

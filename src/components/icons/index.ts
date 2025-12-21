@@ -1,26 +1,41 @@
-// Icon imports - Once icons are created, import them here
-// Each icon file should be named as specified in the prompt (e.g., globe-code.tsx)
+// ⚠️ NOTE: This file is ready for icon imports once icon files are created
+// 
+// INSTRUCTIONS:
+// 1. Create each icon file (e.g., globe-code.tsx) in this directory
+// 2. Use the ICON_TEMPLATE.tsx as a reference for structure
+// 3. Uncomment the exports below once files are created
+// 4. Then you can use icons throughout your app
 
-export { GlobeCode as 'globe-code' } from './globe-code';
-export { RobotSpark as 'robot-spark' } from './robot-spark';
-export { ChatAiBubble as 'chat-ai-bubble' } from './chat-ai-bubble';
-export { PaletteBrush as 'palette-brush' } from './palette-brush';
-export { AnimationWave as 'animation-wave' } from './animation-wave';
-export { FilmReelShort as 'film-reel-short' } from './film-reel-short';
-export { FilmReelLong as 'film-reel-long' } from './film-reel-long';
-export { WrenchGear as 'wrench-gear' } from './wrench-gear';
-export { ChartUptrend as 'chart-uptrend' } from './chart-uptrend';
-export { TargetAds as 'target-ads' } from './target-ads';
-export { DesignGrid as 'design-grid' } from './design-grid';
-export { ShieldCheck as 'shield-check' } from './shield-check';
-export { Cube3d as 'cube-3d' } from './cube-3d';
-export { PlugConnect as 'plug-connect' } from './plug-connect';
-export { CodeBrackets as 'code-brackets' } from './code-brackets';
-
-// Usage Example:
 /*
-import { 'globe-code' as GlobeCodeIcon } from '@/components/icons';
+// UNCOMMENT THESE ONCE ICON FILES ARE CREATED:
 
-// In your component:
-<GlobeCodeIcon size={32} className="text-cyan-400" />
+export { GlobeCode } from './globe-code';
+export { RobotSpark } from './robot-spark';
+export { ChatAiBubble } from './chat-ai-bubble';
+export { PaletteBrush } from './palette-brush';
+export { AnimationWave } from './animation-wave';
+export { FilmReelShort } from './film-reel-short';
+export { FilmReelLong } from './film-reel-long';
+export { WrenchGear } from './wrench-gear';
+export { ChartUptrend } from './chart-uptrend';
+export { TargetAds } from './target-ads';
+export { DesignGrid } from './design-grid';
+export { ShieldCheck } from './shield-check';
+export { Cube3d } from './cube-3d';
+export { PlugConnect } from './plug-connect';
+export { CodeBrackets } from './code-brackets';
+*/
+
+// USAGE EXAMPLE (once icons are created):
+/*
+import { GlobeCode, RobotSpark, ChatAiBubble } from '@/components/icons';
+
+export function ServiceCard() {
+  return (
+    <div>
+      <GlobeCode size={48} className="text-cyan-400" />
+      <h3>Website Development</h3>
+    </div>
+  );
+}
 */
