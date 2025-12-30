@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { homeMetadata, organizationSchema } from "@/lib/metadata";
+import ChatbotWrapper from "@/components/ChatbotWrapper";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <ChatbotWrapper />
         {children}
       </body>
     </html>
