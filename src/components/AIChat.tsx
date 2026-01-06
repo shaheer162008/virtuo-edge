@@ -193,7 +193,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
         <>
           {/* Backdrop for mobile */}
           <div 
-            className="fixed inset-0 bg-black/50 z-40 sm:hidden"
+            className="fixed inset-0 bg-black/60 z-40 sm:hidden"
             onClick={onClose}
           />
           
@@ -202,44 +202,42 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
             ref={chatContainerRef}
             className="
               fixed z-50 bg-gradient-to-b from-gray-900 via-gray-950 to-black flex flex-col border border-cyan-500/30 shadow-2xl
-              inset-y-0 right-0 
+              bottom-0 right-0 left-0
               sm:inset-y-auto sm:bottom-6 sm:right-6 sm:rounded-2xl
-              w-full sm:w-[340px] h-screen sm:h-[500px]
-              rounded-none sm:rounded-2xl
+              w-full sm:w-[340px] h-[calc(100vh-64px)] sm:h-[500px]
+              rounded-t-3xl sm:rounded-2xl
               overflow-hidden
             "
           >
           {/* Header with gradient background */}
-          <div className="bg-gradient-to-r from-[#33BBCF] via-cyan-500 to-blue-600 text-white px-4 sm:px-6 py-5 sm:py-6 flex justify-between items-start sm:rounded-t-2xl flex-shrink-0">
-            <div className="flex items-start gap-2 sm:gap-3 flex-1">
-              <div className="bg-white/10 backdrop-blur-md rounded-lg sm:rounded-xl p-2 sm:p-2.5 flex-shrink-0">
-                <BotMessageSquare size={24} className="text-white" strokeWidth={1.5} />
+          <div className="bg-gradient-to-r from-[#33BBCF] via-cyan-500 to-blue-600 text-white px-4 py-5 sm:px-6 sm:py-6 flex justify-between items-center flex-shrink-0 rounded-t-3xl sm:rounded-t-2xl">
+            <div className="flex items-center gap-3 flex-1 min-w-0">
+              <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 flex-shrink-0">
+                <BotMessageSquare size={20} className="text-white" strokeWidth={1.5} />
               </div>
               <div className="min-w-0">
-                <div className="flex items-center gap-2">
-                  <h3 className="font-bold text-base sm:text-lg">Nexiler AI</h3>
-                  <Sparkles size={14} className="text-yellow-300 animate-pulse flex-shrink-0" />
-                </div>
-                <p className="text-xs text-white/80 mt-0.5">Always here to help</p>
+                <h3 className="font-bold text-base leading-none">Nexiler AI</h3>
+                <p className="text-xs text-white/80 mt-1">Always here to help</p>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="hover:bg-white/20 p-1.5 sm:p-2 rounded-lg transition-all hover:scale-110 active:scale-95 flex-shrink-0 ml-2"
+              className="hover:bg-white/20 p-2 rounded-lg transition-all hover:scale-110 active:scale-95 flex-shrink-0 ml-2 bg-white/10"
+              aria-label="Close chat"
             >
-              <X size={20} />
+              <X size={20} className="text-white" />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-3 space-y-3 bg-gradient-to-b from-gray-900 via-gray-950 to-black scrollbar-hide" data-messages-container>
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gradient-to-b from-gray-900 via-gray-950 to-black scrollbar-hide" data-messages-container>
             {messages.length === 0 && (
-              <div className="flex flex-col items-center justify-center h-full text-center px-3 sm:px-4 py-4">
-                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-full p-3 sm:p-4 mb-3">
-                  <BotMessageSquare size={40} className="text-cyan-400" strokeWidth={1.5} />
+              <div className="flex flex-col items-center justify-center h-full text-center px-4 py-4">
+                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-full p-4 mb-4">
+                  <BotMessageSquare size={36} className="text-cyan-400" strokeWidth={1.5} />
                 </div>
-                <p className="font-bold text-base sm:text-lg text-white mb-1.5">Welcome to Nexiler AI</p>
-                <p className="text-xs text-gray-400 leading-relaxed mb-4">
+                <p className="font-bold text-base text-white mb-2">Welcome to Nexiler AI</p>
+                <p className="text-xs text-gray-400 leading-relaxed mb-5">
                   Ask me anything about our services, projects, or pricing.
                 </p>
                 <div className="space-y-2 w-full">
@@ -247,7 +245,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
                     <button
                       key={idx}
                       onClick={() => handleQuickQuery(query.text)}
-                      className="w-full text-xs sm:text-sm bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 hover:border-cyan-500/60 text-cyan-300 rounded-lg px-3 py-2.5 transition-all active:scale-95 text-left leading-relaxed"
+                      className="w-full text-sm bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 hover:border-cyan-500/60 text-cyan-300 rounded-lg px-3 py-3 transition-all active:scale-95 text-left leading-relaxed font-medium"
                     >
                       <span className="mr-2">{query.icon}</span>
                       {query.text}
@@ -266,8 +264,8 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
               >
                 <div
                   className={`
-                    px-3 py-2 rounded-lg text-xs sm:text-sm
-                    max-w-[85%] sm:max-w-xs
+                    px-4 py-3 rounded-lg text-sm
+                    max-w-[88%] sm:max-w-xs
                     ${
                       message.role === 'user'
                         ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-br-none shadow-lg shadow-cyan-500/30'
@@ -276,12 +274,12 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
                   `}
                 >
                   {message.role === 'assistant' && (
-                    <div className="flex items-center gap-1.5 mb-1">
-                      <div className="w-1 h-1 bg-cyan-400 rounded-full" />
+                    <div className="flex items-center gap-1.5 mb-1.5">
+                      <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
                       <span className="text-xs font-semibold text-cyan-400">Nexiler AI</span>
                     </div>
                   )}
-                  <p className="whitespace-pre-wrap leading-snug">
+                  <p className="whitespace-pre-wrap leading-relaxed text-sm">
                     {message.content}
                   </p>
                 </div>
@@ -290,12 +288,12 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
 
             {isLoading && (
               <div className="flex justify-start px-1">
-                <div className="bg-gray-800 text-gray-100 px-3 py-2 rounded-lg rounded-bl-none border border-gray-700">
-                  <div className="flex items-center gap-1">
-                    <div className="flex gap-1">
-                      <div className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce" />
-                      <div className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
-                      <div className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }} />
+                <div className="bg-gray-800 text-gray-100 px-4 py-3 rounded-lg rounded-bl-none border border-gray-700">
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" />
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }} />
                     </div>
                   </div>
                 </div>
@@ -306,7 +304,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
           </div>
 
           {/* Input */}
-          <div className="border-t border-gray-700/50 bg-gradient-to-t from-black to-gray-950 p-3 sm:rounded-b-2xl flex-shrink-0">
+          <div className="border-t border-gray-700/50 bg-gradient-to-t from-black to-gray-950 p-4 sm:rounded-b-2xl flex-shrink-0 rounded-b-3xl sm:rounded-b-2xl">
             <form onSubmit={handleSubmit} className="flex gap-2">
               <input
                 ref={inputRef}
@@ -314,18 +312,17 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 placeholder="Ask something..."
-                className="flex-1 bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-lg px-3 py-2.5 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                className="flex-1 bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
-                className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 disabled:from-gray-700 disabled:to-gray-700 disabled:cursor-not-allowed text-white rounded-lg px-3 py-2.5 transition-all active:scale-95 shadow-lg shadow-cyan-500/30 disabled:shadow-none flex items-center justify-center flex-shrink-0"
+                className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 disabled:from-gray-700 disabled:to-gray-700 disabled:cursor-not-allowed text-white rounded-lg px-4 py-2.5 transition-all active:scale-95 shadow-lg shadow-cyan-500/30 disabled:shadow-none flex items-center justify-center flex-shrink-0"
               >
-                <Send size={16} />
+                <Send size={18} />
               </button>
             </form>
-            <p className="text-xs text-gray-500 mt-2 text-center hidden sm:block">Powered by Nexiler AI</p>
           </div>
         </div>
         </>
