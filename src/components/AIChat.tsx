@@ -202,11 +202,13 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
             ref={chatContainerRef}
             className="
               fixed z-50 bg-gradient-to-b from-gray-900 via-gray-950 to-black flex flex-col border border-cyan-500/30 shadow-2xl
-              bottom-0 right-0 left-0
+              bottom-0 right-0 left-0 top-auto
               sm:inset-y-auto sm:bottom-6 sm:right-6 sm:rounded-2xl
-              w-full sm:w-[340px] h-[calc(100vh-64px)] sm:h-[500px]
+              w-full sm:w-[340px] h-screen sm:h-[500px]
               rounded-t-3xl sm:rounded-2xl
               overflow-hidden
+              max-h-[calc(100vh-70px)]
+              sm:max-h-[500px]
             "
           >
           {/* Header with gradient background */}
