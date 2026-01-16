@@ -4,12 +4,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Newsletter } from "@/components/Newsletter";
 import { LinkedInProfile } from "@/components/LinkedInProfile";
-import SpecialThanks from "@/components/SpecialThanks";
-import CoFoundersSection from "@/components/CoFoundersSection";
-import { Target, Users, Zap, Award, Heart, Lightbulb, Globe, ExternalLink } from "lucide-react";
-import { teamMembers, teamExpertise } from "@/lib/team";
-
-// Metadata is set in layout.tsx for client components
+import { Lightbulb, Users, Globe, Award, ExternalLink } from "lucide-react";
+import { teamExpertise } from "@/lib/team";
 
 const values = [
     {
@@ -34,8 +30,30 @@ const values = [
     },
 ];
 
+const leaders = [
+    {
+        name: "Ali Hamza",
+        role: "Founder & CEO",
+        description: "Ali founded Virtuo Edge with a simple belief: digital work must solve business problems, not just look good. With hands-on experience in web development, digital marketing, and client-focused project delivery, he leads strategy and product thinking at Virtuo Edge, turning challenges into clear, actionable digital roadmaps.",
+        linkedinUrl: "https://www.linkedin.com/in/ali-hamza-link/",
+        imageUrl: "https://media.licdn.com/dms/image/v2/D4E03AQF45-VNphS-aw/profile-displayphoto-shrink_800_800/B4EZTRO4f0HMAk-/0/1738677132595?e=1770249600&v=beta&t=E3XFwpEeas5iqRdgJSRmdD8sWs65_SwMoZWeJCPP7Ns",
+        id: "ali-hamza",
+        isFounder: true,
+        founderBadgeText: "Founder & CEO",
+    },
+    {
+        name: "Muhammad Rayan",
+        role: "Director of Operations & Co-Founder",
+        description: "Muhammad Rayan oversees operations, project delivery, and client success. With a strong background in process management and team leadership, he ensures projects run smoothly from kickoff to launch, maintaining quality, timelines, and consistency across all services.",
+        linkedinUrl: "https://www.linkedin.com/in/mahummad-rayan-9ba016261/",
+        imageUrl: "https://media.licdn.com/dms/image/v2/D4E35AQG2HaTd-dwpSg/profile-framedphoto-shrink_800_800/profile-framedphoto-shrink_800_800/0/1734793967145?e=1769198400&v=beta&t=RWBd75b9kO7DR2egwIDPlFcA7ByO5D9XkBhikar3dYg",
+        id: "muhammad-rayan",
+        isFounder: true,
+        founderBadgeText: "Co-Founder",
+    },
+];
+
 export default function AboutPage() {
-    const isOdd = teamMembers.length % 2 === 1;
     return (
         <main className="min-h-screen">
             <Navbar />
@@ -51,11 +69,11 @@ export default function AboutPage() {
                         className="text-center max-w-4xl mx-auto"
                     >
                         <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6">
-                            <span className="text-white">Meet </span>
-                            <span className="text-gradient">Team Nexiler</span>
+                            <span className="text-white">About </span>
+                            <span className="text-gradient">Virtuo Edge</span>
                         </h1>
                         <p className="text-base sm:text-lg md:text-xl text-white/70">
-                            A passionate team of developers, designers, and strategists working together to help businesses grow globally.
+                            A full-service digital agency born from a single idea: helping businesses solve real problems by making them truly digital.
                         </p>
                     </motion.div>
                 </div>
@@ -77,28 +95,16 @@ export default function AboutPage() {
                             
                             <div className="space-y-6 text-white/70 text-base sm:text-lg md:text-xl leading-relaxed">
                                 <p>
-                                    Before Nexiler, we were all working individually freelancing, taking on projects solo, and doing our best to help clients one at a time. 
-                                    But <strong className="text-white">Muhammad Shaheer</strong>, our founder, had a bigger vision.
+                                    Virtuo Edge started when a small group of freelancers and digital specialists saw the same recurring problem: companies were getting 
+                                    beautiful websites and campaigns that looked impressive but failed to solve real business challenges. Founded by <strong className="text-white">Ali Hamza</strong>, 
+                                    Virtuo Edge was created to change that to deliver digital solutions that are practical, measurable, and aligned with clients' real goals.
                                 </p>
                                 <p>
-                                    Since 2023, Shaheer dreamed of building a company that could help people internationally a team that combines skills in web development, 
-                                    AI automation, design, and video production to deliver complete solutions. Not just websites or apps, but real business growth.
-                                </p>
-                                <p>
-                                    In <strong className="text-white">2025</strong>, that vision became reality. Shaheer brought together a group of talented individuals, 
-                                    each an expert in their field. Alongside his dedicated co-founders and our core team, we formed <strong className="text-white">Team Nexiler</strong>. 
-                                    Now, instead of working alone, we work as one team with one goal: to grow your business and solve your problems.
-                                </p>
-                                <p>
-                                    Our mission is simple: provide solutions that actually work and save you time. We handle the tech so you can focus on what you do best.
+                                    Today, our team works as one integrated unit to design, build, and optimize solutions that produce meaningful results.
                                 </p>
 
                                 <p>
                                     We are not here just to make money. We want to solve real problems and help clients reach meaningful outcomes and grow the way they envision. We focus on lasting impact, honest advice, and building tools that make work easier for people.
-                                </p>
-
-                                <p className="text-white/60 italic border-l-4 border-primary/50 pl-4 mt-8 text-base sm:text-lg md:text-xl">
-                                    <strong className="text-white">Note:</strong> My all team is my co-founder. Everyone here is invested in Nexiler's mission and contributes as a founder would. We share the same values, vision, and commitment to excellence.
                                 </p>
                             </div>
 
@@ -112,7 +118,7 @@ export default function AboutPage() {
                                         <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-white">The Vision</h3>
                                     </div>
                                     <p className="text-sm sm:text-base md:text-lg text-white/60">
-                                        Build a company that helps businesses worldwide with top-tier development, automation, and design all under one roof.
+                                        Build a company that helps businesses worldwide with top-tier development, strategy, design, and marketing all under one roof.
                                     </p>
                                 </div>
                                 <div className="p-4 sm:p-6 rounded-xl glass border border-white/10">
@@ -131,9 +137,6 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
-
-            {/* Co-Founders Section */}
-            <CoFoundersSection />
 
             {/* Team Expertise Section */}
             <section className="py-20">
@@ -172,7 +175,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Team Section */}
+            {/* Leadership Section */}
             <section className="py-20 bg-white/[0.02]">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-12">
@@ -183,21 +186,17 @@ export default function AboutPage() {
                             transition={{ duration: 0.6 }}
                         >
                             <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-6">
-                                <span className="text-white">Meet the </span>
-                                <span className="text-gradient">Team</span>
+                                <span className="text-white">Leadership</span>
                             </h2>
-                            <p className="text-base sm:text-lg md:text-xl text-white/60 leading-relaxed">
-                                We are a growing team of 11+ skilled professionals who share one goal, helping your business succeed. 
-                                Below are some of our key team members. Each one brings years of experience and a genuine passion for what they do. 
-                                We work together, we learn together, and we deliver together.
-                                Not all of our team members use LinkedIn; where a profile is available we link to it for convenience.
+                            <p className="text-base sm:text-lg md:text-xl text-white/60">
+                                Meet the founders leading Virtuo Edge
                             </p>
                         </motion.div>
                     </div>
 
-                    {/* Nexiler Company LinkedIn */}
+                    {/* Virtuo Edge Company LinkedIn */}
                     <motion.a
-                        href="https://www.linkedin.com/company/nexiler"
+                        href="https://www.linkedin.com/company/virtuoedge"
                         target="_blank"
                         rel="noopener noreferrer"
                         initial={{ opacity: 0, y: 20 }}
@@ -205,13 +204,13 @@ export default function AboutPage() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                         whileHover={{ y: -8, scale: 1.01 }}
-                        className="group block max-w-3xl mx-auto mb-12 rounded-2xl overflow-hidden bg-white/[0.03] backdrop-blur-sm border border-white/10 hover:border-[#0A66C2]/50 transition-all duration-300 cursor-pointer"
+                        className="group block max-w-3xl mx-auto mb-12 rounded-2xl overflow-hidden bg-white/[0.03] backdrop-blur-sm border border-white/10 hover:border-primary/50 transition-all duration-300 cursor-pointer"
                     >
                         {/* Banner */}
                         <div className="relative h-32 sm:h-40 overflow-hidden">
                             <img
-                                src="https://media.licdn.com/dms/image/v2/D4D3DAQE1PEP9MxAu7g/image-scale_191_1128/B4DZruYcrlJAAc-/0/1764935982743/nexiler_cover?e=1766613600&v=beta&t=-sGGEh2CBvveY4RGDH90-mbE9GGi2TIBSzry9M9IFuk"
-                                alt="Nexiler Banner"
+                                src="https://media.licdn.com/dms/image/v2/D4D3DAQFLQdOlg3tMmw/image-scale_191_1128/B4DZXm04QWHsAc-/0/1743334378415/virtuo_edge_cover?e=1769198400&v=beta&t=C6QNjsWBcIeUIRy2arv4Lci5N6WeGsOnen2BZqf5sCA"
+                                alt="Virtuo Edge Banner"
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#00040F] via-transparent to-transparent" />
@@ -219,62 +218,50 @@ export default function AboutPage() {
                         
                         {/* Company Info */}
                         <div className="p-6 flex items-center gap-4">
-                            <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-white/20 group-hover:border-[#0A66C2]/50 transition-all shrink-0 bg-white">
+                            <div className="w-16 h-16 rounded-xl overflow-hidden border-2 border-white/20 group-hover:border-primary/50 transition-all shrink-0 bg-white">
                                 <img
-                                    src="https://media.licdn.com/dms/image/v2/D4D0BAQHX1IwndP6IFA/company-logo_200_200/B4DZre7n2dHwAQ-/0/1764676763531?e=1767830400&v=beta&t=6wG9bU8hxae0LPzyMvrJsZnVfaIMEvKlsVLD02v0be0"
-                                    alt="Nexiler Logo"
+                                    src="https://media.licdn.com/dms/image/v2/D4D0BAQHugQYCz0D8TQ/company-logo_200_200/company-logo_200_200/0/1738965253639/virtuo_edge_logo?e=1770249600&v=beta&t=GuFASft9jtRzw90yleQFLjJxTUqrfSxpPaNrcGsFNhU"
+                                    alt="Virtuo Edge Logo"
                                     className="w-full h-full object-contain"
                                 />
                             </div>
                             <div className="flex-1">
-                                <h3 className="text-xl font-semibold text-white group-hover:text-[#0A66C2] transition-colors">
-                                    Nexiler
+                                <h3 className="text-xl font-semibold text-white group-hover:text-primary transition-colors">
+                                    Virtuo Edge
                                 </h3>
                                 <p className="text-white/60 text-base sm:text-lg">
-                                    Web Development, AI Automation & Business Growth
+                                    Web Development, Digital Strategy & Business Growth
                                 </p>
                             </div>
-                            <div className="flex items-center gap-2 text-sm text-white/50 group-hover:text-[#0A66C2] transition-colors">
+                            <div className="flex items-center gap-2 text-sm text-white/50 group-hover:text-primary transition-colors">
                                 <span className="hidden sm:inline">Follow on LinkedIn</span>
                                 <ExternalLink size={18} />
                             </div>
                         </div>
                     </motion.a>
 
-                    {/* LinkedIn Profile Cards */}
+                    {/* Symmetric LinkedIn Profile Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                        {teamMembers.map((member, index) => {
-                            // First two members (Shaheer and Rabbiya) - 2 columns
-                            // Third member (Saim) - centered
-                            // Fourth member (Amir) - centered until another candidate joins, then 2 columns
-                            const isCentered = index === 2 || (index === 3 && index === teamMembers.length - 1);
-                            return (
-                                <motion.div
-                                    key={member.id}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    className={isCentered ? "md:col-span-2 flex justify-center" : ""}
-                                >
-                                    <div className="w-full max-w-[380px]">
-                                        <LinkedInProfile
-                                            profileUrl={member.linkedinUrl}
-                                            name={member.name}
-                                            headline={member.headline || member.role}
-                                            imageUrl={member.imageUrl}
-                                            isFounder={member.isFounder}
-                                            founderBadgeText={member.founderBadgeText}
-                                            size="md"
-                                        />
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
+                        {leaders.map((leader, index) => (
+                            <motion.div
+                                key={leader.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                            >
+                                <LinkedInProfile
+                                    profileUrl={leader.linkedinUrl}
+                                    name={leader.name}
+                                    headline={leader.role}
+                                    imageUrl={leader.imageUrl}
+                                    isFounder={leader.isFounder}
+                                    founderBadgeText={leader.founderBadgeText}
+                                    size="md"
+                                />
+                            </motion.div>
+                        ))}
                     </div>
-
-                    {/* Special Thanks */}
-                    <SpecialThanks />
                 </div>
             </section>
 
@@ -320,6 +307,27 @@ export default function AboutPage() {
                             </motion.div>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* Note from Team Section */}
+            <section className="py-20 bg-white/[0.02]">
+                <div className="container mx-auto px-4">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="max-w-3xl mx-auto text-center"
+                    >
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+                            <span className="text-white">A Note from </span>
+                            <span className="text-gradient">the Team</span>
+                        </h2>
+                        <p className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed">
+                            Every project is a partnership. We invest time in understanding your business goals and commit to delivering work that truly moves the needle. If you're looking for a digital partner who treats your challenges like their own, let's talk.
+                        </p>
+                    </motion.div>
                 </div>
             </section>
 
