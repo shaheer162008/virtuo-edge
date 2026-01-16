@@ -16,9 +16,9 @@ const testimonials = [
         rating: 5,
     },
     {
-        quote: "Virtuo Edge built our premium e-commerce platform from the ground up. The platform handles thousands of daily transactions seamlessly, integrates with our inventory system, and the analytics dashboard provides real-time business insights. Their technical excellence and support have been invaluable for our growth.",
-        author: "Modern Retail Co.",
-        role: "E-Commerce Director",
+        quote: "Virtuo Edge transformed YAARHAULAGE Limited's online presence with a simple yet highly effective website. The site perfectly showcases our services, makes client contact seamless, and has significantly improved our online visibility. Their team understood our needs and delivered exactly what we needed for our business.",
+        author: "YAARHAULAGE Limited",
+        role: "Haulage Services Director",
         rating: 5,
     },
 ];

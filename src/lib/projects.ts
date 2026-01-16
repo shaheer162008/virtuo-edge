@@ -51,7 +51,7 @@ export const projects: Project[] = [
         image: "/our-work/yaarhaulage-limited.png",
         type: "image",
         link: "https://yaarhaulagelimited.com/",
-        
+        featured: true,
     },
     {
         id: "ai-solution-academy",

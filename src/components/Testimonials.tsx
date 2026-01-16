@@ -3,22 +3,22 @@ import { motion } from "framer-motion";
 
 const testimonials = [
     {
-        quote: "This platform has completely transformed how we build AI applications. The speed and efficiency are unmatched.",
-        name: "Alex Rivera",
-        role: "CTO at TechFlow",
-        handle: "@arivera",
+        quote: "Virtuo Edge delivered a stunning website that perfectly captures our brand. The team was professional, attentive to detail, and truly understood our vision for the Laurus Foods brand.",
+        name: "Laurus Foods",
+        role: "Food & Beverages",
+        handle: "@laurusfoods",
     },
     {
-        quote: "The best investment we've made this year. The automation features alone have saved us hundreds of hours.",
-        name: "Sarah Chen",
-        role: "Product Manager",
-        handle: "@schen_pm",
+        quote: "Exceptional work on our AI chatbot integration. Virtuo Edge's expertise in combining web development with AI automation has transformed how we interact with clients. Highly professional and innovative.",
+        name: "Sayyid & Shaykh",
+        role: "Law Firm",
+        handle: "@sayyidandshaykh",
     },
     {
-        quote: "Incredible user experience and top-notch support. Highly recommended for any startup looking to scale.",
-        name: "James Wilson",
-        role: "Founder at NextGen",
-        handle: "@jwilson",
+        quote: "Virtuo Edge transformed our online presence. Their team built a professional, efficient website that truly represents our haulage services. Highly professional and responsive throughout the project.",
+        name: "YAARHAULAGE Limited",
+        role: "Haulage Services",
+        handle: "@yaarhaulage",
     },
 ];
 
