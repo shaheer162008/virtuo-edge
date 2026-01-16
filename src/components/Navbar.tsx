@@ -57,11 +57,11 @@ export const Navbar = () => {
     }, [mobileMenuOpen]);
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-transparent pt-4 sm:pt-6">
-            <div className="flex items-center h-16 sm:h-18 md:h-20 gap-4 lg:gap-6 px-4 sm:px-6 lg:px-8">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-transparent pt-6 sm:pt-8 px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center h-16 sm:h-18 md:h-20 gap-4 lg:gap-6">
                 
-                {/* Mobile: Logo + Menu Icon in one container with full screen width */}
-                <div className="flex lg:hidden items-center justify-between bg-black/40 backdrop-blur-md rounded-lg px-3 py-2 gap-4 w-full">
+                {/* Mobile: Logo + Menu Icon in one container */}
+                <div className="flex lg:hidden items-center justify-between bg-black/40 backdrop-blur-md rounded-xl px-3 py-2 gap-4 w-full border border-white/10">
                     <Logo />
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
