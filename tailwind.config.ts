@@ -46,6 +46,9 @@ const config: Config = {
                     DEFAULT: "#33BBCF",
                     light: "#00F6FF",
                 },
+                accent: {
+                    DEFAULT: "#135ACD",
+                },
                 dark: {
                     DEFAULT: "#00040F",
                     secondary: "#010613",

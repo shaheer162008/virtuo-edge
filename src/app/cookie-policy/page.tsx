@@ -4,11 +4,11 @@ import { Footer } from "@/components/Footer";
 import { Cookie, Settings, BarChart3, Wrench, Shield, Globe, RefreshCw, Mail, AlertTriangle } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Cookie Policy - Nexiler",
-    description: "Learn about how Nexiler uses cookies to improve your browsing experience.",
+    title: "Cookie Policy - Virtuo Edge",
+    description: "Learn about how Virtuo Edge uses cookies to improve your browsing experience.",
     openGraph: {
-        title: "Cookie Policy - Nexiler",
-        description: "Learn about how Nexiler uses cookies to improve your browsing experience.",
+        title: "Cookie Policy - Virtuo Edge",
+        description: "Learn about how Virtuo Edge uses cookies to improve your browsing experience.",
         type: "website",
     },
 };
@@ -129,8 +129,8 @@ export default function CookiePolicyPage() {
                             </div>
                             <p>
                                 If you have questions about our use of cookies, please contact us at:{" "}
-                                <a href="mailto:contact@nexiler.tech" className="text-primary hover:underline">
-                                    contact@nexiler.tech
+                                <a href="mailto:info@virtuoedge.tech" className="text-primary hover:underline">
+                                    info@virtuoedge.tech
                                 </a>
                             </p>
                         </section>

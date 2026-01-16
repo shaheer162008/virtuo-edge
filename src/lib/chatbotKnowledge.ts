@@ -1,123 +1,117 @@
 // Centralized knowledge base for the AI chatbot
-// This file contains all information the chatbot should know about Nexiler
+// This file contains all information the chatbot should know about Virtuo Edge
 
 export const siteContent = `
-Nexiler is an AI-driven automation and custom development company that helps modern businesses scale with cutting-edge technology.
+Virtuo Edge is a digital solutions company that helps businesses grow through web development, design, and digital strategy. Founded by Ali Hamza (Founder & CEO) and Muhammad Rayan (Co-Founder & Director of Operations).
 
 Company Overview:
-- Founded to help businesses transform through AI and automation
-- Expert team of developers, AI specialists, and strategists
+- Founded with a mission to deliver digital solutions that solve real business problems
+- Expert team of web developers, designers, and digital strategists
 - Headquarters: Pakistan
 - Services available globally
 
 Core Mission:
-We transform businesses by building AI-powered solutions and custom software that scale. Our team combines deep technical expertise with business acumen to deliver solutions that actually move the needle.
+We help businesses grow digitally by delivering solutions that are practical, measurable, and aligned with real business goals. We act as your digital partner, not just a service provider.
 
 Key Values:
-- Innovation: We stay at the forefront of AI and web technology
-- Quality: Every project receives meticulous attention to detail
-- Reliability: We deliver on time and within scope
-- Partnership: We work closely with clients as true partners
-- Transparency: Clear communication at every step
+- Problem Solvers: We dig into root causes and build solutions that actually work
+- True Partners: We act as an extension of your team, focused on your goals
+- Transparent & Honest: Clear communication, fair pricing, documented decisions
+- Craftsmanship: We care about details and deliver high-quality work that lasts
+
+Leadership:
+- Ali Hamza: Founder & CEO - Leads strategy and product thinking with experience in web development, digital marketing, and client-focused project delivery
+- Muhammad Rayan: Co-Founder & Director of Operations - Oversees project delivery and client success with background in process management and team leadership
+
+Social Links:
+- LinkedIn: https://www.linkedin.com/company/virtuoedge/
+- Instagram: https://www.instagram.com/virtuoedge
+- Facebook: https://www.facebook.com/share/18AyZiJpbS/
+- WhatsApp: https://wa.me/923390046730
+
+Contact Information:
+- Email: info@virtuoedge.tech
+- Phone: +92 339 0046730
+- WhatsApp: +92 339 0046730
 `;
 
 export const serviceDescriptions = `
 1. Website Development ($1000 - $3500+)
-   - SEO-optimized, conversion-focused websites
-   - Mobile-first responsive design
+   - Professional custom websites that convert visitors to customers
+   - SEO-optimized architecture and fast loading speeds
+   - Mobile-first responsive design for all devices
    - CMS integration for easy content management
-   - Third-party API integrations and payment gateways
-   - Perfect for startups scaling their online presence
+   - E-commerce integration and payment gateways
+   - Perfect for startups and established businesses
 
-2. AI Automation Setup ($1000 - $2500)
-   - Automate repetitive tasks and save 20+ hours weekly
-   - Custom workflow design
-   - Lead generation and nurturing automation
-   - Automated email and SMS campaigns
-   - Data sync between CRM and apps
-   - Can reduce manual work by up to 70%
+2. UX/UI Design
+   - Custom user interface design
+   - User experience optimization
+   - Brand consistency across digital products
+   - Wireframing and prototyping
+   - Mobile and web app design
 
-3. AI Chatbot Integration ($1000 - $1800)
-   - 24/7 AI chatbots for website, WhatsApp, and social media
-   - Natural language understanding with AI training
-   - Automatic lead capture and CRM sync
-   - Conversation analytics and insights
-   - Multi-language support
-   - 40-60% higher lead quality
+3. Digital Marketing & SEO
+   - Search engine optimization for higher Google rankings
+   - Content strategy and optimization
+   - Social media marketing and ads management
+   - Link building and off-page SEO
+   - Monthly performance reporting
 
 4. Full Brand Creation ($2500 - $4500)
    - Complete brand identity from scratch
    - Custom logo design
    - Brand guidelines and visual system
-   - Color palette and typography system
+   - Color palette and typography
    - Brand voice and messaging framework
    - Social media and web asset pack
 
 5. Motion Graphics ($400 - $1200 per asset)
-   - Stop-the-scroll animations
+   - Stop-the-scroll animations and videos
    - Explainer videos and product demos
-   - Logo animation and brand motion guidelines
-   - 3-4x higher engagement than static content
+   - Logo animation
+   - 2D and 3D motion graphics
 
 6. Video Editing - Short Content/Reels ($800 - $1500/month)
    - 10-20 platform-optimized Reels/Shorts/TikToks monthly
    - Color grading and visual consistency
-   - Automated captions and trending effects
+   - Captions and trending effects
    - Optimized for Instagram, TikTok, YouTube
 
 7. Video Editing - Long Content ($1200 - $2500/month)
-   - 4-8 long-form videos monthly (10-30 min)
-   - Multi-camera editing with seamless cuts
-   - Professional color grading and audio mixing
-   - Motion graphics, titles, and YouTube optimization
+   - 4-8 long-form videos monthly (5-15 min each)
+   - Professional color grading and audio
+   - Motion graphics and titles
+   - YouTube optimization and chapters
 
-8. Mobile App Development
-   - Native iOS and Android development
-   - React Native cross-platform solutions
-   - Custom API development
-   - App store optimization
+8. AI-Enabled Solutions
+   - AI chatbot integration for 24/7 customer support
+   - Workflow automation to reduce manual work
+   - Data analytics and business intelligence dashboards
+   - Custom integrations and automation
 
-9. E-Commerce Solutions
-   - Full e-commerce platform setup
-   - Payment gateway integration
-   - Inventory management systems
-   - Shopping cart optimization for conversions
+9. Social Media Management
+   - Content creation and posting schedule
+   - Community engagement
+   - Analytics and performance tracking
+   - Ads management and optimization
 
-10. Data Analytics & Dashboards
-    - Custom dashboard design
-    - Real-time data visualization
-    - Business intelligence solutions
-    - Performance tracking and reporting
+10. Graphics Design
+    - Social media post designs
+    - Ad banners and display advertising
+    - Infographics and presentations
+    - Print design and brand assets
 
-11. API Development & Integration
-    - Custom REST and GraphQL APIs
-    - Third-party API integration
-    - Webhook development
-    - Payment processing integrations
+11. Website Maintenance
+    - Monthly updates and optimizations
+    - Security monitoring and backups
+    - Performance optimization
+    - Technical support and fixes
 
-12. Email Marketing Automation
-    - Automated email campaigns
-    - Segmentation and personalization
-    - A/B testing and optimization
-    - Deliverability optimization
-
-13. SEO Optimization
-    - On-page and technical SEO
-    - Content optimization
-    - Link building strategies
-    - Search ranking improvement
-
-14. Cloud Migration & DevOps
-    - Cloud infrastructure setup (AWS, Google Cloud, Azure)
-    - CI/CD pipeline implementation
-    - Database optimization
-    - System scaling and performance tuning
-
-15. Consultation & Strategy
-    - Business technology strategy
-    - AI implementation roadmap
-    - Digital transformation planning
-    - Tech stack recommendations
+12. Consultation Services
+    - Free initial consultation for new clients
+    - Digital strategy planning
+    - Project scoping and estimation
 `;
 
 export const portfolioInfo = `
@@ -130,25 +124,22 @@ Website Development:
 - AI Solution Academy: Educational platform for AI courses
 - Ajwa Tutors: Modern tutoring platform website
 - Innox: MEP contractor specialization website
-- Sindh Education Dashboard: Advanced monitoring dashboard for education management
 
 AI Automation Projects:
 - Sayyid & Shaykh: Law firm website with AI-powered chatbot for legal inquiries
-- Custom workflow automation for multiple clients
 
 The team has successfully delivered projects across multiple industries including:
-- Education and e-learning
-- Legal services
+- E-commerce and retail
 - Enterprise management
 - Food and beverage
 - Logistics and transportation
-- Government/public sector
+- SaaS and digital platforms
 
-All projects demonstrate expertise in modern web technologies, user experience design, and AI integration.
+All projects demonstrate expertise in modern web technologies, user experience design, and digital strategy.
 `;
 
 export const aboutUs = `
-The Nexiler Team:
+The Virtuo Edge Team:
 
 Leadership & Expertise:
 - Experienced AI specialists and machine learning engineers
@@ -164,7 +155,7 @@ Our Approach:
 4. Optimization: We continuously improve and scale your solutions
 5. Support: We provide ongoing maintenance and enhancements
 
-Why Choose Nexiler:
+Why Choose Virtuo Edge:
 - Proven track record with successful projects across industries
 - Focus on ROI and business impact, not just technology
 - Agile methodology ensuring flexibility and quick iterations

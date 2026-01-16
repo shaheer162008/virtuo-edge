@@ -151,7 +151,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
         <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 flex flex-col-reverse gap-3 z-40">
           {/* WhatsApp Button */}
           <a
-            href="https://wa.me/923072853163?text=Hello%20Nexiler,%20I%20need%20help%20with%20your%20services"
+            href="https://wa.me/923390046730?text=Hello%20Virtuo%20Edge,%20I%20need%20help%20with%20your%20services"
             target="_blank"
             rel="noopener noreferrer"
             className="group animate-pulse hover:animate-none flex justify-center relative"
@@ -219,7 +219,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
                 <BotMessageSquare size={20} className="text-white" strokeWidth={1.5} />
               </div>
               <div className="min-w-0">
-                <h3 className="font-bold text-base leading-none">Nexiler AI</h3>
+                <h3 className="font-bold text-base leading-none">Virtuo Edge AI</h3>
                 <p className="text-xs text-white/80 mt-1">Always here to help</p>
               </div>
             </div>
@@ -239,7 +239,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
                 <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-full p-4 mb-4">
                   <BotMessageSquare size={36} className="text-cyan-400" strokeWidth={1.5} />
                 </div>
-                <p className="font-bold text-base text-white mb-2">Welcome to Nexiler AI</p>
+                <p className="font-bold text-base text-white mb-2">Welcome to Virtuo Edge AI</p>
                 <p className="text-xs text-gray-400 leading-relaxed mb-5">
                   Ask me anything about our services, projects, or pricing.
                 </p>
@@ -279,7 +279,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
                   {message.role === 'assistant' && (
                     <div className="flex items-center gap-1.5 mb-1.5">
                       <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full" />
-                      <span className="text-xs font-semibold text-cyan-400">Nexiler AI</span>
+                      <span className="text-xs font-semibold text-cyan-400">Virtuo Edge AI</span>
                     </div>
                   )}
                   <p className="whitespace-pre-wrap leading-relaxed text-sm">

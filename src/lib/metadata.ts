@@ -2,10 +2,10 @@ import { Metadata } from "next";
 
 // Base configuration
 const siteConfig = {
-  name: "Nexiler",
+  name: "Virtuo Edge",
   description: "We help businesses grow through modern websites, smart automation, and proven strategies. Real solutions that deliver results.",
-  url: "https://nexiler.tech",
-  ogImage: "https://nexiler.tech/og-image.jpg",
+  url: "https://virtuoedge.tech",
+  ogImage: "https://virtuoedge.tech/og-image.jpg",
   keywords: [
     "business growth",
     "automation solutions",
@@ -23,11 +23,11 @@ const siteConfig = {
     "digital solutions",
     "business scaling"
   ],
-  creator: "Nexiler",
-  authors: [{ name: "Nexiler Team", url: "https://nexiler.tech" }],
+  creator: "Virtuo Edge",
+  authors: [{ name: "Virtuo Edge Team", url: "https://virtuoedge.tech" }],
   twitter: {
-    creator: "@nexiler",
-    site: "@nexiler",
+    creator: "@virtuoedge",
+    site: "@virtuoedge",
   },
 };
 
@@ -112,13 +112,13 @@ export function generateMetadata({
 
 // Home page metadata
 export const homeMetadata = generateMetadata({
-  title: "Nexiler AI Automation and Web Development Solutions",
-  description: "Build smarter with Nexiler. AI automation, web development, workflow optimization, and organic growth strategies for SMBs and scaling businesses.",
+  title: "Virtuo Edge AI Automation and Web Development Solutions",
+  description: "Build smarter with Virtuo Edge. AI automation, web development, workflow optimization, and organic growth strategies for SMBs and scaling businesses.",
   path: "",
   keywords: [
-    "Nexiler",
+    "Virtuo Edge",
     "AI automation for small business",
-    "Nexiler web development agency",
+    "Virtuo Edge web development agency",
     "workflow automation services",
     "AI automation solutions",
     "custom web development",
@@ -132,7 +132,7 @@ export const aboutMetadata = generateMetadata({
   title: "About Us | Your Partners in Growth",
   description: "We help businesses grow through smart technology and proven strategies. Meet the team behind your success.",
   path: "/about",
-  keywords: ["about nexiler", "digital agency", "growth partners", "our team"],
+  keywords: ["about virtuo edge", "digital agency", "growth partners", "our team"],
 });
 
 // Services page metadata
@@ -198,13 +198,13 @@ export const organizationSchema = {
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "Customer Service",
-    email: "contact@nexiler.tech",
+    email: "info@virtuoedge.tech",
     availableLanguage: ["English"],
   },
   sameAs: [
-    "https://twitter.com/nexiler",
-    "https://linkedin.com/company/nexiler",
-    "https://github.com/nexiler",
+    "https://twitter.com/virtuoedge",
+    "https://linkedin.com/company/virtuo-edge",
+    "https://github.com/virtuoedge",
   ],
 };
 

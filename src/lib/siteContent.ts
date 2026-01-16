@@ -1,177 +1,177 @@
 // Site-wide configuration and content management
 export const siteConfig = {
-    name: "Nexiler",
-    description: "AI-driven automation and custom development solutions for modern businesses",
-    url: "https://nexiler.com",
-    ogImage: "https://nexiler.com/og-image.jpg",
+    name: "Virtuo Edge",
+    description: "Digital solutions for business growth - web development, digital strategy, and AI-enabled services",
+    url: "https://virtuoedge.tech",
+    ogImage: "https://virtuoedge.tech/og-image.jpg",
     links: {
-        twitter: "https://twitter.com/nexiler",
-        github: "https://github.com/nexiler",
-        linkedin: "https://linkedin.com/company/nexiler",
+        linkedin: "https://www.linkedin.com/company/virtuoedge/",
+        instagram: "https://www.instagram.com/virtuoedge",
+        facebook: "https://www.facebook.com/share/18AyZiJpbS/",
     },
 };
 
 // Page metadata - Centralized metadata management
 export const pageMetadata = {
     home: {
-        title: "Nexiler - AI Automation & Custom Development Solutions",
-        description: "Transform your business with cutting-edge AI automation and custom development services. Expert team delivering innovative solutions that scale.",
-        keywords: "AI automation, custom development, software development, machine learning, business automation",
+        title: "Virtuo Edge - Digital Solutions for Business Growth",
+        description: "Web development, digital strategy, and AI-enabled services to help your business grow. Expert team delivering solutions that convert.",
+        keywords: "web development, digital strategy, AI services, UX/UI design, digital marketing",
         openGraph: {
-            title: "Nexiler - AI Automation & Custom Development Solutions",
-            description: "Transform your business with cutting-edge AI automation and custom development services.",
-            images: [{ url: "https://nexiler.com/og-image.jpg", width: 1200, height: 630, alt: "Nexiler" }],
+            title: "Virtuo Edge - Digital Solutions for Business Growth",
+            description: "Web development, digital strategy, and AI-enabled services to help your business grow.",
+            images: [{ url: "https://virtuoedge.tech/og-image.jpg", width: 1200, height: 630, alt: "Virtuo Edge" }],
         },
         twitter: {
             card: "summary_large_image" as const,
-            title: "Nexiler - AI Automation & Custom Development Solutions",
-            description: "Transform your business with cutting-edge AI automation and custom development services.",
-            images: ["https://nexiler.com/og-image.jpg"],
+            title: "Virtuo Edge - Digital Solutions for Business Growth",
+            description: "Web development, digital strategy, and AI-enabled services to help your business grow.",
+            images: ["https://virtuoedge.tech/og-image.jpg"],
         },
     },
     about: {
-        title: "About Us - Nexiler | Expert AI & Development Team",
-        description: "Meet the team behind Nexiler. We're AI experts, developers, and strategists dedicated to transforming businesses through innovation.",
-        keywords: "about nexiler, ai experts, development team, company profile",
+        title: "About Virtuo Edge | Digital Strategy & Web Development Team",
+        description: "Meet the team behind Virtuo Edge. We're designers, developers, and strategists dedicated to helping businesses grow digitally.",
+        keywords: "about virtuo edge, web developers, digital strategy, company profile",
         openGraph: {
-            title: "About Us - Nexiler",
-            description: "Meet the team behind Nexiler. AI experts and developers transforming businesses.",
-            images: [{ url: "https://nexiler.com/og-about.jpg", width: 1200, height: 630, alt: "About Nexiler" }],
+            title: "About Virtuo Edge",
+            description: "Meet the team behind Virtuo Edge. Digital experts helping businesses grow.",
+            images: [{ url: "https://virtuoedge.tech/og-about.jpg", width: 1200, height: 630, alt: "About Virtuo Edge" }],
         },
         twitter: {
             card: "summary_large_image" as const,
-            title: "About Us - Nexiler",
-            description: "Meet the team behind Nexiler. AI experts and developers transforming businesses.",
-            images: ["https://nexiler.com/og-about.jpg"],
+            title: "About Virtuo Edge",
+            description: "Meet the team behind Virtuo Edge. Digital experts helping businesses grow.",
+            images: ["https://virtuoedge.tech/og-about.jpg"],
         },
     },
     services: {
-        title: "Our Services - AI Automation & Software Development | Nexiler",
-        description: "Comprehensive AI automation, custom software development, data solutions, and system integration services to accelerate your business growth.",
-        keywords: "ai automation services, custom software, web development, mobile apps, data solutions, api integration",
+        title: "Our Services - Web Development & Digital Strategy | Virtuo Edge",
+        description: "Website development, UX/UI design, digital marketing, and AI-enabled services to accelerate your business growth.",
+        keywords: "web development services, UX/UI design, digital marketing, AI services, branding",
         openGraph: {
-            title: "Our Services - Nexiler",
-            description: "Comprehensive AI automation, custom software development, and data solutions.",
-            images: [{ url: "https://nexiler.com/og-services.jpg", width: 1200, height: 630, alt: "Nexiler Services" }],
+            title: "Our Services - Virtuo Edge",
+            description: "Website development, UX/UI design, digital marketing, and AI-enabled services.",
+            images: [{ url: "https://virtuoedge.tech/og-services.jpg", width: 1200, height: 630, alt: "Virtuo Edge Services" }],
         },
         twitter: {
             card: "summary_large_image" as const,
-            title: "Our Services - Nexiler",
-            description: "Comprehensive AI automation, custom software development, and data solutions.",
-            images: ["https://nexiler.com/og-services.jpg"],
+            title: "Our Services - Virtuo Edge",
+            description: "Website development, UX/UI design, digital marketing, and AI-enabled services.",
+            images: ["https://virtuoedge.tech/og-services.jpg"],
         },
     },
     portfolio: {
-        title: "Our Work - Success Stories & Projects | Nexiler",
-        description: "Explore our portfolio of successful AI automation projects, web applications, mobile apps, and data solutions that delivered real results.",
-        keywords: "our work, case studies, projects, ai projects, web development projects",
+        title: "Our Work - Success Stories & Projects | Virtuo Edge",
+        description: "Explore our portfolio of successful web development, design, and digital strategy projects that delivered real results.",
+        keywords: "our work, case studies, projects, web development projects, design portfolio",
         openGraph: {
-            title: "Our Work - Nexiler",
-            description: "Explore our portfolio of successful AI automation and development projects.",
-            images: [{ url: "https://nexiler.com/og-portfolio.jpg", width: 1200, height: 630, alt: "Nexiler Our Work" }],
+            title: "Our Work - Virtuo Edge",
+            description: "Explore our portfolio of successful digital projects and case studies.",
+            images: [{ url: "https://virtuoedge.tech/og-portfolio.jpg", width: 1200, height: 630, alt: "Virtuo Edge Our Work" }],
         },
         twitter: {
             card: "summary_large_image" as const,
-            title: "Our Work - Nexiler",
-            description: "Explore our portfolio of successful AI automation and development projects.",
-            images: ["https://nexiler.com/og-portfolio.jpg"],
+            title: "Our Work - Virtuo Edge",
+            description: "Explore our portfolio of successful digital projects and case studies.",
+            images: ["https://virtuoedge.tech/og-portfolio.jpg"],
         },
     },
     blog: {
-        title: "Blog - AI Insights & Development Tips | Nexiler",
-        description: "Latest insights on AI automation, development best practices, industry trends, and technical guides from our expert team.",
-        keywords: "ai blog, development blog, tech insights, automation tips",
+        title: "Blog - Digital Insights & Design Tips | Virtuo Edge",
+        description: "Latest insights on web development, design best practices, digital strategy, and industry trends from our expert team.",
+        keywords: "blog, digital insights, web development, design tips, digital marketing",
         openGraph: {
-            title: "Blog - Nexiler",
-            description: "Latest insights on AI automation, development best practices, and industry trends.",
-            images: [{ url: "https://nexiler.com/og-blog.jpg", width: 1200, height: 630, alt: "Nexiler Blog" }],
+            title: "Blog - Virtuo Edge",
+            description: "Latest insights on web development, design best practices, and digital strategy.",
+            images: [{ url: "https://virtuoedge.tech/og-blog.jpg", width: 1200, height: 630, alt: "Virtuo Edge Blog" }],
         },
         twitter: {
             card: "summary_large_image" as const,
-            title: "Blog - Nexiler",
-            description: "Latest insights on AI automation, development best practices, and industry trends.",
-            images: ["https://nexiler.com/og-blog.jpg"],
+            title: "Blog - Virtuo Edge",
+            description: "Latest insights on web development, design best practices, and digital strategy.",
+            images: ["https://virtuoedge.tech/og-blog.jpg"],
         },
     },
     contact: {
-        title: "Contact Us - Let's Build Together | Nexiler",
-        description: "Ready to transform your business? Get in touch with our team to discuss your AI automation and development needs.",
-        keywords: "contact nexiler, get in touch, project inquiry, consultation",
+        title: "Contact Us - Let's Work Together | Virtuo Edge",
+        description: "Ready to grow your business? Get in touch with our team to discuss your digital strategy and web development needs.",
+        keywords: "contact virtuo edge, get in touch, project inquiry, consultation",
         openGraph: {
-            title: "Contact Us - Nexiler",
-            description: "Ready to transform your business? Get in touch with our team.",
-            images: [{ url: "https://nexiler.com/og-contact.jpg", width: 1200, height: 630, alt: "Contact Nexiler" }],
+            title: "Contact Us - Virtuo Edge",
+            description: "Ready to grow your business? Get in touch with our team.",
+            images: [{ url: "https://virtuoedge.tech/og-contact.jpg", width: 1200, height: 630, alt: "Contact Virtuo Edge" }],
         },
         twitter: {
             card: "summary_large_image" as const,
-            title: "Contact Us - Nexiler",
-            description: "Ready to transform your business? Get in touch with our team.",
-            images: ["https://nexiler.com/og-contact.jpg"],
+            title: "Contact Us - Virtuo Edge",
+            description: "Ready to grow your business? Get in touch with our team.",
+            images: ["https://virtuoedge.tech/og-contact.jpg"],
         },
     },
     // Service-specific metadata
     websiteDevelopment: {
-        title: "Website Development Services - Custom Web Design | Nexiler",
+        title: "Website Development Services - Custom Web Design | Virtuo Edge",
         description: "Professional website development with modern technologies. Custom designs, SEO optimization, and responsive layouts that convert visitors into customers.",
         keywords: "website development, web design, custom website, responsive design, e-commerce website",
     },
     aiAutomationSetup: {
-        title: "AI Automation Setup - Workflow Automation Services | Nexiler",
+        title: "AI Automation Setup - Workflow Automation Services | Virtuo Edge",
         description: "Intelligent AI automation setup to streamline operations. Reduce costs by 70% with custom workflow automation and lead generation systems.",
         keywords: "ai automation, workflow automation, business automation, lead generation automation, crm automation",
     },
     aiChatbotIntegration: {
-        title: "AI Chatbot Integration - 24/7 Customer Support Automation | Nexiler",
+        title: "AI Chatbot Integration - 24/7 Customer Support Automation | Virtuo Edge",
         description: "Smart AI chatbot integration for automated customer support and lead qualification. Multi-channel deployment with natural language understanding.",
         keywords: "ai chatbot, chatbot integration, automated customer support, lead qualification, conversational ai",
     },
     fullBrandCreation: {
-        title: "Full Brand Creation - Complete Brand Identity Services | Nexiler",
+        title: "Full Brand Creation - Complete Brand Identity Services | Virtuo Edge",
         description: "Complete brand creation from logo to messaging. Professional brand identity, visual guidelines, and all assets to establish your unique presence.",
         keywords: "brand creation, brand identity, logo design, brand guidelines, visual identity, brand strategy",
     },
     motionGraphics: {
-        title: "Motion Graphics Services - Professional Animation | Nexiler",
+        title: "Motion Graphics Services - Professional Animation | Virtuo Edge",
         description: "High-quality motion graphics and animation for explainer videos, ads, and engaging visual content that captivates audiences.",
         keywords: "motion graphics, animation services, explainer videos, 2d animation, product animation",
     },
     videoEditingShort: {
-        title: "Short Video Editing - Reels, TikTok, Shorts Editing | Nexiler",
+        title: "Short Video Editing - Reels, TikTok, Shorts Editing | Virtuo Edge",
         description: "Professional editing for viral short-form content. Transform raw footage into engaging Reels, TikToks, and Shorts that drive engagement.",
         keywords: "video editing, reels editing, tiktok editing, shorts editing, social media video, short form content",
     },
     videoEditingLong: {
-        title: "Long Video Editing - YouTube & Podcast Editing Services | Nexiler",
+        title: "Long Video Editing - YouTube & Podcast Editing Services | Virtuo Edge",
         description: "Comprehensive editing for YouTube videos, podcasts, and webinars. Professional quality with fast turnaround for content creators.",
         keywords: "youtube editing, podcast editing, long form video, video production, content creator editing",
     },
     aiAutomationMaintenance: {
-        title: "AI Automation Maintenance - Ongoing Support & Optimization | Nexiler",
+        title: "AI Automation Maintenance - Ongoing Support & Optimization | Virtuo Edge",
         description: "Monthly AI automation maintenance with 24/7 monitoring, optimization, and priority support to keep systems running at peak efficiency.",
         keywords: "automation maintenance, ai support, system monitoring, automation optimization, technical support",
     },
     seoOptimization: {
-        title: "SEO Optimization Services - Rank Higher on Google | Nexiler",
+        title: "SEO Optimization Services - Rank Higher on Google | Virtuo Edge",
         description: "Comprehensive SEO services to dominate search rankings. Technical SEO, content optimization, and link building for long-term organic growth.",
         keywords: "seo services, search engine optimization, seo strategy, google ranking, organic traffic, local seo",
     },
     socialMediaAds: {
-        title: "Social Media Ads Management - Facebook, Instagram Ads | Nexiler",
+        title: "Social Media Ads Management - Facebook, Instagram Ads | Virtuo Edge",
         description: "Expert social media advertising management. Full-service campaign strategy, creative, and optimization to maximize ROI on all platforms.",
         keywords: "social media ads, facebook ads, instagram ads, paid social, social media marketing, ad management",
     },
     graphicDesign: {
-        title: "Graphic Design Services - Professional Design for Marketing | Nexiler",
+        title: "Graphic Design Services - Professional Design for Marketing | Virtuo Edge",
         description: "Professional graphic design for social media, ads, and marketing materials. Consistent branding with fast turnaround and unlimited revisions.",
         keywords: "graphic design, social media design, marketing design, ad design, brand design, visual design",
     },
     websiteMaintenance: {
-        title: "Website Maintenance Services - Security & Support | Nexiler",
+        title: "Website Maintenance Services - Security & Support | Virtuo Edge",
         description: "Monthly website maintenance to keep your site secure, fast, and updated. Regular backups, security monitoring, and technical support.",
         keywords: "website maintenance, website support, security updates, website backup, site maintenance, wordpress maintenance",
     },
     modeling3d: {
-        title: "3D Modeling & Visualization - Photorealistic 3D Renders | Nexiler",
+        title: "3D Modeling & Visualization - Photorealistic 3D Renders | Virtuo Edge",
         description: "Professional 3D modeling and visualization services. Photorealistic product renders, architectural visualization, and AR/VR content creation.",
         keywords: "3d modeling, 3d visualization, product rendering, architectural visualization, 3d animation, ar vr content",
     },
@@ -180,17 +180,17 @@ export const pageMetadata = {
 // Home page content
 export const homeContent = {
     hero: {
-        badge: "Next-Gen AI Automation",
-        title: "Transform Your Business with AI",
-        subtitle: "Custom AI automation solutions and traditional development services tailored to your unique needs. We build intelligent systems that scale your business exponentially.",
+        badge: "Digital Strategy & Development",
+        title: "Grow Your Business Digitally",
+        subtitle: "Web development, UX/UI design, and digital strategy solutions tailored to your unique goals. We build solutions that convert visitors into customers.",
         cta: {
             primary: "Get Started",
             secondary: "View Our Work",
         },
         stats: [
-            { value: "3900+", label: "Active Users" },
-            { value: "230+", label: "Trusted Companies" },
-            { value: "$230M+", label: "Transaction Volume" },
+            { value: "50+", label: "Happy Clients" },
+            { value: "100+", label: "Projects Delivered" },
+            { value: "$2M+", label: "Client Revenue Generated" },
             { value: "24/7", label: "Support" },
         ],
     },
@@ -200,7 +200,7 @@ export const homeContent = {
 export const servicesContent = {
     hero: {
         title: "Premium Digital Solutions",
-        subtitle: "NEXILER delivers fast, conversion-focused services: AI automation, web development, branding, and video production. From startups to enterprises, get results in days, not months.",
+        subtitle: "Virtuo Edge delivers proven, results-focused services: website development, UX/UI design, digital marketing, and AI-enabled solutions. From startups to enterprises, get results that matter.",
     },
     services: [
         {
@@ -659,16 +659,16 @@ export const servicesContent = {
 // About page content
 export const aboutContent = {
     hero: {
-        title: "About Nexiler",
+        title: "About Virtuo Edge",
         subtitle: "We're a team of AI experts, developers, and strategists dedicated to transforming businesses through cutting-edge automation and custom solutions.",
     },
     ourStory: {
         title: "Our Story",
-        description: "Nexiler was born from a simple belief: businesses deserve innovation without the premium price tag. What started as a vision to democratize AI automation has evolved into a full-service digital transformation partner. We've seen firsthand how the right tools and the right team can turn struggles into success stories. Since 2023, our founder Muhammad Shaheer has been building a company that combines expertise in AI automation, full-stack development, and creative design to deliver complete solutions. Every service we offer comes from solving real problems for real clients. Every team member is here because they believe in our mission. We're incredibly grateful to our co-founders and the entire team for their dedication and commitment to making Nexiler what it is today. We're not just a service provider. We're your strategic partner in growth. Scroll down to meet our founder and team.",
+        description: "Virtuo Edge was born from a simple belief: businesses deserve innovation without the premium price tag. What started as a vision to democratize AI automation has evolved into a full-service digital transformation partner. We've seen firsthand how the right tools and the right team can turn struggles into success stories. Since 2023, our founder Muhammad Shaheer has been building a company that combines expertise in AI automation, full-stack development, and creative design to deliver complete solutions. Every service we offer comes from solving real problems for real clients. Every team member is here because they believe in our mission. We're incredibly grateful to our co-founders and the entire team for their dedication and commitment to making Virtuo Edge what it is today. We're not just a service provider. We're your strategic partner in growth. Scroll down to meet our founder and team.",
     },
     coFounders: {
-        sectionTitle: "Meet Our Founder",
-        sectionDescription: "The visionary leading Nexiler forward",
+        sectionTitle: "Meet Our Leadership",
+        sectionDescription: "The team leading Virtuo Edge forward",
     },
     values: [
         {
@@ -755,19 +755,19 @@ export const blogContent = {
 // Contact content
 export const contactContent = {
     hero: {
-        title: "Let's Build Together",
-        subtitle: "Ready to transform your business? Get in touch and let's create something amazing.",
+        title: "Let's Work Together",
+        subtitle: "Ready to grow your business? Get in touch and let's create something amazing.",
     },
     info: [
         {
             label: "Email",
-            value: "contact@nexiler.tech",
-            link: "mailto:contact@nexiler.tech",
+            value: "info@virtuoedge.tech",
+            link: "mailto:info@virtuoedge.tech",
         },
         {
             label: "WhatsApp",
             value: "Chat with us",
-            link: "https://wa.me/923001234567",
+            link: "https://wa.me/923390046730",
         },
         {
             label: "Location",
@@ -779,9 +779,9 @@ export const contactContent = {
 
 // Footer content
 export const footerContent = {
-    description: "Transforming businesses with cutting-edge AI automation and custom solutions. Your partner in digital transformation.",
-    copyright: "Nexiler. All rights reserved.",
-    tagline: "Built with ❤️ and AI",
+    description: "Digital solutions for business growth. Web development, design, and strategy services that deliver real results.",
+    copyright: "Virtuo Edge. All rights reserved.",
+    tagline: "Built with ❤️ for your growth",
 };
 
 // Navigation

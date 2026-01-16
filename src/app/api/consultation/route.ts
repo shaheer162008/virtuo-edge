@@ -12,9 +12,10 @@ const transporter = nodemailer.createTransport({
 
 const datetime = new Date().getFullYear();
 
-// Nexiler brand colors
+// Virtuo Edge brand colors
 const BRAND = {
   primary: '#33BBCF',
+  accent: '#135ACD',
   dark: '#00040F',
   darkAlt: '#0a1628',
   white: '#ffffff',
@@ -28,7 +29,7 @@ const clientEmailTemplate = (data: { name: string; date: string; time: string; s
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Consultation Confirmed - Nexiler</title>
+      <title>Consultation Confirmed - Virtuo Edge</title>
     </head>
     <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f5;">
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f4f4f5; padding: 40px 20px;">
@@ -42,12 +43,12 @@ const clientEmailTemplate = (data: { name: string; date: string; time: string; s
                   <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
                     <tr>
                       <td align="center">
-                        <!-- Nexiler Logo -->
+                        <!-- Virtuo Edge Logo -->
                         <div style="display: inline-flex; align-items: center; gap: 8px;">
                           <div style="width: 40px; height: 40px; background: linear-gradient(135deg, ${BRAND.primary}, #1a8a9a); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                            <span style="color: white; font-weight: bold; font-size: 20px;">N</span>
+                            <span style="color: white; font-weight: bold; font-size: 20px;">V</span>
                           </div>
-                          <span style="color: ${BRAND.white}; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">Nexiler</span>
+                          <span style="color: ${BRAND.white}; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">Virtuo Edge</span>
                         </div>
                       </td>
                     </tr>
@@ -124,7 +125,7 @@ const clientEmailTemplate = (data: { name: string; date: string; time: string; s
               <!-- CTA Button -->
               <tr>
                 <td style="padding: 0 40px 40px; text-align: center;">
-                  <a href="https://nexiler.tech" style="display: inline-block; background: linear-gradient(135deg, ${BRAND.primary}, #1a8a9a); color: ${BRAND.white}; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 14px;">
+                  <a href="https://virtuoedge.tech" style="display: inline-block; background: linear-gradient(135deg, ${BRAND.primary}, #1a8a9a); color: ${BRAND.white}; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 14px;">
                     Visit Our Website →
                   </a>
                 </td>
@@ -135,10 +136,10 @@ const clientEmailTemplate = (data: { name: string; date: string; time: string; s
                 <td style="padding: 24px 40px; background: rgba(0,0,0,0.3); text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
                   <p style="color: ${BRAND.gray}; font-size: 12px; margin: 0 0 8px;">
                     Questions? Reply to this email or contact us at
-                    <a href="mailto:contact@nexiler.tech" style="color: ${BRAND.primary}; text-decoration: none;">contact@nexiler.tech</a>
+                    <a href="mailto:info@virtuoedge.tech" style="color: ${BRAND.primary}; text-decoration: none;">info@virtuoedge.tech</a>
                   </p>
                   <p style="color: ${BRAND.gray}; font-size: 12px; margin: 0;">
-                    © ${datetime} Nexiler. All rights reserved.
+                    © ${datetime} Virtuo Edge. All rights reserved.
                   </p>
                 </td>
               </tr>
@@ -158,7 +159,7 @@ const adminEmailTemplate = (data: any) => `
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>New Consultation Booking - Nexiler</title>
+      <title>New Consultation Booking - Virtuo Edge</title>
     </head>
     <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f5;">
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f4f4f5; padding: 40px 20px;">
@@ -174,9 +175,9 @@ const adminEmailTemplate = (data: any) => `
                       <td>
                         <div style="display: inline-flex; align-items: center; gap: 8px;">
                           <div style="width: 32px; height: 32px; background: linear-gradient(135deg, ${BRAND.primary}, #1a8a9a); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                            <span style="color: white; font-weight: bold; font-size: 16px;">N</span>
+                            <span style="color: white; font-weight: bold; font-size: 16px;">V</span>
                           </div>
-                          <span style="color: ${BRAND.white}; font-size: 20px; font-weight: 700;">Nexiler</span>
+                          <span style="color: ${BRAND.white}; font-size: 20px; font-weight: 700;">Virtuo Edge</span>
                         </div>
                       </td>
                       <td style="text-align: right;">
@@ -332,7 +333,7 @@ const adminEmailTemplate = (data: any) => `
               <tr>
                 <td style="padding: 20px 40px; background: rgba(0,0,0,0.3); text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
                   <p style="color: ${BRAND.gray}; font-size: 12px; margin: 0;">
-                    © ${datetime} Nexiler. Internal notification.
+                    © ${datetime} Virtuo Edge. Internal notification.
                   </p>
                 </td>
               </tr>
@@ -389,16 +390,16 @@ export async function POST(request: NextRequest) {
 
     // Send confirmation email to client
     await transporter.sendMail({
-      from: "no-reply@nexiler.tech",
+      from: "info@virtuoedge.tech",
       to: email,
-      subject: '✅ Consultation Request Received - Nexiler',
+      subject: '✅ Consultation Request Received - Virtuo Edge',
       html: clientEmailTemplate({ name, date, time, service }),
     });
 
-    // Send notification email to admin/developer
+    // Send notification email to admin
     await transporter.sendMail({
-      from: "no-reply@nexiler.tech",
-      to: "contact@nexiler.tech",
+      from: "info@virtuoedge.tech",
+      to: "admin@nexiler.tech",
       subject: `New Consultation Booking - ${name}`,
       html: adminEmailTemplate(consultationData),
     });

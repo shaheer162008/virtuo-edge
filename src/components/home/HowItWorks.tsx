@@ -42,7 +42,7 @@ export const HowItWorks = () => {
                         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                     >
                         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8">
-                            <span className="text-white">The Nexiler </span>
+                            <span className="text-white">The Virtuo Edge </span>
                             <span className="text-gradient">Process</span>
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed">

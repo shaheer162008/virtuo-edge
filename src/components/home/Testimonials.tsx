@@ -4,21 +4,21 @@ import { Star } from "lucide-react";
 
 const testimonials = [
     {
-        quote: "Nexiler built our Laurus Foods website from scratch. The design is clean, the user experience is smooth, and it's helped us showcase our catering products and packaging beautifully. Our online orders increased by 40% after launch.",
+        quote: "Virtuo Edge built our Laurus Foods website from scratch. The design is clean, the user experience is smooth, and it's helped us showcase our catering products and packaging beautifully. Our online orders increased by 40% after launch.",
         author: "Laurus Foods Team",
         role: "Business Owner, Laurus Foods",
         rating: 5,
     },
     {
-        quote: "For Sayyid & Shaykh, Nexiler created an AI-powered chatbot that handles legal inquiries 24/7. Clients now get instant responses, our consultants focus on complex cases, and we've cut response time from hours to minutes. Professional, reliable, and exactly what we needed.",
+        quote: "For Sayyid & Shaykh, Virtuo Edge created an AI-powered chatbot that handles legal inquiries 24/7. Clients now get instant responses, our consultants focus on complex cases, and we've cut response time from hours to minutes. Professional, reliable, and exactly what we needed.",
         author: "Sayyid & Shaykh",
         role: "Advocate and Legal Consultant",
         rating: 5,
     },
     {
-        quote: "The Sindh Education Dashboard was critical for our government project. Nexiler delivered a robust platform to track and manage education metrics across districts. It's user-friendly, secure, and handles thousands of data points without a hitch. Outstanding technical expertise.",
-        author: "Sindh Government",
-        role: "Education Department Leadership",
+        quote: "Virtuo Edge built our premium e-commerce platform from the ground up. The platform handles thousands of daily transactions seamlessly, integrates with our inventory system, and the analytics dashboard provides real-time business insights. Their technical excellence and support have been invaluable for our growth.",
+        author: "Modern Retail Co.",
+        role: "E-Commerce Director",
         rating: 5,
     },
 ];
@@ -37,11 +37,11 @@ export const Testimonials = () => {
                         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
                     >
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-5 md:mb-6">
-                            <span className="text-white">How Nexiler </span>
+                            <span className="text-white">How Virtuo Edge </span>
                             <span className="text-gradient">Delivers Results</span>
                         </h2>
                         <p className="text-lg text-white/60">
-                            Real stories from real clients. Nexiler helps businesses save time, reduce costs, and grow faster.
+                            Real stories from real clients. Virtuo Edge helps businesses save time, reduce costs, and grow faster.
                         </p>
                     </motion.div>
                 </div>

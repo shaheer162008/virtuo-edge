@@ -100,10 +100,10 @@ export default function BlogPage() {
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="text-white">Learn From </span>
-              <span className="text-gradient">Nexiler</span>
+              <span className="text-gradient">Virtuo Edge</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70">
-              Articles, insights, and expert tips on AI automation, web development, workflow optimization, and business growth. Stay informed with Nexiler's resource hub.
+              Articles, insights, and expert tips on AI automation, web development, workflow optimization, and business growth. Stay informed with Virtuo Edge's resource hub.
             </p>
           </motion.div>
         </div>

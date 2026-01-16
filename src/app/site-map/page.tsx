@@ -5,10 +5,10 @@ import { Footer } from "@/components/Footer";
 import { generateMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = generateMetadata({
-  title: "Nexiler Sitemap - All Pages and Resources",
-  description: "Complete sitemap of Nexiler website. Find all pages, services, portfolio, blog posts, and resources in one place. Navigate Nexiler easily.",
+  title: "Virtuo Edge Sitemap - All Pages and Resources",
+  description: "Complete sitemap of Virtuo Edge website. Find all pages, services, portfolio, blog posts, and resources in one place. Navigate easily.",
   path: "/site-map",
-  keywords: ["nexiler sitemap", "site navigation", "all pages", "nexiler pages"],
+  keywords: ["virtuo edge sitemap", "site navigation", "all pages"],
 });
 
 const sitemapSections = [
@@ -16,24 +16,24 @@ const sitemapSections = [
     title: "Main Pages",
     links: [
       { href: "/", label: "Home" },
-      { href: "/about", label: "About Nexiler" },
-      { href: "/services", label: "Nexiler Services" },
+      { href: "/about", label: "About Virtuo Edge" },
+      { href: "/services", label: "Virtuo Edge Services" },
       { href: "/our-work", label: "Our Work" },
-      { href: "/pricing", label: "Nexiler Pricing" },
+      { href: "/pricing", label: "Virtuo Edge Pricing" },
       { href: "/blogs", label: "Blog" },
       { href: "/consultation", label: "Free Consultation" },
-      { href: "/contact", label: "Contact Nexiler" },
+      { href: "/contact", label: "Contact Virtuo Edge" },
     ],
   },
   {
-    title: "Nexiler Services",
+    title: "Services",
     links: [
-      { href: "/services#ai-automation", label: "AI Automation" },
-      { href: "/services#custom-development", label: "Custom Development" },
-      { href: "/services#process-optimization", label: "Process Optimization" },
-      { href: "/services#data-solutions", label: "Data Solutions" },
-      { href: "/services#api-integration", label: "API Integration" },
-      { href: "/services#consulting", label: "Consulting and Support" },
+      { href: "/services#website-development", label: "Website Development" },
+      { href: "/services#uiux-design", label: "UX/UI Design" },
+      { href: "/services#digital-marketing", label: "Digital Marketing" },
+      { href: "/services#ai-services", label: "AI Services" },
+      { href: "/services#branding", label: "Branding" },
+      { href: "/services#video-production", label: "Video Production" },
     ],
   },
   {
@@ -74,11 +74,11 @@ export default function SitemapPage() {
           {/* Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-white">Nexiler</span>
+              <span className="text-white">Virtuo Edge</span>
               <span className="text-gradient"> Sitemap</span>
             </h1>
             <p className="text-lg text-white/70">
-              Navigate through all Nexiler pages, services, resources and content in one place
+              Navigate through all Virtuo Edge pages, services, resources and content in one place
             </p>
           </div>
 
@@ -112,13 +112,13 @@ export default function SitemapPage() {
           {/* Additional Info */}
           <div className="mt-16 text-center">
             <p className="text-white/60 text-base sm:text-lg mb-4">
-              Looking for something specific on Nexiler?
+              Looking for something specific on Virtuo Edge?
             </p>
             <Link
               href="/contact"
               className="inline-flex px-6 py-3 bg-white/10 text-white border-2 border-white/30 rounded-xl font-bold hover:bg-white/20 hover:border-white/50 transition-all duration-300"
             >
-              Contact Nexiler
+              Contact Virtuo Edge
             </Link>
           </div>
         </div>

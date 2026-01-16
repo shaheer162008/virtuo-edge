@@ -18,7 +18,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://nexiler.tech/sitemap.xml',
-    host: 'https://nexiler.tech',
+    sitemap: 'https://virtuoedge.tech/sitemap.xml',
+    host: 'https://virtuoedge.tech',
   };
 }

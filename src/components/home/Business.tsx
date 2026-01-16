@@ -38,10 +38,10 @@ export const Business = () => {
                         <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5 sm:mb-6 md:mb-8 leading-tight">
                             <span className="text-white">Focus on your business.</span>
                             <br />
-                            <span className="text-gradient">Let Nexiler handle the tech.</span>
+                            <span className="text-gradient">Let Virtuo Edge handle the tech.</span>
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 sm:mb-10 md:mb-12 leading-relaxed">
-                            From website development to workflow automation, Nexiler handles all the technical heavy lifting. You stay focused on growth.
+                            From website development to workflow automation, Virtuo Edge handles all the technical heavy lifting. You stay focused on growth.
                         </p>
                         <Link href="/consultation">
                             <motion.button

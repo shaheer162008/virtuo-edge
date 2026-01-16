@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "./Logo";
-import { Twitter, Linkedin, Github, Mail, Instagram, Facebook, Youtube, ArrowRight } from "lucide-react";
+import { Mail, Instagram, ArrowRight, Linkedin, Facebook } from "lucide-react";
+import { socialLinks, contactInfo } from "@/lib/socialConfig";
 
 const footerLinks = {
     company: [
@@ -21,15 +22,19 @@ const footerLinks = {
     ],
 };
 
-const socialLinks = [
-    { Icon: Twitter, href: "https://x.com/NexilerOfficial", label: "X" },
-    { Icon: Youtube, href: "https://www.youtube.com/@Nexiler.Official", label: "Youtube" },
-    { Icon: Linkedin, href: "https://www.linkedin.com/company/nexiler", label: "LinkedIn" },
-    { Icon: Github, href: "https://github.com/nexiler-official", label: "GitHub" },
-    { Icon: Instagram, href: "https://www.instagram.com/nexiler.official", label: "Instagram" },
-    { Icon: Mail, href: "mailto:contact@nexiler.tech", label: "Email" },
-    { Icon: Facebook, href: "https://www.facebook.com/share/1APYFEoejH/", label: "Facebook" },
-];
+// Map social links to icons
+const getIconForSocial = (icon: string) => {
+    switch(icon) {
+        case 'linkedin':
+            return Linkedin;
+        case 'instagram':
+            return Instagram;
+        case 'facebook':
+            return Facebook;
+        default:
+            return Mail;
+    }
+};
 
 export const Footer = () => {
     return (
@@ -43,22 +48,25 @@ export const Footer = () => {
                             <Logo />
                         </div>
                         <p className="text-white/65 text-base sm:text-base md:text-lg leading-relaxed mb-6 max-w-xs">
-                            Unlock growth through intelligent automation, stunning web experiences, and strategic digital solutions.
+                            Digital solutions for business growth. Web development, design, and strategy services that deliver real results.
                         </p>
                         <div className="flex items-center gap-3 flex-wrap sm:flex-nowrap">
-                            {socialLinks.map(({ Icon, href, label }) => (
-                                <a
-                                    key={label}
-                                    href={href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group relative w-10 h-10 flex items-center justify-center rounded-xl text-white/50 hover:text-primary transition-all duration-300 hover:scale-110 active:scale-95"
-                                    aria-label={label}
-                                >
-                                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    <Icon size={18} className="relative z-10" />
-                                </a>
-                            ))}
+                            {socialLinks.map(({ icon, href, label }) => {
+                                const Icon = getIconForSocial(icon);
+                                return (
+                                    <a
+                                        key={label}
+                                        href={href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group relative w-10 h-10 flex items-center justify-center rounded-xl text-white/50 hover:text-primary transition-all duration-300 hover:scale-110 active:scale-95"
+                                        aria-label={label}
+                                    >
+                                        <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                        <Icon size={18} className="relative z-10" />
+                                    </a>
+                                );
+                            })}
                         </div>
                     </div>
 
@@ -120,10 +128,10 @@ export const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="pt-8 sm:pt-10 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
                     <p className="text-white/40 text-base sm:text-lg text-center sm:text-left">
-                        © {new Date().getFullYear()} Nexiler. All rights reserved.
+                        © {new Date().getFullYear()} Virtuo Edge. All rights reserved.
                     </p>
                     <p className="text-white/40 text-base sm:text-lg">
-                        Developed by Team Nexiler
+                        Developed by Team Virtuo Edge
                     </p>
                 </div>
             </div>

@@ -31,7 +31,7 @@ export const CardDeal = () => {
                             <span className="text-gradient">No juggling agencies.</span>
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-white/60 mb-8 sm:mb-10 md:mb-12 leading-relaxed">
-                            Websites, automation, branding, video, integrations Nexiler handles it all. Single point of contact, cohesive strategy, better results.
+                            Websites, automation, branding, video, integrations Virtuo Edge handles it all. Single point of contact, cohesive strategy, better results.
                         </p>
                         <Link href="/consultation">
                             <motion.button 
@@ -61,9 +61,9 @@ export const CardDeal = () => {
                                     <div className="flex items-center justify-between mb-6">
                                         <div className="flex items-center gap-2">
                                             <div className="w-8 h-8 rounded-lg bg-primary/20 flex items-center justify-center">
-                                                <span className="text-primary font-bold text-sm">N</span>
+                                                <span className="text-primary font-bold text-sm">V</span>
                                             </div>
-                                            <span className="text-white font-semibold">Nexiler Services</span>
+                                            <span className="text-white font-semibold">Virtuo Edge Services</span>
                                         </div>
                                         <div className="text-base sm:text-lg text-white/40">15+ Solutions</div>
                                     </div>

@@ -9,9 +9,9 @@ interface BlogFilterProps {
 
 export const BlogFilter = ({ categories, activeCategory, onCategoryChange }: BlogFilterProps) => {
     return (
-        <section className="py-6 border-y border-white/10 sticky top-16 md:top-20 z-40 backdrop-blur-xl overflow-hidden relative">
+        <section className="py-6 border-y border-white/10 backdrop-blur-xl overflow-hidden relative">
             {/* Enhanced Gradient Effect */}
-            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#00040F] via-[#00040F]/95 to-[#00040F]" />
+            <div className="absolute inset-0 -z-10 bg-linear-to-r from-[#00040F] via-[#00040F]/95 to-[#00040F]" />
             <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
                 <div 
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[120px] sm:w-[400px] sm:h-[180px] lg:w-[600px] lg:h-[200px]"

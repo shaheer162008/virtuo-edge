@@ -26,7 +26,7 @@ export default function CoFoundersSection() {
                         <span className="text-gradient">Founder & Co-Founders</span>
                     </h2>
                     <p className="text-white/60 text-base sm:text-lg max-w-3xl mx-auto mb-8 leading-relaxed">
-                        Meet the leadership team driving Nexiler's vision. <strong className="text-white">Muhammad Shaheer</strong> founded Nexiler with a mission to democratize AI automation and digital innovation. 
+                        Meet the leadership team driving Virtuo Edge's vision. <strong className="text-white">Muhammad Shaheer</strong> founded Virtuo Edge with a mission to democratize AI automation and digital innovation. 
                         Supporting him are our exceptional co-founders <strong className="text-white">Rabbiya Sohail</strong> and <strong className="text-white">Muhammad Saim</strong>, who bring expertise in graphic design, social media strategy, and full-stack development. 
                         Together, they've built a company dedicated to delivering transformative solutions for businesses worldwide.
                     </p>
@@ -80,19 +80,19 @@ export default function CoFoundersSection() {
                     <div className="p-6 sm:p-8 rounded-2xl bg-white/[0.03] border border-white/10">
                         <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">Our Leadership Philosophy</h3>
                         <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-4">
-                            Our founder and co-founders of Nexiler share a common vision: to create transformative solutions that help businesses thrive in the digital age. 
+                            Our founder and co-founders of Virtuo Edge share a common vision: to create transformative solutions that help businesses thrive in the digital age. 
                             With combined expertise spanning AI automation, full-stack development, and creative design, they've built a company where innovation meets reliability.
                         </p>
                         <p className="text-white/70 text-base sm:text-lg leading-relaxed">
                             Every decision we make, every service we offer, and every client relationship we build reflects the values established by our founding team. 
-                            Their commitment to excellence, transparency, and client success sets the standard for everyone at Nexiler.
+                            Their commitment to excellence, transparency, and client success sets the standard for everyone at Virtuo Edge.
                         </p>
                     </div>
 
                     <div className="p-6 sm:p-8 rounded-2xl bg-primary/5 border border-primary/20">
                         <p className="text-white text-base sm:text-lg leading-relaxed italic">
                             <strong>"We believe great businesses are built on trust, innovation, and the right team."</strong> 
-                            — Leadership Team, Nexiler
+                            — Leadership Team, Virtuo Edge
                         </p>
                     </div>
                 </motion.div>

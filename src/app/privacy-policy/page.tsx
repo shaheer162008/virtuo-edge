@@ -3,11 +3,11 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Privacy Policy - Nexiler",
-    description: "Learn how Nexiler collects, uses, and protects your personal information. Your privacy is our priority.",
+    title: "Privacy Policy - Virtuo Edge",
+    description: "Learn how Virtuo Edge collects, uses, and protects your personal information. Your privacy is our priority.",
     openGraph: {
-        title: "Privacy Policy - Nexiler",
-        description: "Learn how Nexiler collects, uses, and protects your personal information.",
+        title: "Privacy Policy - Virtuo Edge",
+        description: "Learn how Virtuo Edge collects, uses, and protects your personal information.",
         type: "website",
     },
 };
@@ -123,8 +123,8 @@ export default function PrivacyPolicyPage() {
                             </h2>
                             <p>
                                 If you have questions about this Privacy Policy or want to exercise your rights, please contact us at:{" "}
-                                <a href="mailto:contact@nexiler.tech" className="text-primary hover:underline">
-                                    contact@nexiler.tech
+                                <a href="mailto:info@virtuoedge.tech" className="text-primary hover:underline">
+                                    info@virtuoedge.tech
                                 </a>
                             </p>
                         </section>

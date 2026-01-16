@@ -43,7 +43,7 @@ export default function OurWorkPage() {
             </section>
 
             {/* Filter */}
-            <section className="py-6 border-y border-white/10 sticky top-16 md:top-20 z-40 backdrop-blur-xl overflow-hidden">
+            <section className="py-6 border-y border-white/10 backdrop-blur-xl overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-linear-to-r from-[#00040F] via-[#00040F]/95 to-[#00040F]" />
                 <div className="container mx-auto px-4">
                     <div className="flex flex-wrap justify-center gap-3">

@@ -60,13 +60,20 @@ export const Navbar = () => {
         <header className="fixed top-0 left-0 right-0 z-50 bg-transparent pt-4 sm:pt-6">
             <div className="flex items-center h-16 sm:h-18 md:h-20 gap-4 lg:gap-6 px-4 sm:px-6 lg:px-8">
                 
-                {/* Mobile: Logo + Menu (no background) */}
-                <div className="flex md:hidden items-center gap-4">
+                {/* Mobile: Logo + Menu Icon in one container with full screen width */}
+                <div className="flex lg:hidden items-center justify-between bg-black/40 backdrop-blur-md rounded-lg px-3 py-2 gap-4 w-full">
                     <Logo />
+                    <button
+                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        className="text-white hover:text-cyan-400 transition-all duration-300"
+                        aria-label="Toggle menu"
+                    >
+                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
                 </div>
                 
                 {/* Desktop: Logo + Nav Links with Transparent Border */}
-                <div className="hidden md:flex items-center md:bg-black/40 md:backdrop-blur-md border-2 border-transparent px-4 sm:px-6 lg:px-8 h-full rounded-2xl gap-2 sm:gap-4">
+                <div className="hidden lg:flex items-center md:bg-black/40 md:backdrop-blur-md border-2 border-transparent px-4 sm:px-6 lg:px-8 h-full rounded-2xl gap-2 sm:gap-4">
                     {/* Logo */}
                     <Logo />
                     
@@ -94,7 +101,7 @@ export const Navbar = () => {
                                                     animate={{ opacity: 1, y: 0 }}
                                                     exit={{ opacity: 0, y: -10 }}
                                                     transition={{ duration: 0.2 }}
-                                                    className="absolute top-full mt-2 left-[-200px] w-[600px] bg-black/40 backdrop-blur-md border-2 border-transparent rounded-2xl p-6 grid grid-cols-2 gap-4 shadow-2xl z-50"
+                                                    className="absolute top-full mt-2 left-[-200px] w-[600px] bg-black/90 backdrop-blur-md border-2 border-transparent rounded-2xl p-6 grid grid-cols-2 gap-4 shadow-2xl z-50"
                                                     onMouseEnter={() => setServicesDropdownOpen(true)}
                                                     onMouseLeave={() => setServicesDropdownOpen(false)}
                                                 >
@@ -144,7 +151,7 @@ export const Navbar = () => {
                     </nav>
                 </div>
 
-                {/* Right Side: CTA Button (Desktop) / Mobile Menu Icon */}
+                {/* Right Side: CTA Button (Desktop Only) */}
                 {/* Desktop: Consultation Button */}
                 <div className="hidden md:flex items-center ml-auto mr-4 sm:mr-6 lg:mr-8 h-full">
                     <Link
@@ -155,15 +162,6 @@ export const Navbar = () => {
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
                     </Link>
                 </div>
-
-                {/* Mobile: Menu Icon Only */}
-                <button
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    className="flex md:hidden items-center ml-auto text-white hover:text-cyan-400 transition-all duration-300"
-                    aria-label="Toggle menu"
-                >
-                    {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
             </div>
 
             {/* Mobile Menu - New Theme */}
@@ -176,7 +174,18 @@ export const Navbar = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="md:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+                            className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+                            onClick={() => setMobileMenuOpen(false)}
+                            style={{ top: '64px' }}
+                        />
+                        
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
                             onClick={() => setMobileMenuOpen(false)}
                             style={{ top: '64px' }}
                         />
@@ -187,7 +196,7 @@ export const Navbar = () => {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -400 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="md:hidden fixed left-0 top-0 bottom-0 w-full bg-gradient-to-b from-black/70 via-black/80 to-blue-950/60 backdrop-blur-xl border-r border-white/10 shadow-2xl z-50 overflow-y-auto"
+                            className="lg:hidden fixed left-0 top-0 bottom-0 w-full bg-gradient-to-b from-black/70 via-black/80 to-blue-950/60 backdrop-blur-xl border-r border-white/10 shadow-2xl z-50 overflow-y-auto"
                         >
                             {/* Logo at top */}
                             <div className="sticky top-0 flex items-center justify-between p-6 bg-black/60 backdrop-blur-md border-b border-white/10">

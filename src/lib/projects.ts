@@ -92,16 +92,5 @@ export const projects: Project[] = [
         featured: true,
         link: "https://sayyidandshaykh.com/"
     },
-  {
-    id: "sindh-education-dashboard",
-    title: "Sindh Education Dashboard",
-    category: "Website Development",
-    description: "Advanced monitoring dashboard built for the School Education & Literacy Department, Sindh track and manage cases, store PDFs and reports, and monitor district-level education metrics in real time.",
-    image: "/our-work/sindh-education-dashboard.png",
-    type: "image",
-    link: "https://seldlegaldashboard.com/"
-  ,
-    // mark this as featured on the homepage
-    featured: true
-  },
+
 ];

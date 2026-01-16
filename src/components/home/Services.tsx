@@ -83,7 +83,7 @@ export const Services = () => {
                     className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 md:mb-16"
                 >
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-[1.15]">
-                        <span className="text-white">What Nexiler </span>
+                        <span className="text-white">What Virtuo Edge </span>
                         <span className="text-gradient">Delivers</span>
                     </h2>
                     <p className="text-base sm:text-lg md:text-xl text-white/70 leading-relaxed mb-4">

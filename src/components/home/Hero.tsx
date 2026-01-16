@@ -63,7 +63,7 @@ export const Hero = () => {
                             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-5 md:mb-6 leading-[1.05]"
                         >
                             <span className="text-white">Make Your Business Work </span>
-                            <span className="text-gradient block whitespace-wrap">Smarter with Nexiler</span>
+                            <span className="text-gradient block whitespace-wrap">Smarter with Virtuo Edge</span>
                         </motion.h1>
 
                         {/* Subheadline */}

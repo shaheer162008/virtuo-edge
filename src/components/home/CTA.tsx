@@ -28,7 +28,7 @@ export const CTA = () => {
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-5 md:mb-6"
                         >
                             <span className="text-white">Ready to see what </span>
-                            <span className="text-gradient">Nexiler can do?</span>
+                            <span className="text-gradient">Virtuo Edge can do?</span>
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}

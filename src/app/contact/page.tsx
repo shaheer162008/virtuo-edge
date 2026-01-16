@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Newsletter } from "@/components/Newsletter";
-import { Mail, Phone, MapPin, Send, MessageCircle, Twitter, Instagram, Linkedin, Github, Youtube, Facebook } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 
 // Metadata is set in layout.tsx for client components
 
@@ -42,7 +42,7 @@ export default function ContactPage() {
                             <span className="text-gradient">Project</span>
                         </h1>
                         <p className="text-lg md:text-xl text-white/70">
-                            Nexiler is ready to help. Whether you need a website, automation system, or brand strategy, reach out and we'll figure out what's next.
+                            Virtuo Edge is ready to help. Whether you need a website, automation system, or brand strategy, reach out and we'll figure out what's next.
                         </p>
                     </motion.div>
                 </div>
@@ -58,10 +58,11 @@ export default function ContactPage() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6 }}
+                            className="flex flex-col justify-start"
                         >
-                            <h2 className="text-3xl font-bold text-white mb-6">Reach Nexiler</h2>
-                            <p className="text-white/70 mb-8 leading-relaxed">
-                                Have a project in mind? Whether you need AI automation, custom website development, or consulting, Nexiler is ready to help. Get in touch and let's start.
+                            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Reach Virtuo Edge</h2>
+                            <p className="text-white/70 mb-8 leading-relaxed text-base md:text-lg">
+                                Have a project in mind? Whether you need AI automation, custom website development, or consulting, Virtuo Edge is ready to help. Get in touch and let's start.
                             </p>
 
                             <div className="space-y-6">
@@ -71,20 +72,22 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <div className="font-semibold text-white mb-1">Email</div>
-                                        <a href="mailto:contact@nexiler.tech" className="text-white/70 hover:text-primary transition-colors text-base sm:text-lg">
-                                            contact@nexiler.tech
+                                        <a href="mailto:info@virtuoedge.tech" className="text-white/70 hover:text-primary transition-colors text-base sm:text-lg">
+                                            info@virtuoedge.tech
                                         </a>
                                     </div>
                                 </div>
 
                                 <div className="flex items-start gap-4">
                                     <div className="p-3 rounded-lg bg-primary/10">
-                                        <MessageCircle size={24} className="text-primary" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1664 1600" width="24" height="24" fill="#FFFFFF" style={{opacity: 1}}>
+                                            <path d="M985 878q13 0 97.5 44t89.5 53q2 5 2 15q0 33-17 76q-16 39-71 65.5T984 1158q-57 0-190-62q-98-45-170-118T476 793q-72-107-71-194v-8q3-91 74-158q24-22 52-22q6 0 18 1.5t19 1.5q19 0 26.5 6.5T610 448q8 20 33 88t25 75q0 21-34.5 57.5T599 715q0 7 5 15q34 73 102 137q56 53 151 101q12 7 22 7q15 0 54-48.5t52-48.5m-203 530q127 0 243.5-50t200.5-134t134-200.5t50-243.5t-50-243.5T1226 336t-200.5-134T782 152t-243.5 50T338 336T204 536.5T154 780q0 203 120 368l-79 233l242-77q158 104 345 104m0-1382q153 0 292.5 60T1315 247t161 240.5t60 292.5t-60 292.5t-161 240.5t-240.5 161t-292.5 60q-195 0-365-94L0 1574l136-405Q28 991 28 780q0-153 60-292.5T249 247T489.5 86T782 26" />
+                                        </svg>
                                     </div>
                                     <div>
                                         <div className="font-semibold text-white mb-1">WhatsApp</div>
-                                        <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-primary transition-colors text-base sm:text-lg">
-                                            Chat with us on WhatsApp
+                                        <a href="https://wa.me/923390046730" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-accent transition-colors text-base sm:text-lg">
+                                            +92 339 0046730
                                         </a>
                                     </div>
                                 </div>
@@ -103,28 +106,13 @@ export default function ContactPage() {
                                 </div>
 
                                 <div>
-                                    <div className="font-semibold text-white mb-4">Connect With Us</div>
+                                    <div className="font-semibold text-white mb-4">Quick Contact</div>
                                     <div className="flex gap-4 flex-wrap">
-                                        <a href="https://wa.me/923001234567" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="WhatsApp">
-                                            <MessageCircle size={22} />
-                                        </a>
-                                        <a href="https://www.facebook.com/nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Facebook">
-                                            <Facebook size={22} />
-                                        </a>
-                                        <a href="https://www.linkedin.com/company/nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="LinkedIn">
-                                            <Linkedin size={22} />
-                                        </a>
-                                        <a href="https://x.com/NexilerOfficial" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Twitter">
-                                            <Twitter size={22} />
-                                        </a>
-                                        <a href="https://www.instagram.com/nexiler.official" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="Instagram">
-                                            <Instagram size={22} />
-                                        </a>
-                                        <a href="https://github.com/nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="GitHub">
-                                            <Github size={22} />
-                                        </a>
-                                        <a href="https://www.youtube.com/@nexiler" target="_blank" rel="noopener noreferrer" className="p-3 rounded-lg bg-white/10 text-white/70 hover:text-primary hover:bg-white/20 transition-all duration-300" title="YouTube">
-                                            <Youtube size={22} />
+                                        <a href="https://wa.me/923390046730" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-3 rounded-lg bg-accent text-white hover:shadow-lg hover:shadow-accent/50 transition-all duration-300" title="Chat on WhatsApp">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1664 1600" width="20" height="20" fill="#FFFFFF" style={{opacity: 1}}>
+                                                <path d="M985 878q13 0 97.5 44t89.5 53q2 5 2 15q0 33-17 76q-16 39-71 65.5T984 1158q-57 0-190-62q-98-45-170-118T476 793q-72-107-71-194v-8q3-91 74-158q24-22 52-22q6 0 18 1.5t19 1.5q19 0 26.5 6.5T610 448q8 20 33 88t25 75q0 21-34.5 57.5T599 715q0 7 5 15q34 73 102 137q56 53 151 101q12 7 22 7q15 0 54-48.5t52-48.5m-203 530q127 0 243.5-50t200.5-134t134-200.5t50-243.5t-50-243.5T1226 336t-200.5-134T782 152t-243.5 50T338 336T204 536.5T154 780q0 203 120 368l-79 233l242-77q158 104 345 104m0-1382q153 0 292.5 60T1315 247t161 240.5t60 292.5t-60 292.5t-161 240.5t-240.5 161t-292.5 60q-195 0-365-94L0 1574l136-405Q28 991 28 780q0-153 60-292.5T249 247T489.5 86T782 26" />
+                                            </svg>
+                                            Chat Now
                                         </a>
                                     </div>
                                 </div>

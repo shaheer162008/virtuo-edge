@@ -3,11 +3,11 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-    title: "Terms of Service - Nexiler | Digital Transformation & Business Growth",
-    description: "Clear, transparent terms for Nexiler's web development, AI automation, and business growth services. Learn about our result guarantees, payment terms, and partnership commitments.",
+    title: "Terms of Service - Virtuo Edge | Digital Transformation & Business Growth",
+    description: "Clear, transparent terms for Virtuo Edge's web development, AI automation, and business growth services. Learn about our result guarantees, payment terms, and partnership commitments.",
     openGraph: {
-        title: "Terms of Service - Nexiler | Digital Transformation & Business Growth",
-        description: "Clear, transparent terms for Nexiler's web development, AI automation, and business growth services. Learn about our result guarantees, payment terms, and partnership commitments.",
+        title: "Terms of Service - Virtuo Edge | Digital Transformation & Business Growth",
+        description: "Clear, transparent terms for Virtuo Edge's web development, AI automation, and business growth services. Learn about our result guarantees, payment terms, and partnership commitments.",
         type: "website",
     },
 };
@@ -28,7 +28,7 @@ export default function TermsOfServicePage() {
                     
                     <div className="p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-purple-500/10 border border-primary/30 mb-8">
                         <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
-                            Welcome to Nexiler. We're all about building honest partnerships that drive real results for your business. 
+                            Welcome to Virtuo Edge. We're all about building honest partnerships that drive real results for your business. 
                             Whether you need a powerful web app, smart automation, or a strategy to scale your brand, these terms make sure 
                             we're on the same page from day one. We've kept this simple and clear because we believe great work starts with trust.
                         </p>
@@ -49,7 +49,7 @@ export default function TermsOfServicePage() {
                                 Acceptance and Agreement
                             </h2>
                             <p className="text-sm sm:text-base md:text-lg">
-                                By accessing our website, engaging in consultations, or signing a proposal/Statement of Work (SOW) with Nexiler (the "Agency"), 
+                                By accessing our website, engaging in consultations, or signing a proposal/Statement of Work (SOW) with Virtuo Edge (the "Agency"), 
                                 you ("Client") agree to be bound by these Terms of Service. These terms apply to all digital services, including Web Development, 
                                 AI Automation, Branding, Digital Marketing, and Custom Solutions.
                             </p>
@@ -322,12 +322,12 @@ export default function TermsOfServicePage() {
                             </p>
                             <p className="mb-4">
                                 <strong className="text-white">Email:</strong>{" "}
-                                <a href="mailto:contact@nexiler.tech" className="text-primary hover:underline">
-                                    contact@nexiler.tech
+                                <a href="mailto:info@virtuoedge.tech" className="text-primary hover:underline">
+                                    info@virtuoedge.tech
                                 </a>
                             </p>
                             <p className="text-white/90">
-                                Thanks for choosing Nexiler. Let's build something great together.
+                                Thanks for choosing Virtuo Edge. Let's build something great together.
                             </p>
                         </section>
                     </div>

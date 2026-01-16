@@ -26,6 +26,10 @@ export { PlugConnect } from './plug-connect';
 export { CodeBrackets } from './code-brackets';
 */
 
+// WhatsApp Icon - Available for use
+export { WhatsAppIcon } from './WhatsAppIcon';
+export { WhatsAppSVG } from './WhatsAppSVG';
+
 // USAGE EXAMPLE (once icons are created):
 /*
 import { GlobeCode, RobotSpark, ChatAiBubble } from '@/components/icons';

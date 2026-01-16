@@ -30,7 +30,7 @@ export const Billing = () => {
                                 <div className="flex items-center justify-between mb-6">
                                     <div className="flex items-center gap-2">
                                         <Bot className="w-6 h-6 text-primary" />
-                                        <span className="text-white font-semibold">Nexiler AI</span>
+                                        <span className="text-white font-semibold">Virtuo Edge AI</span>
                                     </div>
                                     <div className="flex gap-1.5">
                                         <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse" />

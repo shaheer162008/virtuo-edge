@@ -33,7 +33,7 @@ interface LinkedInProfileProps {
  * <LinkedInProfile
  *     profileUrl="https://www.linkedin.com/in/muhammad-shaheer-yousuf/"
  *     name="Muhammad Shaheer"
- *     headline="Founder & CEO at Nexiler"
+ *     headline="Founder & CEO at Virtuo Edge"
  *     isFounder={true}
  * />
  * ```

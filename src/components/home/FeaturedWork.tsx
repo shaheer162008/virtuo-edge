@@ -24,11 +24,11 @@ export const FeaturedWork = () => {
                             transition={{ duration: 0.6 }}
                         >
                             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                                <span className="text-white">Nexiler's </span>
+                                <span className="text-white">Virtuo Edge's </span>
                                 <span className="text-gradient">Client Success Stories</span>
                             </h2>
                             <p className="text-lg text-white/60">
-                                See how Nexiler has helped businesses build better websites, automate operations, and grow faster.
+                                See how Virtuo Edge has helped businesses build better websites, automate operations, and grow faster.
                             </p>
                         </motion.div>
                     </div>

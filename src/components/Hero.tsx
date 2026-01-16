@@ -7,10 +7,10 @@ import Link from "next/link";
 export const Hero = () => {
     return (
         <section className="relative min-h-screen overflow-hidden pt-20 md:pt-24">
-            {/* ========== OPTIMIZED GRADIENT BACKGROUND ========== */}
+            {/* Background */}
             <div className="absolute inset-0 bg-[#00040F] -z-30" />
             
-            {/* Simplified gradient - Better performance */}
+            {/* Radial Gradient Background */}
             <div 
                 className="absolute top-0 right-0 w-full h-full -z-20 opacity-60"
                 style={{
@@ -18,7 +18,7 @@ export const Hero = () => {
                 }}
             />
 
-            {/* ========== CONTENT LAYER ========== */}
+            {/* Content */}
             <div className="container relative z-10 min-h-[calc(100vh-80px)] flex items-center px-4 py-12 md:py-16">
                 <div className="w-full max-w-6xl mx-auto text-center">
                     {/* Badge */}
@@ -32,17 +32,16 @@ export const Hero = () => {
                         <span>Next Gen AI Automation • Trusted by 230+ Companies</span>
                     </motion.div>
 
-                    {/* Main Heading - Responsive */}
+                    {/* Main Heading */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="mb-6"
                     >
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight tracking-tight mb-4">
-                            Transform Your
-                            <br />
-                            <span className="text-gradient">Business with AI</span>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight mb-4">
+                            <span className="text-white block">Make Your Business Work</span>
+                            <span className="text-gradient">Smarter with Virtuo Edge</span>
                         </h1>
                     </motion.div>
 

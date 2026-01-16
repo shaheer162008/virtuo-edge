@@ -25,7 +25,7 @@ export const getBlogTitles = async (): Promise<string[]> => {
 
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://nexiler.tech';
+  const baseUrl = 'https://virtuoedge.tech';
   
   // Static pages
   const routes = [
