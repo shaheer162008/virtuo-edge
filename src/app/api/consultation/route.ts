@@ -45,23 +45,11 @@ const clientEmailTemplate = (data: { name: string; date: string; time: string; s
                       <td align="center">
                         <!-- Virtuo Edge Logo -->
                         <div style="display: inline-flex; align-items: center; gap: 8px;">
-                          <div style="width: 40px; height: 40px; background: linear-gradient(135deg, ${BRAND.primary}, #1a8a9a); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                            <span style="color: white; font-weight: bold; font-size: 20px;">V</span>
-                          </div>
                           <span style="color: ${BRAND.white}; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">Virtuo Edge</span>
                         </div>
                       </td>
                     </tr>
                   </table>
-                </td>
-              </tr>
-
-              <!-- Success Icon -->
-              <tr>
-                <td style="padding: 40px 40px 20px; text-align: center;">
-                  <div style="width: 80px; height: 80px; background: linear-gradient(135deg, ${BRAND.primary}20, ${BRAND.primary}10); border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
-                    <span style="font-size: 40px;">✓</span>
-                  </div>
                 </td>
               </tr>
 
@@ -72,12 +60,12 @@ const clientEmailTemplate = (data: { name: string; date: string; time: string; s
                     Consultation Request Received!
                   </h1>
                   <p style="color: ${BRAND.gray}; font-size: 16px; line-height: 1.6; margin: 0 0 32px; text-align: center;">
-                    Hi <span style="color: ${BRAND.primary}; font-weight: 600;">${data.name}</span>, thank you for booking a consultation with us!
+                    Hi <span style="color: ${BRAND.accent}; font-weight: 600;">${data.name}</span>, thank you for booking a consultation with us!
                   </p>
 
                   <!-- Booking Details Card -->
-                  <div style="background: ${BRAND.darkAlt}; border-radius: 12px; padding: 24px; margin-bottom: 32px; border: 1px solid rgba(255,255,255,0.1);">
-                    <h3 style="color: ${BRAND.white}; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 20px; opacity: 0.7;">
+                  <div style="background: ${BRAND.darkAlt}; border-radius: 12px; padding: 24px; margin-bottom: 32px; border: 1px solid ${BRAND.accent}30;">
+                    <h3 style="color: ${BRAND.accent}; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 20px;">
                       Your Booking Details
                     </h3>
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
@@ -102,14 +90,14 @@ const clientEmailTemplate = (data: { name: string; date: string; time: string; s
                           <span style="color: ${BRAND.gray}; font-size: 14px;">🎯 Service</span>
                         </td>
                         <td style="padding: 12px 0; text-align: right;">
-                          <span style="color: ${BRAND.primary}; font-size: 14px; font-weight: 600;">${data.service}</span>
+                          <span style="background: ${BRAND.accent}20; color: ${BRAND.accent}; padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 600;">${data.service}</span>
                         </td>
                       </tr>
                     </table>
                   </div>
 
                   <!-- What's Next -->
-                  <div style="background: linear-gradient(135deg, ${BRAND.primary}15, ${BRAND.primary}05); border-radius: 12px; padding: 24px; border: 1px solid ${BRAND.primary}30;">
+                  <div style="background: linear-gradient(135deg, ${BRAND.accent}15, ${BRAND.accent}05); border-radius: 12px; padding: 24px; border: 1px solid ${BRAND.accent}30;">
                     <h3 style="color: ${BRAND.white}; font-size: 16px; font-weight: 600; margin: 0 0 16px;">
                       ⚡ What happens next?
                     </h3>
@@ -125,7 +113,7 @@ const clientEmailTemplate = (data: { name: string; date: string; time: string; s
               <!-- CTA Button -->
               <tr>
                 <td style="padding: 0 40px 40px; text-align: center;">
-                  <a href="https://virtuoedge.tech" style="display: inline-block; background: linear-gradient(135deg, ${BRAND.primary}, #1a8a9a); color: ${BRAND.white}; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 14px;">
+                  <a href="https://virtuoedge.tech" style="display: inline-block; background: linear-gradient(135deg, ${BRAND.accent}, #1a5fc9); color: ${BRAND.white}; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 14px;">
                     Visit Our Website →
                   </a>
                 </td>
@@ -136,7 +124,7 @@ const clientEmailTemplate = (data: { name: string; date: string; time: string; s
                 <td style="padding: 24px 40px; background: rgba(0,0,0,0.3); text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
                   <p style="color: ${BRAND.gray}; font-size: 12px; margin: 0 0 8px;">
                     Questions? Reply to this email or contact us at
-                    <a href="mailto:info@virtuoedge.tech" style="color: ${BRAND.primary}; text-decoration: none;">info@virtuoedge.tech</a>
+                    <a href="mailto:info@virtuoedge.tech" style="color: ${BRAND.accent}; text-decoration: none;">info@virtuoedge.tech</a>
                   </p>
                   <p style="color: ${BRAND.gray}; font-size: 12px; margin: 0;">
                     © ${datetime} Virtuo Edge. All rights reserved.
@@ -174,14 +162,11 @@ const adminEmailTemplate = (data: any) => `
                     <tr>
                       <td>
                         <div style="display: inline-flex; align-items: center; gap: 8px;">
-                          <div style="width: 32px; height: 32px; background: linear-gradient(135deg, ${BRAND.primary}, #1a8a9a); border-radius: 8px; display: flex; align-items: center; justify-content: center;">
-                            <span style="color: white; font-weight: bold; font-size: 16px;">V</span>
-                          </div>
                           <span style="color: ${BRAND.white}; font-size: 20px; font-weight: 700;">Virtuo Edge</span>
                         </div>
                       </td>
                       <td style="text-align: right;">
-                        <span style="background: #ef4444; color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">
+                        <span style="background: linear-gradient(135deg, ${BRAND.accent}, #1a5fc9); color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">
                           🔔 NEW BOOKING
                         </span>
                       </td>
@@ -193,7 +178,7 @@ const adminEmailTemplate = (data: any) => `
               <!-- Alert Banner -->
               <tr>
                 <td style="padding: 24px 40px;">
-                  <div style="background: linear-gradient(135deg, #ef444420, #ef444410); border: 1px solid #ef444440; border-radius: 12px; padding: 20px; text-align: center;">
+                  <div style="background: linear-gradient(135deg, ${BRAND.accent}20, ${BRAND.accent}10); border: 1px solid ${BRAND.accent}40; border-radius: 12px; padding: 20px; text-align: center;">
                     <h2 style="color: ${BRAND.white}; font-size: 24px; font-weight: 700; margin: 0 0 8px;">
                       📌 New Consultation Request
                     </h2>
@@ -207,8 +192,8 @@ const adminEmailTemplate = (data: any) => `
               <!-- Client Information -->
               <tr>
                 <td style="padding: 0 40px 24px;">
-                  <div style="background: ${BRAND.darkAlt}; border-radius: 12px; padding: 24px; border: 1px solid rgba(255,255,255,0.1);">
-                    <h3 style="color: ${BRAND.primary}; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 20px;">
+                  <div style="background: ${BRAND.darkAlt}; border-radius: 12px; padding: 24px; border: 1px solid ${BRAND.accent}30;">
+                    <h3 style="color: ${BRAND.accent}; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 20px;">
                       👤 Client Information
                     </h3>
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
@@ -225,7 +210,7 @@ const adminEmailTemplate = (data: any) => `
                           <span style="color: ${BRAND.gray}; font-size: 13px;">Email</span>
                         </td>
                         <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: right;">
-                          <a href="mailto:${data.email}" style="color: ${BRAND.primary}; font-size: 14px; text-decoration: none;">${data.email}</a>
+                          <a href="mailto:${data.email}" style="color: ${BRAND.accent}; font-size: 14px; text-decoration: none;">${data.email}</a>
                         </td>
                       </tr>
                       <tr>
@@ -244,8 +229,8 @@ const adminEmailTemplate = (data: any) => `
               <!-- Consultation Details -->
               <tr>
                 <td style="padding: 0 40px 24px;">
-                  <div style="background: ${BRAND.darkAlt}; border-radius: 12px; padding: 24px; border: 1px solid rgba(255,255,255,0.1);">
-                    <h3 style="color: ${BRAND.primary}; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 20px;">
+                  <div style="background: ${BRAND.darkAlt}; border-radius: 12px; padding: 24px; border: 1px solid ${BRAND.accent}30;">
+                    <h3 style="color: ${BRAND.accent}; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 20px;">
                       📋 Consultation Details
                     </h3>
                     <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
@@ -254,7 +239,7 @@ const adminEmailTemplate = (data: any) => `
                           <span style="color: ${BRAND.gray}; font-size: 13px;">Service</span>
                         </td>
                         <td style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: right;">
-                          <span style="background: ${BRAND.primary}20; color: ${BRAND.primary}; padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 600;">${data.service}</span>
+                          <span style="background: ${BRAND.accent}20; color: ${BRAND.accent}; padding: 4px 10px; border-radius: 4px; font-size: 13px; font-weight: 600;">${data.service}</span>
                         </td>
                       </tr>
                       <tr>
@@ -297,8 +282,8 @@ const adminEmailTemplate = (data: any) => `
               <!-- Message -->
               <tr>
                 <td style="padding: 0 40px 24px;">
-                  <div style="background: ${BRAND.darkAlt}; border-radius: 12px; padding: 24px; border: 1px solid rgba(255,255,255,0.1);">
-                    <h3 style="color: ${BRAND.primary}; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 16px;">
+                  <div style="background: ${BRAND.darkAlt}; border-radius: 12px; padding: 24px; border: 1px solid ${BRAND.accent}30;">
+                    <h3 style="color: ${BRAND.accent}; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 16px;">
                       💬 Client Message
                     </h3>
                     <p style="color: ${BRAND.white}; font-size: 14px; line-height: 1.7; margin: 0; white-space: pre-wrap;">${data.message || 'No message provided'}</p>
@@ -320,7 +305,7 @@ const adminEmailTemplate = (data: any) => `
               <!-- Quick Actions -->
               <tr>
                 <td style="padding: 0 40px 32px; text-align: center;">
-                  <a href="mailto:${data.email}" style="display: inline-block; background: linear-gradient(135deg, ${BRAND.primary}, #1a8a9a); color: ${BRAND.white}; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 14px; margin-right: 12px;">
+                  <a href="mailto:${data.email}" style="display: inline-block; background: linear-gradient(135deg, ${BRAND.accent}, #1a5fc9); color: ${BRAND.white}; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 14px; margin-right: 12px;">
                     📧 Reply via Email
                   </a>
                   <a href="https://wa.me/${data.phone?.replace(/[^0-9]/g, '')}" style="display: inline-block; background: #25D366; color: ${BRAND.white}; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 14px;">
@@ -399,7 +384,7 @@ export async function POST(request: NextRequest) {
     // Send notification email to admin
     await transporter.sendMail({
       from: "info@virtuoedge.tech",
-      to: "admin@nexiler.tech",
+      to: "admin@virtuoedge.tech",
       subject: `New Consultation Booking - ${name}`,
       html: adminEmailTemplate(consultationData),
     });
