@@ -86,7 +86,7 @@ export const Navbar = () => {
                                     <div key={link.href} className="relative" ref={servicesRef}>
                                         <button
                                             onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-                                            className={`flex items-center gap-1 text-base xl:text-lg font-medium transition-all duration-300 hover:text-cyan-400 relative group whitespace-nowrap ${pathname === "/services" ? "text-cyan-400 font-bold" : "text-white/70"}`}
+                                            className={`flex items-center gap-1 text-base xl:text-lg font-medium transition-all duration-300 hover:text-blue-400 relative group whitespace-nowrap ${pathname === "/services" ? "text-blue-400 font-bold" : "text-white/70"}`}
                                             onMouseEnter={() => setServicesDropdownOpen(true)}
                                         >
                                             {link.label}
@@ -120,7 +120,7 @@ export const Navbar = () => {
                                                     <Link
                                                         href="/services"
                                                         onClick={() => setServicesDropdownOpen(false)}
-                                                        className="col-span-2 px-4 py-3 rounded-lg text-sm font-bold text-cyan-400 hover:text-white hover:bg-cyan-400/10 border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 text-center"
+                                                        className="col-span-2 px-4 py-3 rounded-lg text-sm font-bold text-blue-400 hover:text-white hover:bg-blue-400/10 border border-blue-400/30 hover:border-blue-400/60 transition-all duration-300 text-center"
                                                     >
                                                         View All Services →
                                                     </Link>
@@ -135,7 +135,7 @@ export const Navbar = () => {
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className={`text-base xl:text-lg font-medium transition-all duration-300 hover:text-cyan-400 relative group whitespace-nowrap ${pathname === link.href ? "text-cyan-400 font-bold" : "text-white/70"}`}
+                                    className={`text-base xl:text-lg font-medium transition-all duration-300 hover:text-blue-400 relative group whitespace-nowrap ${pathname === link.href ? "text-blue-400 font-bold" : "text-white/70"}`}
                                 >
                                     {link.label}
                                     {pathname === link.href && (
@@ -156,7 +156,7 @@ export const Navbar = () => {
                 <div className="hidden md:flex items-center ml-auto mr-4 sm:mr-6 lg:mr-8 h-full">
                     <Link
                         href="/consultation"
-                        className="flex items-center gap-2 text-base font-bold text-white/70 hover:text-cyan-400 transition-all duration-300 whitespace-nowrap group"
+                        className="flex items-center gap-2 text-base font-bold text-white/70 hover:text-blue-400 transition-all duration-300 whitespace-nowrap group"
                     >
                         Get Free Consultation
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />

@@ -182,7 +182,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
             <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full blur-xl opacity-80 group-hover:opacity-100 transition-opacity" />
             
             {/* Main button - Circle */}
-            <div className="relative bg-gradient-to-r from-[#33BBCF] to-[#0066CC] text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 shadow-2xl hover:scale-110 active:scale-95 transition-all duration-200 flex items-center justify-center cursor-pointer group-hover:shadow-cyan-500/50 group-hover:shadow-2xl">
+            <div className="relative bg-gradient-to-r from-[#135ACD] to-[#0d3a8a] text-white rounded-full w-16 h-16 sm:w-20 sm:h-20 shadow-2xl hover:scale-110 active:scale-95 transition-all duration-200 flex items-center justify-center cursor-pointer group-hover:shadow-blue-500/50 group-hover:shadow-2xl">
               <BotMessageSquare size={32} strokeWidth={1.5} />
             </div>
           </button>
@@ -201,7 +201,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
           <div
             ref={chatContainerRef}
             className="
-              fixed z-50 bg-gradient-to-b from-gray-900 via-gray-950 to-black flex flex-col border border-cyan-500/30 shadow-2xl
+              fixed z-50 bg-gradient-to-b from-gray-900 via-gray-950 to-black flex flex-col border border-blue-500/30 shadow-2xl
               top-[70px] bottom-0 left-0 right-0
               sm:inset-y-auto sm:bottom-6 sm:right-6 sm:left-auto sm:top-auto
               w-full sm:w-[340px]
@@ -213,7 +213,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
             "
           >
           {/* Header with gradient background */}
-          <div className="bg-gradient-to-r from-[#33BBCF] via-cyan-500 to-blue-600 text-white px-4 py-5 sm:px-6 sm:py-6 flex justify-between items-center flex-shrink-0 rounded-t-3xl sm:rounded-t-2xl">
+          <div className="bg-gradient-to-r from-[#135ACD] via-blue-500 to-blue-600 text-white px-4 py-5 sm:px-6 sm:py-6 flex justify-between items-center flex-shrink-0 rounded-t-3xl sm:rounded-t-2xl">
             <div className="flex items-center gap-3 flex-1 min-w-0">
               <div className="bg-white/10 backdrop-blur-md rounded-lg p-2 flex-shrink-0">
                 <BotMessageSquare size={20} className="text-white" strokeWidth={1.5} />
@@ -236,7 +236,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
           <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-gradient-to-b from-gray-900 via-gray-950 to-black scrollbar-hide" data-messages-container>
             {messages.length === 0 && (
               <div className="flex flex-col items-center justify-center h-full text-center px-4 py-4">
-                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-full p-4 mb-4">
+                <div className="bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded-full p-4 mb-4">
                   <BotMessageSquare size={36} className="text-cyan-400" strokeWidth={1.5} />
                 </div>
                 <p className="font-bold text-base text-white mb-2">Welcome to Virtuo Edge AI</p>
@@ -248,7 +248,7 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
                     <button
                       key={idx}
                       onClick={() => handleQuickQuery(query.text)}
-                      className="w-full text-sm bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 hover:border-cyan-500/60 text-cyan-300 rounded-lg px-3 py-3 transition-all active:scale-95 text-left leading-relaxed font-medium"
+                      className="w-full text-sm bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/40 hover:border-blue-500/60 text-blue-300 rounded-lg px-3 py-3 transition-all active:scale-95 text-left leading-relaxed font-medium"
                     >
                       <span className="mr-2">{query.icon}</span>
                       {query.text}
@@ -315,13 +315,13 @@ export default function AIChat({ isOpen, onClose, onOpen }: AIChatProps) {
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 placeholder="Ask something..."
-                className="flex-1 text-sm bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 hover:border-cyan-500/60 text-cyan-300 rounded-lg px-3 py-3 placeholder-cyan-500/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all leading-relaxed font-medium"
+                className="flex-1 text-sm bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/40 hover:border-blue-500/60 text-blue-300 rounded-lg px-3 py-3 placeholder-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all leading-relaxed font-medium"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
-                className="text-sm bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 hover:border-cyan-500/60 text-cyan-300 rounded-lg px-3 py-3 transition-all active:scale-95 leading-relaxed font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center flex-shrink-0"
+                className="text-sm bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/40 hover:border-blue-500/60 text-blue-300 rounded-lg px-3 py-3 transition-all active:scale-95 leading-relaxed font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center flex-shrink-0"
               >
                 <Send size={18} />
               </button>

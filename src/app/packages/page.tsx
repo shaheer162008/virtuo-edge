@@ -219,7 +219,7 @@ export default function PackagesPage() {
                                 }`}
                             >
                                 {plan.popular && (
-                                    <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 px-4 sm:px-5 py-1 sm:py-1.5 bg-[#00F6FF] rounded-full text-black text-dark font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-lg">
+                                    <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 px-4 sm:px-5 py-1 sm:py-1.5 bg-[#135ACD] rounded-full text-white text-dark font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-lg shadow-blue-500/40">
                                         <Sparkles size={14} />
                                         Most Popular
                                     </div>
@@ -313,7 +313,7 @@ export default function PackagesPage() {
                                 }`}
                             >
                                 {plan.popular && (
-                                    <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 px-4 sm:px-5 py-1 sm:py-1.5 bg-[#00F6FF] rounded-full text-black text-dark font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-lg">
+                                    <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 px-4 sm:px-5 py-1 sm:py-1.5 bg-[#135ACD] rounded-full text-white text-dark font-bold text-xs sm:text-sm flex items-center gap-1.5 shadow-lg shadow-blue-500/40">
                                         <Sparkles size={14} />
                                         Most Popular
                                     </div>

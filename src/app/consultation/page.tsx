@@ -62,11 +62,11 @@ export default function ConsultationPage() {
               
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-5">
                 <span className="text-white">Free Consultation With </span>
-                <span className="text-gradient">Nexiler Experts</span>
+                <span className="text-gradient">Virtuo Edge Experts</span>
               </h1>
               
               <p className="text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto">
-                Book a 30-minute call with Nexiler. We'll understand your business, discuss your goals, and outline a clear path forward—no pressure, no hidden agenda.
+                Book a 30-minute call with Virtuo Edge. We'll understand your business, discuss your goals, and outline a clear path forward—no pressure, no hidden agenda.
               </p>
             </div>
 
