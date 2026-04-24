@@ -58,6 +58,35 @@ export const Navbar = () => {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 bg-transparent pt-6 sm:pt-8 px-4 sm:px-6 lg:px-8">
+
+{/* Promo Banner */}
+{promoBannerVisible && (
+    <motion.div
+        initial={{ opacity: 1, height: "auto" }}
+        exit={{ opacity: 0, height: 0 }}
+        className="w-full bg-gradient-to-r from-black via-indigo-950/50 to-black border-b border-indigo-500/20 px-4 py-1.5 flex items-center justify-center gap-3 relative overflow-hidden"
+    >
+        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse flex-shrink-0" />
+        <p className="text-xs text-indigo-200/80">
+            <strong className="text-indigo-300 font-medium">Virtuo Build Co.</strong>
+            {" "}— Fire Protection, HVAC, Solar & MEP Solutions
+        </p>
+        
+            href="https://build.virtuoedge.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-semibold text-indigo-400 border border-indigo-400/30 rounded-full px-2.5 py-0.5 hover:bg-indigo-400/15 transition-all duration-200 flex-shrink-0"
+        >
+            Explore →
+        </a>
+        <button
+            onClick={() => setPromoBannerVisible(false)}
+            className="absolute right-3 text-white/30 hover:text-white/60 text-sm transition-colors"
+        >✕</button>
+    </motion.div>
+)}
+
+            
             <div className="flex items-center h-16 sm:h-18 md:h-20 gap-4 lg:gap-6">
                 
                 {/* Mobile: Logo + Menu Icon in one container */}
