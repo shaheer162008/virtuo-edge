@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { homeMetadata, organizationSchema } from "@/lib/metadata";
 import ChatbotWrapper from "@/components/ChatbotWrapper";
+import Script from "next/script";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
@@ -25,6 +26,13 @@ export default function RootLayout({
         <meta name="theme-color" content="#00040F" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8289236021486555"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         
         {/* Structured Data - Organization */}
         <script
